@@ -11,7 +11,7 @@ userRouter.post("/register", async (req, res) => {
     const user = await UserModel.findOne({ email });
     try {
         if (user) {
-            res.status(200).send({ "message": "User is already present, please login." })
+            res.status(300).send({ "message": "User is already present, please login." })
         }
         else {
             bcrypt.hash(password, 5, async (err, hash) => {
@@ -23,12 +23,12 @@ userRouter.post("/register", async (req, res) => {
                     res.status(200).send({ "message": "User is registered.", "user": user })
                 }
                 else {
-                    res.status(201).send({ "message": "Something went wrong while hashing", "err": err })
+                    res.status(400).send({ "message": "Something went wrong while hashing", "err": err })
                 }
             })
         }
     } catch (error) {
-        res.status(400).send({ "message": "Something went wrong", "err": error })
+        res.status(500).send({ "message": "Something went wrong", "err": error })
     }
 })
 
@@ -43,15 +43,15 @@ userRouter.post("/login", async (req, res) => {
                     res.status(200).send({ "message": "Successfully logged in", "token": token });
                 }
                 else {
-                    res.status(201).send({ "message": "Something went wrong.", "err": err })
+                    res.status(400).send({ "message": "Something went wrong.", "err": err })
                 }
             })
         }
         else {
-            res.status(202).send({ "message": "User is not registered, please register" })
+            res.status(300).send({ "message": "User is not registered, please register" })
         }
     } catch (error) {
-        res.status(400).send({ "message": "Something went wrong", "Err": error })
+        res.status(500).send({ "message": "Something went wrong", "Err": error })
     }
 })
 
@@ -62,7 +62,7 @@ userRouter.get("/logout", auth, async (req, res) => {
         await newTkn.save();
         res.status(200).send({ "message": "Logout successful" })
     } catch (error) {
-        res.status(400).send({ "message": "Something went wrong", "err": error })
+        res.status(500).send({ "message": "Something went wrong", "err": error })
     }
 })
 
@@ -72,7 +72,7 @@ userRouter.patch("update/:id", auth, async (req, res) => {
         await UserModel.findByIdAndUpdate({ _id: id }, req.body);
         res.status(200).send({ "msg": "Your details are updated successfully." });
     } catch (error) {
-        res.status(400).send({ "msg": "Something went wrong.", "err": error });
+        res.status(500).send({ "msg": "Something went wrong.", "err": error });
     }
 })
 
@@ -82,7 +82,7 @@ userRouter.delete("delete/:id", async (req, res) => {
         await UserModel.findByIdAndDelete({ _id: id });
         res.status(200).send({ "msg": "Your account is deleted successfully." });
     } catch (error) {
-        res.status(400).send({ "msg": "Something went wrong.", "err": error });
+        res.status(500).send({ "msg": "Something went wrong.", "err": error });
     }
 })
 
