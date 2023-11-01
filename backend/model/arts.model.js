@@ -8,6 +8,7 @@ const artSchema = mongoose.Schema({
     views:Number,
     favorite:Number,
     premium:Boolean,
+    categoty:String,
     userID:String,
     username:String
 
