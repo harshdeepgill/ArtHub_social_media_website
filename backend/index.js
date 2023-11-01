@@ -6,6 +6,7 @@ require("dotenv").config();
 const { userRouter } = require("./routes/user.router");
 const { adminRoute } = require("./routes/admin.router");
 const { connection } = require("./db");
+const { artRouter } = require("./routes/arts.router");
 
 app.use(express.json());
 app.use(cors());
@@ -24,6 +25,7 @@ app.listen(process.env.PORT, async () => {
     } catch (error) {
         console.log(error);
     }
+
 })
 
 
