@@ -1,5 +1,5 @@
 const express = require("express");
-const { ArtModel } = require("../models/arts.model");
+const { ArtModel } = require("../model/arts.model");
 
 const artRouter = express.Router();
 
@@ -29,7 +29,9 @@ artRouter.patch("/update/:Id", async (req, res) => {
             await ArtModel.findByIdAndUpdate({ _id: Id }, req.body);
             return res.status(200).send({ msg: `The arts of id ${Id} has been updated` })
         }
-
+        else {
+            res.status(300).send({ "msg": "You are not authorized." })
+        }
     } catch (error) {
         return res.status(500).send(error)
     }
@@ -42,6 +44,9 @@ artRouter.delete("/delete/:Id", async (req, res) => {
         if (req.body.userId == arts.userId) {
             await ArtModel.findByIdAndDelete({ _id: Id });
             return res.status(200).send({ msg: `The arts of id ${Id} has been udeleted` })
+        }
+        else {
+            res.status(300).send({ "msg": "You are not authorized." })
         }
     } catch (error) {
         return res.status(500).send(error)

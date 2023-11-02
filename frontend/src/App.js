@@ -1,12 +1,12 @@
-import { Explor } from "./Components/Explor";
+import Navbar from "./Components/Navbar";
 import AddPost from "./Pages/AddPost";
 
 function App() {
   return (
     <div className="App">
       hi
-      <AddPost/>
-      <Explor />
+      <AddPost />
+      <Navbar />
     </div>
   );
 }

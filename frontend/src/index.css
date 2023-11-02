@@ -1,79 +1,80 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comic+Neue:wght@300;400;700&family=Inter:wght@400;600;800&family=Jost:wght@100;200;400;600;700&family=Montserrat:wght@200;300;400;500;600;700;800&family=Mulish:wght@200;300;400;500;600;700;800;900&family=Oswald:wght@200;500;600;700&family=Poppins:wght@200;300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@300;400;500;700&family=Rubik:wght@400;500;700&display=swap");
 
 
-:root{
-    /* Root Colors */
-    --color-primary: #BE00FE;
-    --color-secondary: #FFF857;
-    --white: #fff;
-    --black: #000000;
-    --heading: #3e4152;
-    --shadow: #151515;
-    --para-text: #696b70;
+:root {
+  /* Root Colors */
+  --color-primary: #BE00FE;
+  --color-secondary: #FFF857;
+  --white: #fff;
+  --black: #000000;
+  --heading: #3e4152;
+  --shadow: #151515;
+  --para-text: #696b70;
 
-    /* Font Family */
-    --logo-font-family: 'Jost', sans-serif;
-    --primary-font-family: 'Mulish', sans-serif;
+  /* Font Family */
+  --logo-font-family: 'Jost', sans-serif;
+  --primary-font-family: 'Mulish', sans-serif;
 
 
-    /* Font Size */
-    --h1: 4.5rem;
-    --h2: 2.65rem;
-    --h3: 3.35rem;
-    --h4: 1.5rem;
-    --h5: 0.9rem;
-    --para: 0.9rem;
-    --para-sm: 0.8rem
+  /* Font Size */
+  --h1: 4.5rem;
+  --h2: 2.65rem;
+  --h3: 3.35rem;
+  --h4: 1.5rem;
+  --h5: 0.9rem;
+  --para: 0.9rem;
+  --para-sm: 0.8rem
 }
 
 .head-text {
-    font-size: 2.75rem;
-    font-weight: 800;
-    text-align: center;
-    color: var(--black);
-    text-transform: capitalize;
-  
-    span {
-      color: var(--secondary-color);
-    }
-  
-    @media screen and (min-width: 2000px) {
-      font-size: 4rem;
-    }
-  
-    @media screen and (max-width: 450px) {
-      font-size: 2rem;
-    }
+  font-size: 2.75rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--black);
+  text-transform: capitalize;
+
+  span {
+    color: var(--secondary-color);
   }
-  .p-text {
-    font-size: 0.8rem;
-    text-align: left;
-    color: var(--gray-color);
-    line-height: 1.5;
-  
-    @media screen and (min-width: 2000px) {
-      font-size: 1.75rem;
-    }
+
+  @media screen and (min-width: 2000px) {
+    font-size: 4rem;
   }
-  
-  .footer-text {
-    font-size: 1rem;
-    text-align: center;
-    color: black;
-    line-height: 1.5;
+
+  @media screen and (max-width: 450px) {
+    font-size: 2rem;
   }
-  
-  .bold-text {
-    font-size: 1rem;
-    font-weight: 800;
-    color: var(--black-color);
-    text-align: left;
-  
-    @media screen and (min-width: 2000px) {
-      font-size: 2rem;
-    }
-  
-    @media screen and (max-width: 450px) {
-      font-size: 0.9rem
-    }
+}
+
+.p-text {
+  font-size: 0.8rem;
+  text-align: left;
+  color: var(--gray-color);
+  line-height: 1.5;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.75rem;
+  }
+}
+
+.footer-text {
+  font-size: 1rem;
+  text-align: center;
+  color: black;
+  line-height: 1.5;
+}
+
+.bold-text {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--black-color);
+  text-align: left;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 0.9rem
+  }
 }
