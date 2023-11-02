@@ -1,6 +1,6 @@
 const express = require("express");
-const { UserModel } = require("../backend/model/user.model");
-const { ArtModel } = require("../backend/model/arts.model");
+const { UserModel } = require("../model/user.model");
+const { ArtModel } = require("../model/arts.model");
 const adminRoute = express.Router();
 
 adminRoute.get("/users", async (req, res) => {
