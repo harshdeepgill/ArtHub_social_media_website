@@ -1,3 +1,4 @@
+import { Explor } from "./Components/Explor";
 import AddPost from "./Pages/AddPost";
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
     <div className="App">
       hi
       <AddPost/>
+      <Explor />
     </div>
   );
 }
