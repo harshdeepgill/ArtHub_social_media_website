@@ -26,7 +26,7 @@ const EditPhoto = () => {
         const inputFile = document.getElementById("file-input");
         const previewImg = document.getElementById("preview-img");
         let file = inputFile.files[0];
-        if(!file){
+        if (!file) {
             return
         }
         previewImg.src = URL.createObjectURL(file);
@@ -43,68 +43,68 @@ const EditPhoto = () => {
     }
 
 
-  return (
-    <div style={{padding:"4rem"}}>
-        <h2>Image Editor</h2>
-        <DIV>
-            <div>
-                <EDITORPANNEL>
-                    <label >Filters</label>
-                    <SLIDER>
-                        <div>
-                            <p>Brightness</p>
-                            <p>{brightness}%</p>
-                        </div>
-                        <input onChange={(e) => {setBrightness(e.target.value)}} type="range" value={brightness} min={"0"} max={"200"} id='input-slider' />
-                        <div>
-                            <p>Saturation</p>
-                            <p>{saturation}%</p>
-                        </div>
-                        <input onChange={(e) => {setSaturation(e.target.value)}} type="range" value={saturation} min={"0"} max={"200"} id='input-slider' />
-                        <div>
-                            <p>Inversion</p>
-                            <p>{inversion}%</p>
-                        </div>
-                        <input onChange={(e) => {setInversion(e.target.value)}} type="range" value={inversion} min={"0"} max={"100"} id='input-slider' />
-                        <div>
-                            <p>Grayscale</p>
-                            <p>{grayscale}%</p>
-                        </div>
-                        <input onChange={(e) => {setGrayscale(e.target.value)}} type="range" value={grayscale} min={"0"} max={"100"} id='input-slider' />
-                    </SLIDER>
-                    <ROTATE>
-                        <label>Rotate & Flip</label>
-                        <div>
-                            <button onClick={()=> {setRotate(prev => prev-90)}}>
-                                <FaArrowRotateLeft/>
-                            </button>
-                            <button onClick={()=> {setRotate(prev => prev+90)}}>
-                                <FaArrowRotateRight/>
-                            </button>
-                            <button onClick={()=> {setFlipHorizontal(prev => {return(prev == 1 ? -1 : 1)})}}>
-                                <TbFlipVertical/>
-                            </button>
-                            <button onClick={()=> {setFlipVertical(prev => {return(prev == 1 ? -1 : 1)})}}>
-                                <TbFlipHorizontal/>
-                            </button>
-                        </div>
-                    </ROTATE>
-                </EDITORPANNEL>
-                <IMGDIV>
-                    <IMG flipHorizontal={flipHorizontal} flipVertical={flipVertical} rotate={rotate} brightnes={brightness} saturation={saturation} inversion={inversion} grayscale={grayscale} id='preview-img' src="https://placehold.co/600x400" alt="" /> 
-                </IMGDIV>
-            </div>
-            <BOTTOMDIV>
-            <button onClick={handleDefault}>Restore Defaults</button>
+    return (
+        <div style={{ padding: "4rem" }}>
+            <h2>Image Editor</h2>
+            <DIV>
+                <div>
+                    <EDITORPANNEL>
+                        <label >Filters</label>
+                        <SLIDER>
+                            <div>
+                                <p>Brightness</p>
+                                <p>{brightness}%</p>
+                            </div>
+                            <input onChange={(e) => { setBrightness(e.target.value) }} type="range" value={brightness} min={"0"} max={"200"} id='input-slider' />
+                            <div>
+                                <p>Saturation</p>
+                                <p>{saturation}%</p>
+                            </div>
+                            <input onChange={(e) => { setSaturation(e.target.value) }} type="range" value={saturation} min={"0"} max={"200"} id='input-slider' />
+                            <div>
+                                <p>Inversion</p>
+                                <p>{inversion}%</p>
+                            </div>
+                            <input onChange={(e) => { setInversion(e.target.value) }} type="range" value={inversion} min={"0"} max={"100"} id='input-slider' />
+                            <div>
+                                <p>Grayscale</p>
+                                <p>{grayscale}%</p>
+                            </div>
+                            <input onChange={(e) => { setGrayscale(e.target.value) }} type="range" value={grayscale} min={"0"} max={"100"} id='input-slider' />
+                        </SLIDER>
+                        <ROTATE>
+                            <label>Rotate & Flip</label>
+                            <div>
+                                <button onClick={() => { setRotate(prev => prev - 90) }}>
+                                    <FaArrowRotateLeft />
+                                </button>
+                                <button onClick={() => { setRotate(prev => prev + 90) }}>
+                                    <FaArrowRotateRight />
+                                </button>
+                                <button onClick={() => { setFlipHorizontal(prev => { return (prev == 1 ? -1 : 1) }) }}>
+                                    <TbFlipVertical />
+                                </button>
+                                <button onClick={() => { setFlipVertical(prev => { return (prev == 1 ? -1 : 1) }) }}>
+                                    <TbFlipHorizontal />
+                                </button>
+                            </div>
+                        </ROTATE>
+                    </EDITORPANNEL>
+                    <IMGDIV>
+                        <IMG flipHorizontal={flipHorizontal} flipVertical={flipVertical} rotate={rotate} brightnes={brightness} saturation={saturation} inversion={inversion} grayscale={grayscale} id='preview-img' src="https://placehold.co/600x400" alt="" />
+                    </IMGDIV>
+                </div>
+                <BOTTOMDIV>
+                    <button onClick={handleDefault}>Restore Defaults</button>
                     <div>
                         <input onChange={loadImage} type="file" id='file-input' accept='image/*' hidden />
                         <button onClick={handleFileInput}>Choose Image</button>
                         <button>Save Image</button>
                     </div>
-            </BOTTOMDIV>
-        </DIV>
-    </div>
-  )
+                </BOTTOMDIV>
+            </DIV>
+        </div>
+    )
 }
 
 export default EditPhoto

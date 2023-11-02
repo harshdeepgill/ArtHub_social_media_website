@@ -1,5 +1,5 @@
 const express = require("express");
-const { ArtModel } = require("../model/arts.model");
+const { ArtModel } = require("../models/arts.model");
 
 const artRouter = express.Router();
 
@@ -11,6 +11,16 @@ artRouter.get("/", async (req, res) => {
         return res.status(500).send(error)
     }
 });
+
+artRouter.get("/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+        const art = await ArtModel.find({ _id: id })
+        res.status(200).send(art);
+    } catch (error) {
+        res.status(500).send({ "msg": "Something went wrong.", "err": error });
+    }
+})
 
 artRouter.post("/add", async (req, res) => {
     try {
