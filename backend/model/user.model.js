@@ -4,6 +4,7 @@ const userSchema = monngoose.Schema({
     name: String,
     email: String,
     avatar: String,
+    role: { type: String, default: "user", enum: ["user"] },
     password: String,
     age: String,
     favourites: Array,
