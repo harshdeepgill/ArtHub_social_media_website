@@ -1,12 +1,11 @@
-import Navbar from "./Components/Navbar";
-import AddPost from "./Pages/AddPost";
+import AllRoutes from "./Components/AllRoutes";
+import Navbar from "./Pages/Navbar";
 
 function App() {
   return (
     <div className="App">
-      hi
-      <AddPost />
-      <Navbar />
+      <Navbar/>
+      <AllRoutes/>
     </div>
   );
 }
