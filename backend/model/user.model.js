@@ -3,6 +3,8 @@ const userSchema = monngoose.Schema({
     username: String,
     name: String,
     email: String,
+    avatar: String,
+    role: { type: String, default: "user", enum: ["user"] },
     password: String,
     age: String,
     favourites: Array,
