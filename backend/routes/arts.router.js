@@ -1,5 +1,5 @@
 const express = require("express");
-const { ArtModel } = require("../models/arts.model");
+const { ArtModel } = require("../model/arts.model");
 
 const artRouter = express.Router();
 
