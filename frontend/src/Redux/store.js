@@ -1,10 +1,11 @@
 import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
 import thunk from "redux-thunk";
 import postReducer from "./addPostReducer";
-
+import registerReducer from "./registerReducer";
 
 const rootReducer = combineReducers({
-    postReducer
+    postReducer,
+    registerReducer
 })
 
 
