@@ -3,7 +3,9 @@
 const initialState = {
     image: "",
     title: "",
-    tags: ""
+    tags: "",
+    premium: false,
+    catagory: ""
 }
 
 const postReducer = (state = initialState, {type, payload}) => {
@@ -11,6 +13,22 @@ const postReducer = (state = initialState, {type, payload}) => {
         case "IMAGE": return {
             ...state,
             image: payload
+        }
+        case "TITLE": return {
+            ...state,
+            title: payload
+        }
+        case "CATAGORY": return {
+            ...state,
+            catagory: payload
+        }
+        case "TAG": return{
+            ...state,
+            tags: state.tags + "#"+payload + " "
+        }
+        case "VERSION": return {
+            ...state,
+            premium: payload==="free"? false: true
         }
         
         default : return state
