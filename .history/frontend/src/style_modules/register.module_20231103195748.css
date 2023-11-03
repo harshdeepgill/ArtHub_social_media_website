@@ -1,0 +1,100 @@
+/* new css */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+.Nunito {
+  font-family: 'Nunito', sans-serif;
+}
+
+.register_form_section {
+  width: 100%;
+  max-width: 45%;
+  /* min-height: 400px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  background-color: rgb(249, 176, 99);
+  margin: auto;
+  margin-top: 3rem !important;
+  border-radius: 5%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+@media (max-width: 1050px) {
+  .register_form_section {
+    max-width: 100%;
+    width: 65%;
+  }
+}
+
+@media (max-width: 500px) {
+  .register_form_section {
+    max-width: 100%;
+    width: 90%;
+  }
+}
+
+a,
+a:visited {
+  color: #fff;
+}
+
+input[type="text"],
+input[type="password"],
+button,
+textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+.SignUp_btn {
+  margin-top: 2rem !important;
+}
+
+.instructions {
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  background: #000;
+  color: #fff;
+  padding: 0.25rem;
+  position: relative;
+  bottom: -10px;
+}
+
+.instructions>svg {
+  margin-right: 0.25rem;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.hide {
+  display: none;
+}
+
+.valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.line {
+  display: inline-block;
+}

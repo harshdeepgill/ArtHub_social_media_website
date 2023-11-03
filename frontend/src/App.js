@@ -1,11 +1,13 @@
 import AllRoutes from "./Components/AllRoutes";
-import Navbar from "./Pages/Navbar";
-
+import SingleProduct from "./Pages/SingleProduct";
+import Navbar from "./Components/Navbar";
+import ArtPage from "./Pages/Artpage";
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <AllRoutes/>
+      <Navbar />
+      {/* <AllRoutes /> */}
+      <ArtPage />
     </div>
   );
 }

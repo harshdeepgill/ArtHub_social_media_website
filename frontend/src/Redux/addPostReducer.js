@@ -1,5 +1,3 @@
-
-
 const initialState = {
     image: "",
     title: "",
@@ -8,8 +6,8 @@ const initialState = {
     catagory: ""
 }
 
-const postReducer = (state = initialState, {type, payload}) => {
-    switch(type){
+const postReducer = (state = initialState, { type, payload }) => {
+    switch (type) {
         case "IMAGE": return {
             ...state,
             image: payload

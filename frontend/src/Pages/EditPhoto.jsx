@@ -28,8 +28,7 @@ const EditPhoto = () => {
         const inputFile = document.getElementById("file-input");
         const previewImg = document.getElementById("preview-img");
         let file = inputFile.files[0];
-        console.log(file);
-        if(!file){
+        if (!file) {
             return
         }
         previewImg.src = URL.createObjectURL(file);
@@ -155,10 +154,10 @@ const EditPhoto = () => {
                         <button onClick={handleFileInput}>Choose Image</button>
                         <button onClick={handleSaveImage}>Save Image</button>
                     </div>
-            </BOTTOMDIV>
-        </DIV>
-    </div>
-  )
+                </BOTTOMDIV>
+            </DIV>
+        </div>
+    )
 }
 
 export default EditPhoto
