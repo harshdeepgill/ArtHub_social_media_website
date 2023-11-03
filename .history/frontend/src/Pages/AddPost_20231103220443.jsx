@@ -15,8 +15,7 @@ import {
   Radio,
   RadioGroup,
   Select,
-  Stack,
-  HStack
+  Stack
 } from '@chakra-ui/react'
 import axios from 'axios'
 
@@ -79,25 +78,20 @@ const AddPost = () => {
       premium,
       views: 0,
       favorite: 0,
-      // userID: "6544ed8e677444857d9d6228"
-    }, {
-      headers: {
-        "Content-type": "application/json",
-        "authorization": localStorage.getItem("token")
-      }
+      userID: "6544ed8e677444857d9d6228"
     })
       .then(res => {
-        console.log("upload response :", res.data);
+        console.log(res)
       })
       .catch(err => {
         console.log(err.message);
       })
-    console.log({ image, title, tags, category, premium });
+    console.log({ image, title, tags, category, premium })
   }
 
   return (
-    <Box mx="auto" w="95%">
-      <HStack mx="auto" direction={"row"} w="95%">
+    <Box mx="auto">
+      <Stack mx="auto" direction={"row"}>
         <form onSubmit={handleSubmit}>
           <FormControl style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
             <FormLabel>Title</FormLabel>
@@ -138,7 +132,7 @@ const AddPost = () => {
         <Box w="50%" boxSize='lg'>
           <Image id='preview-img-addpost' src='' alt='Dan Abramov' />
         </Box>
-      </HStack>
+      </Stack>
     </Box>
   )
 }

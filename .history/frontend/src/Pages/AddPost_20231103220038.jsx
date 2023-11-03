@@ -15,8 +15,7 @@ import {
   Radio,
   RadioGroup,
   Select,
-  Stack,
-  HStack
+  Stack
 } from '@chakra-ui/react'
 import axios from 'axios'
 
@@ -79,27 +78,22 @@ const AddPost = () => {
       premium,
       views: 0,
       favorite: 0,
-      // userID: "6544ed8e677444857d9d6228"
-    }, {
-      headers: {
-        "Content-type": "application/json",
-        "authorization": localStorage.getItem("token")
-      }
+      userID: "6544ed8e677444857d9d6228"
     })
       .then(res => {
-        console.log("upload response :", res.data);
+        console.log(res)
       })
       .catch(err => {
         console.log(err.message);
       })
-    console.log({ image, title, tags, category, premium });
+    console.log({ image, title, tags, category, premium })
   }
 
   return (
-    <Box mx="auto" w="95%">
-      <HStack mx="auto" direction={"row"} w="95%">
+    <div>
+      <Stack m="0 auto" direction={"row"}>
         <form onSubmit={handleSubmit}>
-          <FormControl style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+          <FormControl>
             <FormLabel>Title</FormLabel>
             <Input onChange={(e) => { dispatch({ type: "TITLE", payload: e.target.value }) }} type='text' value={title} />
             <FormLabel>Category</FormLabel>
@@ -130,16 +124,14 @@ const AddPost = () => {
                 <Radio value='premium'>Premium</Radio>
               </Stack>
             </RadioGroup>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <Button type='submit' value="Add Post">Add Post</Button>
-            </div>
+            <Button type='submit' value="Add Post" />
           </FormControl>
         </form>
         <Box w="50%" boxSize='lg'>
           <Image id='preview-img-addpost' src='' alt='Dan Abramov' />
         </Box>
-      </HStack>
-    </Box>
+      </Stack>
+    </div>
   )
 }
 
