@@ -6,7 +6,7 @@ const userSchema = monngoose.Schema({
     avatar: String,
     role: { type: String, default: "user", enum: ["user"] },
     password: String,
-    age: String,
+    age: Number,
     favourites: Array,
     premium: Boolean,
     elite: Boolean
