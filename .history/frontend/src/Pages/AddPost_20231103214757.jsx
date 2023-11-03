@@ -25,13 +25,13 @@ const AddPost = () => {
 
   const dispatch = useDispatch();
 
-  const { image, title, tags, premium, category } = useSelector(store => {
+  const { image, title, tags, premium, catagory } = useSelector(store => {
     return {
       image: store.postReducer.image,
       title: store.postReducer.title,
       tags: store.postReducer.tags,
       premium: store.postReducer.premium,
-      category: store.postReducer.category
+      catagory: store.postReducer.catagory
     }
   })
 
@@ -74,7 +74,7 @@ const AddPost = () => {
       image,
       title,
       tags,
-      category,
+      catagory,
       premium,
       views: 0,
       favorite: 0,
@@ -86,7 +86,7 @@ const AddPost = () => {
       .catch(err => {
         console.log(err);
       })
-    console.log({ image, title, tags, category, premium })
+    console.log({ image, title, tags, catagory, premium })
   }
 
   return (
