@@ -2,8 +2,12 @@ import React from 'react'
 import { Route, Routes } from "react-router-dom";
 import Home from '../Pages/Home';
 import EditPhoto from '../Pages/EditPhoto';
+<<<<<<< HEAD
+import AddPost from '../Pages/AddPost';
+=======
 import Login from '../Pages/Login';
 import Register from '../Pages/Register';
+>>>>>>> main
 
 const AllRoutes = () => {
   return (
@@ -12,7 +16,8 @@ const AllRoutes = () => {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path='upload' element={<EditPhoto />} />
+        <Route path='/edit' element={<EditPhoto/>}/>
+        <Route path='/upload' element={<AddPost/>}/>
       </Routes>
     </div>
   )
