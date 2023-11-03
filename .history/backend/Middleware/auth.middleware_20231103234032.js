@@ -4,7 +4,7 @@ const auth = async (req, res, next) => {
     const token = req.headers.authorization?.split(" ")[1];
     if (token) {
         const tkn = await ListModel.findOne({ token });
-        if (tkn.length > 10) {
+        if (tkn) {
             res.status(201).send({ "message": "Please Login" })
         }
         else {
