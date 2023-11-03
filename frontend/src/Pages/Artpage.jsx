@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Grid, GridItem, Image, Text } from "@chakra-ui/react";
+import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 const ArtPage = () => {
     const [curr, setCurr] = useState("foryou");
@@ -18,6 +19,13 @@ const ArtPage = () => {
             .catch((err) => console.log(err))
     }
     console.log(data);
+    const handleMouseEnter = () => {
+        document.querySelector('.image-title').style.visibility = 'visible';
+    };
+
+    const handleMouseLeave = () => {
+        document.querySelector('.image-title').style.visibility = 'hidden';
+    };
     useEffect(() => {
         fetchTheData();
     }, [])
@@ -57,17 +65,35 @@ const ArtPage = () => {
                     <Button w={"100%"} variant={"outline"} borderColor={curr == "photography" ? "#00ff51" : "#ffb89e"} _hover={{ opacity: 0.8 }} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"} value={"photography"}>Photography</Button>
                 </GridItem>
             </Grid>
-            <Box display={"flex"} flexWrap={"wrap"} gap={"1rem"}>
+            {/* <Box display={"flex"} flexWrap={"wrap"} gap={"1rem"}>
                 {data.length > 0 && data.map((el) => {
-                    return <Box>
-                        <Image key={el._id} src={el.image} objectFit={"cover"} />
-                        <Text>{el.title}</Text>
-                        <Text>{el.views}</Text>
-                        <Text>{el.favorite}</Text>
-                    </Box>
+                    return <Box key={el._id} position={"relative"} w={"auto"} h={"auto"}>
+                        <Image src={el.image} position={"relative"} objectFit={"cover"} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
+                        <Text noOfLines={1} position={"absolute"} bottom={0} left={0} backgroundColor={"transparent"} color={"white"} padding={"5px"} visibility={"hidden"} transition={"visibility 0.2s"} className="image-title" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>{el.title}</Text>
+                        {/* <Text>{el.views}</Text> */}
+            {/* <Text>{el.favorite}</Text> */}
+            {/* </Box> */}
+            {/* })} */}
+            {/* </Box> * /} */}
+            <GRID className="grid">
+                {data.length > 0 && data.map((el) => {
+                    return <div key={el._id} className={`div`} >
+                        <img src={el.image} className="div-img" />
+                    </div>
                 })}
-            </Box>
-        </Box>
-    </Box>
+            </GRID>
+        </Box >
+    </Box >
 }
 export default ArtPage;
+const GRID = styled.div`
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-rows: auto;
+    grid-auto-flow: dense;
+    .div-img{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+`
