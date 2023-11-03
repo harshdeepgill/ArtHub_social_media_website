@@ -87,12 +87,12 @@ const AddPost = () => {
       }
     })
       .then(res => {
-        console.log("upload response :", res.data);
+        console.log(res.data)
       })
       .catch(err => {
         console.log(err.message);
       })
-    console.log({ image, title, tags, category, premium });
+    console.log({ image, title, tags, category, premium })
   }
 
   return (

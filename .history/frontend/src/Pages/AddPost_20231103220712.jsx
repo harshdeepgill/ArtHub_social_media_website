@@ -79,20 +79,15 @@ const AddPost = () => {
       premium,
       views: 0,
       favorite: 0,
-      // userID: "6544ed8e677444857d9d6228"
-    }, {
-      headers: {
-        "Content-type": "application/json",
-        "authorization": localStorage.getItem("token")
-      }
+      userID: "6544ed8e677444857d9d6228"
     })
       .then(res => {
-        console.log("upload response :", res.data);
+        console.log(res)
       })
       .catch(err => {
         console.log(err.message);
       })
-    console.log({ image, title, tags, category, premium });
+    console.log({ image, title, tags, category, premium })
   }
 
   return (
