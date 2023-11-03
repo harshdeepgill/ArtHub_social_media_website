@@ -5,7 +5,7 @@ const auth = async (req, res, next) => {
     if (token) {
         const tkn = await ListModel.findOne({ token });
         if (tkn.length > 10) {
-            res.status(201).send({ "message": "you have logged out, please Login again" });
+            res.status(201).send({ "message": "you have logged out, please Login again" })
         }
         else {
             jwt.verify(token, "users", (err, decoded) => {
