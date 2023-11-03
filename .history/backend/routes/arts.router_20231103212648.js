@@ -1,6 +1,6 @@
 const express = require("express");
 const { ArtModel } = require("../model/arts.model");
-const { auth } = require("../Middleware/auth.middleware");
+const {auth} = require("../Middleware/auth.middleware");
 
 const artRouter = express.Router();
 
@@ -56,7 +56,7 @@ artRouter.delete("/delete/:Id", async (req, res) => {
     try {
         if (req.body.userId == arts.userId) {
             await ArtModel.findByIdAndDelete({ _id: Id });
-            return res.status(200).send({ msg: `The arts of id ${Id} has been deleted` })
+            return res.status(200).send({ msg: `The arts of id ${Id} has been udeleted` })
         }
         else {
             res.status(300).send({ "msg": "You are not authorized." })
