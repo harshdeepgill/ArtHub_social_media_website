@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, GridItem, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 const ArtPage = () => {
     const [curr, setCurr] = useState("foryou");
@@ -59,7 +59,12 @@ const ArtPage = () => {
             </Grid>
             <Box display={"flex"} flexWrap={"wrap"} gap={"1rem"}>
                 {data.length > 0 && data.map((el) => {
-                    return <Image key={el._id} src={el.image} />
+                    return <Box>
+                        <Image key={el._id} src={el.image} objectFit={"cover"} />
+                        <Text>{el.title}</Text>
+                        <Text>{el.views}</Text>
+                        <Text>{el.favorite}</Text>
+                    </Box>
                 })}
             </Box>
         </Box>
