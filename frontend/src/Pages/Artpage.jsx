@@ -9,17 +9,31 @@ const ArtPage = () => {
         setCurr(e.target.value)
     }
     const fetchTheData = () => {
-        fetch(`https://artsphere.onrender.com/arts/${curr}`, {
+        fetch(`https://gifted-kit-cow.cyclic.app/arts/${curr}`, {
             method: "GET",
             headers: {
-                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhcmFzIiwiaWF0IjoxNjk5MDIyMzgzLCJleHAiOjE2OTk2MjcxODN9.8My3_Cj6z1f8Cksqa4tMndDwMpnWGJMjTCTooXQwtWY`
+                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhcmFzIiwiaWF0IjoxNjk5MTA5MDAzLCJleHAiOjE2OTk3MTM4MDN9.J6J2TNTFERx0Cs1PUpuQUSjtRU4mQVYLLd6Coy7wXuY`
             }
         })
             .then((res) => res.json())
-            .then((res) => setData(res))
+            .then((res) => setData(res.reverse()))
             .catch((err) => console.log(err))
     }
     console.log(data);
+    const handleView = (id, view) => {
+        const newView = { views: view + 1 };
+        console.log(newView.views);
+        fetch(`https://gifted-kit-cow.cyclic.app/arts/view/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhcmFzIiwiaWF0IjoxNjk5MTA5MDAzLCJleHAiOjE2OTk3MTM4MDN9.J6J2TNTFERx0Cs1PUpuQUSjtRU4mQVYLLd6Coy7wXuY`,
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(newView)
+        })
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err))
+    }
     useEffect(() => {
         fetchTheData();
     }, [curr])
@@ -44,7 +58,7 @@ const ArtPage = () => {
                     <Button w={"100%"} variant={"outline"} borderColor={curr == "Anime" ? "#00ff51" : "#ffb89e"} value={"Anime"} _hover={{ opacity: 0.8 }} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"}>Anime</Button>
                 </GridItem>
                 <GridItem>
-                    <Button w={"100%"} variant={"outline"} borderColor={curr == "Drawings" ? "#00ff51" : "#ffb89e"} value={"Drawings"} _hover={{ opacity: 0.8 }} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"}>Drawings and Paintings</Button>
+                    <Button w={"100%"} variant={"outline"} borderColor={curr == "Drawings" ? "#00ff51" : "#ffb89e"} value={"Drawings"} _hover={{ opacity: 0.8 }} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"}>Drawings</Button>
                 </GridItem>
                 <GridItem>
                     <Button w={"100%"} variant={"outline"} borderColor={curr == "OnePiece" ? "#00ff51" : "#ffb89e"} _hover={{ opacity: 0.8 }} value={"OnePiece"} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"}>One Piece</Button>
@@ -71,7 +85,7 @@ const ArtPage = () => {
             {/* </Box> * /} */}
             <GRID className="grid">
                 {data.length > 0 && data.map((el) => {
-                    return <Box key={el._id} className={`div`} >
+                    return <Box key={el._id} className={`div`} onClick={() => handleView(el._id, el.views)}>
                         <Image src={el.image} className="div-img" />
                         <Text className="title">{el.title}</Text>
                         <VStack className="opacity">
