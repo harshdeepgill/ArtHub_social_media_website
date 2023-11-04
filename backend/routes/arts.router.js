@@ -4,9 +4,8 @@ const { auth } = require("../Middleware/auth.middleware");
 
 const artRouter = express.Router();
 
-artRouter.use(auth);
 
-artRouter.get("/", async (req, res) => {
+artRouter.get("/", auth, async (req, res) => {
     try {
         const arts = await ArtModel.find({ username: req.body.username });
         return res.status(200).send(arts)
@@ -15,7 +14,17 @@ artRouter.get("/", async (req, res) => {
     }
 });
 
-artRouter.get("/:id", async (req, res) => {
+artRouter.patch("/view/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+        await ArtModel.findByIdAndUpdate({ _id: id }, req.body);
+        return res.status(200).send({ "msg": "Updated successfully." })
+    } catch (error) {
+        return res.status(500).send(error)
+    }
+});
+
+artRouter.get("/:id", auth, async (req, res) => {
     const { id } = req.params;
     try {
         const art = await ArtModel.find({ _id: id })
@@ -25,7 +34,7 @@ artRouter.get("/:id", async (req, res) => {
     }
 })
 
-artRouter.post("/add", async (req, res) => {
+artRouter.post("/add", auth, async (req, res) => {
     try {
         const arts = new ArtModel(req.body);
         await arts.save();
@@ -34,7 +43,7 @@ artRouter.post("/add", async (req, res) => {
         return res.status(500).send(error)
     }
 });
-artRouter.patch("/update/:Id", async (req, res) => {
+artRouter.patch("/update/:Id", auth, async (req, res) => {
     const { Id } = req.params;
     const arts = await ArtModel.findOne({ _id: Id });
     try {
@@ -50,7 +59,7 @@ artRouter.patch("/update/:Id", async (req, res) => {
     }
 });
 
-artRouter.delete("/delete/:Id", async (req, res) => {
+artRouter.delete("/delete/:Id", auth, async (req, res) => {
     const { Id } = req.params;
     const arts = await ArtModel.findOne({ _id: Id });
     try {
