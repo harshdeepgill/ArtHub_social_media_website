@@ -21,7 +21,7 @@ const Navbar = () => {
             </InputGroup>
             <Box display={"flex"} justifyContent={"space-between"} w={"16%"} alignItems={"center"}>
                 <Icon as={theme == "dark" ? BsSun : BsMoonStars} fontSize={"xl"} onClick={changeTheme} />
-                <Button bgColor="#FF7F50" color={"white"}>
+                <Button bgColor="#FF7F50" color={"white"} _hover={{ bgColor: "#FF7F50" }}>
                     <ChakraLink as={RouteLink} style={{ textDecoration: "none", fontSize: "xl" }}>Subscribe</ChakraLink>
                 </Button>
                 <ChakraLink style={{ textDecoration: "none" }} _hover={{ color: "#8FDBA7" }}>Login</ChakraLink>
