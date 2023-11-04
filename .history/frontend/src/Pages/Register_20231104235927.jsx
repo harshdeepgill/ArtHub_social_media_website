@@ -93,7 +93,7 @@ const Register = () => {
       return;
     }
     try {
-      const payload = { username: userName, name, email: user, avatar, password: pwd, age, subscription: "basic" };
+      const payload = { username: userName, name, email: user, avatar, password: pwd, age, };
       console.log("register payload :", payload);
       axios.post("https://gifted-kit-cow.cyclic.app/users/register", payload)
         .then((res) => {

@@ -41,11 +41,7 @@ const Navbar = () => {
                         <Button bgColor="#FF7F50" color={"white"} _hover={{ backgroundColor: "#91D9A8", color: "coral" }} onClick={() => { navigate("/plans") }}>
                             Subscribe
                         </Button>
-                    ) : subscription === "premium" ? (
-                        <Button bgColor="#FF7F50" color={"white"} _hover={{ backgroundColor: "#91D9A8", color: "coral" }} onClick={() => { navigate("/plans") }}>
-                            Upgrade
-                        </Button>
-                    ) : ""
+                    ) : ()
                 }
                 {
                     isAuth ?
