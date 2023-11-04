@@ -2,9 +2,11 @@ import { Box, Button, Flex, Grid, GridItem, Image, Text, VStack } from "@chakra-
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { ViewIcon, StarIcon } from "@chakra-ui/icons"
+import { useNavigate } from "react-router-dom";
 const ArtPage = () => {
     const [curr, setCurr] = useState("");
     const [data, setData] = useState();
+    const navigate = useNavigate();
     const handleClick = (e) => {
         setCurr(e.target.value)
     }
@@ -31,7 +33,14 @@ const ArtPage = () => {
             },
             body: JSON.stringify(newView)
         })
-            .then((res) => console.log(res))
+            .then((res) => {
+                if (res.status == 200) {
+                    data.map((el) => {
+                        return el._id == id ? el.views++ : el
+                    })
+                    navigate(`/art/${id}`)
+                }
+            })
             .catch((err) => console.log(err))
     }
     useEffect(() => {
