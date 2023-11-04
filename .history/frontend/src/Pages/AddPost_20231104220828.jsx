@@ -101,9 +101,9 @@ const AddPost = () => {
         <form onSubmit={handleSubmit}>
           <FormControl style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
             <FormLabel>Title</FormLabel>
-            <Input onChange={(e) => { dispatch({ type: "TITLE", payload: e.target.value }) }} type='text' value={title} boxShadow="outline" />
+            <Input onChange={(e) => { dispatch({ type: "TITLE", payload: e.target.value }) }} type='text' value={title} />
             <FormLabel>Category</FormLabel>
-            <Select onChange={(e) => { dispatch({ type: "CATAGORY", payload: e.target.value }) }} placeholder='Select option' boxShadow="outline">
+            <Select onChange={(e) => { dispatch({ type: "CATAGORY", payload: e.target.value }) }} placeholder='Select option'>
               <option value='AI Art'>AI Art</option>
               <option value='Digital Art'>Digital Art</option>
               <option value='Fan Art'>Fan Art</option>
@@ -112,15 +112,15 @@ const AddPost = () => {
               <option value='Anime'>Anime</option>
             </Select>
             <FormLabel>Choose Art</FormLabel>
-            <Input onChange={loadImage} id='file-input-addpost' type='file' boxShadow="outline" />
+            <Input onChange={loadImage} id='file-input-addpost' type='file' />
             <FormLabel>Tags</FormLabel>
             <Box>
               {tags.split(" ")?.map((el, i) => <Box key={i}>{el}</Box>)}
             </Box>
-            <InputGroup size="md">
-              <Input onChange={(e) => { setTag(e.target.value) }} type='text' boxShadow="outline" />
-              <InputRightElement w="4.5rem">
-                <Button size="md" onClick={tagHandler}>Add Tag</Button>
+            <InputGroup>
+              <Input onChange={(e) => { setTag(e.target.value) }} type='text' />
+              <InputRightElement>
+                <Button h="1.75rem" size="sm" onClick={tagHandler}>Add Tag</Button>
               </InputRightElement>
             </InputGroup>
             <FormLabel>Version</FormLabel>

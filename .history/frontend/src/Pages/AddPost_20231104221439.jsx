@@ -119,8 +119,8 @@ const AddPost = () => {
             </Box>
             <InputGroup size="md">
               <Input onChange={(e) => { setTag(e.target.value) }} type='text' boxShadow="outline" />
-              <InputRightElement w="4.5rem">
-                <Button size="md" onClick={tagHandler}>Add Tag</Button>
+              <InputRightElement>
+                <Button size="md" mr="2rem" onClick={tagHandler}>Add Tag</Button>
               </InputRightElement>
             </InputGroup>
             <FormLabel>Version</FormLabel>
