@@ -6,7 +6,7 @@ import AddPost from '../Pages/AddPost';
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import ArtPage from "../Pages/Artpage";
-
+import SingleProduct from '../Pages/SingleProduct';
 const AllRoutes = () => {
   return (
     <div>
@@ -17,6 +17,7 @@ const AllRoutes = () => {
         <Route path="/art" element={<ArtPage />} />
         <Route path='/edit' element={<EditPhoto />} />
         <Route path='/upload' element={<AddPost />} />
+        <Route path='/art/:id' element={<SingleProduct />} />
       </Routes>
     </div>
   )
