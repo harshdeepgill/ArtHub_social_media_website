@@ -25,6 +25,16 @@ artRouter.get("/:id", async (req, res) => {
     }
 })
 
+artRouter.get("/:cate", async (req, res) => {
+    const { cate } = req.params;
+    try {
+        const arts = await ArtModel.find({ category: cate });
+        res.status(200).send(arts);
+    } catch (error) {
+        res.status(500).send({ "msg": "Something went wrong.", "err": error });
+    }
+})
+
 artRouter.post("/add", async (req, res) => {
     try {
         const arts = new ArtModel(req.body);
