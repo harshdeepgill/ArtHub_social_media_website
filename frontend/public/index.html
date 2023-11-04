@@ -27,20 +27,40 @@
   <style>
     *,
     *::before,
-    *::after{
+    *::after {
       margin: 0;
       padding: 0;
       box-sizing: inherit;
     }
-    html{
-      
+
+    html {
+
 
       /* Media queries for fornts will come here */
       scroll-behavior: smooth;
 
     }
-    body{
+
+    body {
       box-sizing: border-box;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
     }
   </style>
 </head>

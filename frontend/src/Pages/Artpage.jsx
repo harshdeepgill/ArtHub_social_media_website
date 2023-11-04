@@ -103,6 +103,9 @@ const ArtPage = () => {
                         </VStack>
                     </Box>
                 })}
+                {/* <div></div>
+                <div></div>
+                <div></div> */}
             </GRID>
         </Box >
     </Box >
@@ -110,7 +113,7 @@ const ArtPage = () => {
 export default ArtPage;
 const GRID = styled.div`
     display: grid;
-  grid-gap: 10px;
+  grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: auto;
   grid-auto-flow: dense;
