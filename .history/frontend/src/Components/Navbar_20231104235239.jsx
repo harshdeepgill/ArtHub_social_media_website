@@ -35,8 +35,9 @@ const Navbar = () => {
             </InputGroup>
             <Box display={"flex"} justifyContent={"space-around"} w={"35%"} alignItems={"center"}>
                 <Icon as={theme === "dark" ? BsSun : BsMoonStars} fontSize={"xl"} onClick={changeTheme} />
-                <Button bgColor="#FF7F50" color={"white"} _hover={{ backgroundColor: "#91D9A8", color: "coral" }} onClick={()=>{navigate("/plans")}}>
-                    Subscribe
+                <Button bgColor="#FF7F50" color={"white"} _hover={{ backgroundColor: "#91D9A8" }}>
+                    <ChakraLink as={RouteLink} style={{ textDecoration: "none", fontSize: "xl" }}
+                        _hover={{ color: "coral" }}>Subscribe</ChakraLink>
                 </Button>
                 {
                     isAuth ?
