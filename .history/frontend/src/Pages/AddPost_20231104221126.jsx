@@ -103,7 +103,7 @@ const AddPost = () => {
             <FormLabel>Title</FormLabel>
             <Input onChange={(e) => { dispatch({ type: "TITLE", payload: e.target.value }) }} type='text' value={title} boxShadow="outline" />
             <FormLabel>Category</FormLabel>
-            <Select onChange={(e) => { dispatch({ type: "CATAGORY", payload: e.target.value }) }} placeholder='Select option' boxShadow="outline">
+            <Select onChange={(e) => { dispatch({ type: "CATAGORY", payload: e.target.value }) }} placeholder='Select option'>
               <option value='AI Art'>AI Art</option>
               <option value='Digital Art'>Digital Art</option>
               <option value='Fan Art'>Fan Art</option>
@@ -119,8 +119,8 @@ const AddPost = () => {
             </Box>
             <InputGroup size="md">
               <Input onChange={(e) => { setTag(e.target.value) }} type='text' boxShadow="outline" />
-              <InputRightElement w="4.5rem">
-                <Button size="md" onClick={tagHandler}>Add Tag</Button>
+              <InputRightElement>
+                <Button h="1.75rem" size="md" w="2rem" onClick={tagHandler}>Add Tag</Button>
               </InputRightElement>
             </InputGroup>
             <FormLabel>Version</FormLabel>
