@@ -92,8 +92,4 @@ const GRID = styled.div`
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     grid-template-rows: auto;
     grid-auto-flow: dense;
-    .div-img{
-        margin-top: auto;
-        margin-bottom: auto;
-    }
 `
