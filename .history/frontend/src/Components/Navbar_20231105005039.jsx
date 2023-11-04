@@ -12,10 +12,13 @@ const Navbar = () => {
     const navigate = useNavigate();
     // const [isAuth, setIsAuth] = useState(false);
     let isAuth = false;
+    // const [linkColor, setLinkColor] = useState("white");
     if (localStorage.getItem("token")) {
+        // setIsAuth(true);
         isAuth = true;
     }
     else {
+        // setIsAuth(false);
         isAuth = false;
     }
     const avatar = useSelector((store) => store.authReducer.avatar);
@@ -24,6 +27,14 @@ const Navbar = () => {
     const dispatch = useDispatch();
     const changeTheme = () => {
         setTheme(theme === "dark" ? "light" : "dark");
+        // if (theme === "dark") {
+        //     // linkColor = "white";
+        //     setLinkColor("white");
+        // }
+        // else {
+        //     // linkColor = "black";
+        //     setLinkColor("black");
+        // }
     }
 
     const handleLogout = () => {

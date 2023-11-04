@@ -12,10 +12,13 @@ const Navbar = () => {
     const navigate = useNavigate();
     // const [isAuth, setIsAuth] = useState(false);
     let isAuth = false;
+    // const [linkColor, setLinkColor] = useState("white");
     if (localStorage.getItem("token")) {
+        // setIsAuth(true);
         isAuth = true;
     }
     else {
+        // setIsAuth(false);
         isAuth = false;
     }
     const avatar = useSelector((store) => store.authReducer.avatar);
@@ -24,6 +27,14 @@ const Navbar = () => {
     const dispatch = useDispatch();
     const changeTheme = () => {
         setTheme(theme === "dark" ? "light" : "dark");
+        // if (theme === "dark") {
+        //     // linkColor = "white";
+        //     setLinkColor("white");
+        // }
+        // else {
+        //     // linkColor = "black";
+        //     setLinkColor("black");
+        // }
     }
 
     const handleLogout = () => {
@@ -62,7 +73,7 @@ const Navbar = () => {
                                 <Text>{username}</Text>
                                 <Button bgColor="#FF7F50" color="white" _hover={{ backgroundColor: "#91D9A8", color: "coral" }} onClick={handleLogout}>Logout</Button>
                             </HStack>
-                        ) : (<ChakraLink to="/login" as={RouteLink} style={{ textDecoration: "none", color: theme === "dark" ? "coral" : "black" }} _hover={{ color: "#8FDBA7" }} fontSize="xl">login</ChakraLink>)
+                        ) : (<ChakraLink to="/login" as={RouteLink} style={{ textDecoration: "none" }} _hover={{ color: "#8FDBA7" }} color={"coral"}>Login</ChakraLink>)
                 }
             </Box>
         </Stack>
