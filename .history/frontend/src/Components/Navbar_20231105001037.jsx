@@ -36,17 +36,9 @@ const Navbar = () => {
             </InputGroup>
             <Box display={"flex"} justifyContent={"space-around"} gap="1.5rem" alignItems={"center"}>
                 <Icon as={theme === "dark" ? BsSun : BsMoonStars} fontSize={"xl"} onClick={changeTheme} />
-                {
-                    subscription === "basic" ? (
-                        <Button bgColor="#FF7F50" color={"white"} _hover={{ backgroundColor: "#91D9A8", color: "coral" }} onClick={() => { navigate("/plans") }}>
-                            Subscribe
-                        </Button>
-                    ) : subscription === "premium" ? (
-                        <Button bgColor="#FF7F50" color={"white"} _hover={{ backgroundColor: "#91D9A8", color: "coral" }} onClick={() => { navigate("/plans") }}>
-                            Upgrade
-                        </Button>
-                    ) : ""
-                }
+                <Button bgColor="#FF7F50" color={"white"} _hover={{ backgroundColor: "#91D9A8", color: "coral" }} onClick={() => { navigate("/plans") }}>
+                    Subscribe
+                </Button>
                 {
                     isAuth ?
                         (
