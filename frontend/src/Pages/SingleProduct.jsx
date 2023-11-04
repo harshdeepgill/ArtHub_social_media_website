@@ -7,19 +7,18 @@ import { BiCommentDetail } from "react-icons/bi";
 const SingleProduct = () => {
     const { id } = useParams();
     const fetchThedata = () => {
-
+        fetch(`https://gifted-kit-cow.cyclic.app/arts/${id}`, {
+            method: "GET",
+            headers: {
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhcmFzIiwiaWF0IjoxNjk5MTA5MDAzLCJleHAiOjE2OTk3MTM4MDN9.J6J2TNTFERx0Cs1PUpuQUSjtRU4mQVYLLd6Coy7wXuY"
+            }
+        })
+            .then((res) => res.json())
+            .then((res) => setData(res[0]))
+            .catch((err) => console.log(err))
     }
-    const [data, setData] = useState({
-        title: "Photo",
-        image: "https://firebasestorage.googleapis.com/v0/b/festive-crayon.appspot.com/o/Posts%2FCraft_Ideas1-removebg.png029b92d9-75e9-48d1-b100-5b790f007a6c?alt=media&token=b496407b-289a-45d6-952d-9bb82d176b81",
-        tags: ["Nature", "Photo"],
-        views: 100,
-        favorite: 50,
-        premium: false,
-        categoty: "Nature",
-        userID: 200,
-        username: "Paras"
-    });
+    const [data, setData] = useState();
+    console.log(data);
     const [commentSection, setcommentSection] = useState(false);
     const [comments, setComments] = useState("");
     const loader = () => {
@@ -29,6 +28,7 @@ const SingleProduct = () => {
     }
     useEffect(() => {
         loader();
+        fetchThedata();
     }, [])
     const [loading, setLoading] = useState(true);
     const handleDownload = () => {
