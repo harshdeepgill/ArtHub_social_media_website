@@ -12,7 +12,6 @@ const Navbar = () => {
     const navigate = useNavigate();
     const isAuth = useSelector((store) => store.authReducer.isAuth);
     const avatar = useSelector((store) => store.authReducer.avatar);
-    const username = useSelector((store) => store.authReducer.username);
     const dispatch = useDispatch();
     const changeTheme = () => {
         setTheme(theme === "dark" ? "light" : "dark")
@@ -43,7 +42,7 @@ const Navbar = () => {
                         (
                             <HStack spacing="1rem">
                                 <Image src={avatar} borderRadius='full' boxSize='50px'></Image>
-                                <Text>{username}</Text>
+                                <Text></Text>
                             </HStack>
                         ) : (<ChakraLink to="/login" as={RouteLink} style={{ textDecoration: "none" }} _hover={{ color: "#8FDBA7" }}>Login</ChakraLink>)
                 }

@@ -43,7 +43,7 @@ const Navbar = () => {
                         (
                             <HStack spacing="1rem">
                                 <Image src={avatar} borderRadius='full' boxSize='50px'></Image>
-                                <Text>{username}</Text>
+                                <Text>{ }</Text>
                             </HStack>
                         ) : (<ChakraLink to="/login" as={RouteLink} style={{ textDecoration: "none" }} _hover={{ color: "#8FDBA7" }}>Login</ChakraLink>)
                 }

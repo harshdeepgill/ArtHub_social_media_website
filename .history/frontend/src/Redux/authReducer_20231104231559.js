@@ -1,17 +1,16 @@
 const initialState = {
   isAuth: false,
   userName: "",
-  avatar: "",
   token: ""
 }
 
 const authReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case "LOGIN": {
-      return { ...state, isAuth: true, userName: payload.username, avatar: payload.avatar, token: payload.token };
+      return { ...state, isAuth: true, userData: payload, token: payload.token };
     }
     case "LOGOUT": {
-      return initialState;
+      return { ...state, isAuth: false, userData: {}, token: "" };
     }
     default: return state;
   }
