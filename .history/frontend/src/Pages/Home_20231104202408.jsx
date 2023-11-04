@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Image, VStack, Box, Flex } from "@chakra-ui/react";
+import { Text, Image, VStack, Box, HStack } from "@chakra-ui/react";
 
 const Home = () => {
   return (
@@ -8,7 +8,7 @@ const Home = () => {
         <h1 className='head-text' style={{ marginTop: "3rem" }}>Create great designs</h1>
         <Text fontSize="xl">Turn ideas into outstanding designs with high-quality vectors, photos, videos, mockups, and more</Text>
       </div>
-      <Flex gap="4rem" mt="4rem" justify="center">
+      <HStack spacing="4rem" mt="4rem">
         <Box style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
           <Image objectFit="cover" w="20rem" h="12rem" boxShadow='outline' src="https://firebasestorage.googleapis.com/v0/b/festive-crayon.appspot.com/o/Posts%2FAscendance%20of%20a%20Bookworm.png44370915-aedf-42a9-b51f-d132766b0191?alt=media&token=9835d4db-20cd-4be9-ad14-87b4d8528cc5" borderRadius="22px" _hover={{ outline: "3px solid coral", transform: "scale(1.05)", transition: "transform 0.3s ease-in-out" }} />
           <Text fontSize="xl">Anime</Text>
@@ -28,7 +28,7 @@ const Home = () => {
           <Image objectFit="cover" w="20rem" h="12rem" boxShadow='outline' src="https://img.freepik.com/free-photo/chocolate-cake-decorated-with-forest-fruits-blueberries-strawberries-blackberries-ai-generative_123827-24046.jpg?size=626&ext=jpg&uid=R121159570&ga=GA1.1.1797973341.1699101398&semt=sph" borderRadius="22px" _hover={{ outline: "3px solid coral", transform: "scale(1.05)", transition: "transform 0.3s ease-in-out" }} />
           <Text fontSize="xl">Food Art</Text>
         </Box>
-      </Flex>
+      </HStack>
     </section>
   )
 }
