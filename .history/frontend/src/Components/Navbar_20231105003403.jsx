@@ -10,15 +10,12 @@ const Navbar = () => {
     const [search, setSearch] = useState("");
     const [theme, setTheme] = useState("dark");
     const navigate = useNavigate();
-    // const [isAuth, setIsAuth] = useState(false);
-    let isAuth = false;
+    const [isAuth, setIsAuth] = useState(false);
     if (localStorage.getItem("token")) {
-        // setIsAuth(true);
-        isAuth = true;
+        setIsAuth(true);
     }
     else {
-        // setIsAuth(false);
-        isAuth = false;
+        setIsAuth(false);
     }
     const avatar = useSelector((store) => store.authReducer.avatar);
     const username = useSelector((store) => store.authReducer.userName);
