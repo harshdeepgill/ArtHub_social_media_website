@@ -24,6 +24,14 @@ const Navbar = () => {
     const dispatch = useDispatch();
     const changeTheme = () => {
         setTheme(theme === "dark" ? "light" : "dark");
+        // if (theme === "dark") {
+        //     // linkColor = "white";
+        //     setLinkColor("white");
+        // }
+        // else {
+        //     // linkColor = "black";
+        //     setLinkColor("black");
+        // }
     }
 
     const handleLogout = () => {
