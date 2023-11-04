@@ -100,7 +100,7 @@ const Login = () => {
       .then((res) => {
         console.log(res.data);
         localStorage.setItem("token", res.data.token);
-        login(dispatch, { username: res.data.username, avatar: res.data.avatar });
+        login(dispatch, res.data.username, res.data.avatar);
       })
       .catch(err => console.log(err.message));
     // login(dispatch, { username, password });
