@@ -11,15 +11,10 @@ const Navbar = () => {
 
     const theme = useSelector((store) => store.authReducer.theme);
     // const avatar = useSelector((store) => store.authReducer.avatar);
-    const avatar = localStorage.getItem("avatar");
     // const username = useSelector((store) => store.authReducer.userName);
-    const username = localStorage.getItem("userName");
     // const subscription = useSelector((store) => store.authReducer.subscription);
     const subscription = localStorage.getItem("subscription");
-    // const isAuth = localStorage.getItem("token") ? true : false;
-   const isAuth = useSelector((store) => store.authReducer.isAuth);
-
-
+    // const isAuth = useSelector((store) => store.authReducer.isAuth);
 
     const navigate = useNavigate();
     // const [isAuth, setIsAuth] = useState(false);

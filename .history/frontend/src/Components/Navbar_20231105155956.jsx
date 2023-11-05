@@ -16,10 +16,7 @@ const Navbar = () => {
     const username = localStorage.getItem("userName");
     // const subscription = useSelector((store) => store.authReducer.subscription);
     const subscription = localStorage.getItem("subscription");
-    // const isAuth = localStorage.getItem("token") ? true : false;
-   const isAuth = useSelector((store) => store.authReducer.isAuth);
-
-
+    // const isAuth = useSelector((store) => store.authReducer.isAuth);
 
     const navigate = useNavigate();
     // const [isAuth, setIsAuth] = useState(false);
