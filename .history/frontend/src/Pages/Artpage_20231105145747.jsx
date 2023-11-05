@@ -16,7 +16,7 @@ const ArtPage = () => {
     }
     const fetchTheData = () => {
         let url;
-        if (curr === "") {
+        if (curr == "") {
             url = "https://gifted-kit-cow.cyclic.app/admin/arts"
         }
         else {
@@ -32,6 +32,7 @@ const ArtPage = () => {
             .then((res) => setData(res.reverse()))
             .catch((err) => console.log(err))
     }
+    console.log(data)
     const renderData1 = () => {
         const ele = []
         for (let i = 0; i < data?.length; i += 4) {
@@ -90,6 +91,7 @@ const ArtPage = () => {
     }
     const handleView = (id, view) => {
         const newView = { views: view + 1 };
+        console.log(newView.views);
         fetch(`https://gifted-kit-cow.cyclic.app/arts/view/${id}`, {
             method: "PATCH",
             headers: {
