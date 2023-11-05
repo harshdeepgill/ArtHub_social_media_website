@@ -89,7 +89,7 @@ const SingleProduct = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     const [loading, setLoading] = useState(true);
-    return <Box bgColor={theme === "dark" ? "#15191E" : "#edf2f7"} color={theme === "dark" ? "white" : "black"}>
+    return <Box bgColor={theme == "dark" ? "#15191E" : "#edf2f7"} color={theme == "dark" ? "white" : "black"}>
         {!comments ?
             <Flex height="80vh" align="center" justify="center" >
                 <Image src="https://i.ibb.co/68zbKqX/output-onlinegiftools.gif" w={"10%"} />
@@ -98,11 +98,11 @@ const SingleProduct = () => {
                 <Stack display={"flex"} direction={["column", "column", "column", "row", "row"]} justifyContent={"center"}>
                     <Box w={"60%"} mb={"1rem"} position={"relative"} justifyContent={"center"}>
                         <LazyLoadImage src={data.image} effect="blur" alt={data.title} />
-                        {data.premium === true && <Text position={"absolute"} letterSpacing={"1px"} top={0} left={0} bgColor={"#FF7F50"}>PREMIUM</Text>}
+                        {data.premium == true && <Text position={"absolute"} letterSpacing={"1px"} top={0} left={0} bgColor={"#FF7F50"}>PREMIUM</Text>}
                         <Stack display={"flex"} w={"100%"} mt={"1rem"} direction={"row"} justifyContent={"space-between"}>
                             <HStack>
                                 <Button leftIcon={<AiOutlineStar />} bgColor={"#FF7F50"} color={"white"} _hover={{ bgColor: "none" }} _active={{ transform: "scale(0.95)" }}>Add to Favourites</Button>
-                                <Button leftIcon={<BiCommentDetail />} bgColor={"#8FDBA7"} _hover={{ bgColor: "none" }} onClick={() => setcommentSection(!commentSection)} _active={{ transform: "scale(0.95)" }}>Comments</Button>
+                                <Button leftIcon={<BiCommentDetail />} bgColor={"#8FDBA7"} _hover={{ bgColor: "none" }} onClick={() => setcommentSection(!commentSection)} _active={{ transform: "scale(0.95)" }}>Comments</Button >
                             </HStack>
                             <HStack>
                                 <ChakraLink href={data.image} rel="norefferer noopener" target="_blank" >
@@ -113,11 +113,11 @@ const SingleProduct = () => {
                         {commentSection && <Box w={"100%"} m={"auto"} p={"5"} >
                             <Box w={"100%"} display={"flex"} m={"auto"} gap={"0.5rem"}>
                                 <Image src={avatar} w={"10%"} h={"10%"} />
-                                <Textarea size={"sm"} border={"1px solid black"} _hover={{ borderColor: "none" }} focusBorderColor="coral" placeholder="Add a new comment..." value={commentInput} onChange={(e) => setCommentInput(e.target.value)} borderColor={theme === "dark" ? "white" : "black"} />
+                                <Textarea size={"sm"} border={"1px solid black"} _hover={{ borderColor: "none" }} focusBorderColor="coral" placeholder="Add a new comment..." value={commentInput} onChange={(e) => setCommentInput(e.target.value)} borderColor={theme == "dark" ? "white" : "black"} />
                             </Box>
                             <Stack direction={"row"} display={"flex"} justifyContent={"flex-end"} >
-                                <Button border={"none"} variant={"outline"} _hover={{ border: "none" }} color={theme === "dark" ? "white" : "black"} onClick={() => setcommentSection(!commentSection)}>Cancel</Button>
-                                <Button border={"none"} variant={"outline"} _hover={{ border: "none" }} color={theme === "dark" ? "white" : "black"} onClick={postComment} disabled={commentInput === ""}>Comment</Button>
+                                <Button border={"none"} variant={"outline"} _hover={{ border: "none" }} color={theme == "dark" ? "white" : "black"} onClick={() => setcommentSection(!commentSection)}>Cancel</Button>
+                                <Button border={"none"} variant={"outline"} _hover={{ border: "none" }} color={theme == "dark" ? "white" : "black"} onClick={postComment} disabled={commentInput == ""}>Comment</Button>
                             </Stack>
                         </Box>}
                         <Box display={"flex"} w={"100%"} m={"auto"} p={"5"} justifyContent={"space-between"} >
@@ -156,9 +156,9 @@ const SingleProduct = () => {
                             </Grid>
                         </Box>
                     </Box>
-                </Stack>
-            </Box>
+                </Stack >
+            </Box >
         }
-    </Box>
+    </Box >
 }
 export default SingleProduct;
