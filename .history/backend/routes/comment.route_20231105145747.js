@@ -12,7 +12,7 @@ commentRoute.get("/:postID", async (req, res) => {
         const comment = await CommentModel.find({ postId: postID });
         res.status(200).send(comment);
     } catch (error) {
-        res.status(500).send({ "msg": "Something went wrong.", "err": error.message })
+        res.status(500).send({ "msg": "Something went wrong.", "err": error })
     }
 })
 
@@ -25,7 +25,7 @@ commentRoute.post("/:postID/create", async (req, res) => {
         const comments = await CommentModel.find({ postId: postID });
         res.status(200).send(comments);
     } catch (error) {
-        res.status(500).send({ "msg": "Something went wrong.", "err": error.message })
+        res.status(500).send({ "msg": "Something went wrong.", "err": error })
     }
 })
 
@@ -42,7 +42,7 @@ commentRoute.delete("/:commentId/delete", async (req, res) => {
             res.status(300).send({ "msg": "You are not authorized." })
         }
     } catch (error) {
-        res.status(400).send({ "msg": "Something went wrong.", "err": error.message })
+        res.status(400).send({ "msg": "Something went wrong.", "err": error })
     }
 })
 
@@ -59,7 +59,7 @@ commentRoute.patch("/:commentId/update", async (req, res) => {
             res.status(300).send({ "msg": "You are not authorized." })
         }
     } catch (error) {
-        res.status(400).send({ "msg": "Something went wrong.", "err": error.message })
+        res.status(400).send({ "msg": "Something went wrong.", "err": error })
     }
 })
 

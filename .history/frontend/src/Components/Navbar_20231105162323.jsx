@@ -5,7 +5,6 @@ import { SearchIcon } from "@chakra-ui/icons";
 import { BsMoonStars, BsSun } from "react-icons/bs"
 import { useDispatch, useSelector } from "react-redux";
 import { logout, themeChange } from "../Redux/action";
-import axios from "axios";
 
 const Navbar = () => {
     const [search, setSearch] = useState("");
@@ -45,10 +44,7 @@ const Navbar = () => {
         logout(dispatch);
     }
 
-    const handleSearch = () => {
-        console.log("handle search invoked");
-        let searchData = axios.get(`https://gifted-kit-cow.cyclic.app/arts/search?title=${search}`);
-    }
+    const handleSearch = () => { }
 
     useEffect(() => {
         const debounceTimer = setTimeout(() => {
