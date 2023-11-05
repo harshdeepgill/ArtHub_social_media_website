@@ -1,6 +1,5 @@
 const initialState = {
   isAuth: false,
-  userID: "",
   userName: "",
   avatar: "",
   subscription: "",
@@ -11,7 +10,7 @@ const initialState = {
 const authReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case "LOGIN": {
-      return { ...state, isAuth: true, userName: payload.username, avatar: payload.avatar, token: payload.token, subscription: payload.subscription, userID: payload.userID };
+      return { ...state, isAuth: true, userName: payload.username, avatar: payload.avatar, token: payload.token, subscription: payload.subscription };
     }
     case "LOGOUT": {
       localStorage.removeItem("token");
