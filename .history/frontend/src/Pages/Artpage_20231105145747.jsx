@@ -16,7 +16,7 @@ const ArtPage = () => {
     }
     const fetchTheData = () => {
         let url;
-        if (curr === "") {
+        if (curr == "") {
             url = "https://gifted-kit-cow.cyclic.app/admin/arts"
         }
         else {

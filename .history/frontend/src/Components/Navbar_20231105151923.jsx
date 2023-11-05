@@ -13,22 +13,21 @@ const Navbar = () => {
     const avatar = useSelector((store) => store.authReducer.avatar);
     const username = useSelector((store) => store.authReducer.userName);
     const subscription = useSelector((store) => store.authReducer.subscription);
-    const isAuth = useSelector((store) => store.authReducer.isAuth);
 
     const navigate = useNavigate();
-    // const [isAuth, setIsAuth] = useState(false);
-    // const isAuthRef = useRef(isAuth);
+    const [isAuth, setIsAuth] = useState(false);
+    const isAuthRef = useRef(isAuth);
 
-    // useEffect(() => {
-    //     if (localStorage.getItem("token")) {
-    //         setIsAuth(true);
-    //         isAuthRef.current = true;
-    //     }
-    //     else {
-    //         setIsAuth(false);
-    //         isAuthRef.current = false;
-    //     }
-    // }, [isAuth]);
+    useEffect(() => {
+        if (localStorage.getItem("token")) {
+            setIsAuth(true);
+            isAuthRef.current = true;
+        }
+        else {
+            setIsAuth(false);
+            isAuthRef.current = false;
+        }
+    }, [isAuth]);
 
     const dispatch = useDispatch();
     const changeTheme = () => {
