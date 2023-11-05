@@ -3,6 +3,7 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import PricingPage from "./Pages/PricingPage";
 function App() {
   const theme = useSelector(store => store.authReducer.theme);
   useEffect(() => {
