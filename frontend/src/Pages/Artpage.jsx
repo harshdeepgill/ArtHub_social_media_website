@@ -17,7 +17,7 @@ const ArtPage = () => {
     const fetchTheData = () => {
         let url;
         if (curr == "") {
-            url = "https://gifted-kit-cow.cyclic.app/arts"
+            url = "https://gifted-kit-cow.cyclic.app/admin/arts"
         }
         else {
             url = `https://gifted-kit-cow.cyclic.app/arts/all/?category=${curr}`
@@ -25,7 +25,7 @@ const ArtPage = () => {
         fetch(url, {
             method: "GET",
             headers: {
-                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhcmFzIiwiaWF0IjoxNjk5MTA5MDAzLCJleHAiOjE2OTk3MTM4MDN9.J6J2TNTFERx0Cs1PUpuQUSjtRU4mQVYLLd6Coy7wXuY`
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
             }
         })
             .then((res) => res.json())
@@ -95,7 +95,7 @@ const ArtPage = () => {
         fetch(`https://gifted-kit-cow.cyclic.app/arts/view/${id}`, {
             method: "PATCH",
             headers: {
-                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhcmFzIiwiaWF0IjoxNjk5MTA5MDAzLCJleHAiOjE2OTk3MTM4MDN9.J6J2TNTFERx0Cs1PUpuQUSjtRU4mQVYLLd6Coy7wXuY`,
+                "Authorization": `Bearer ${localStorage.getItem("token")}`,
                 "Content-type": "application/json"
             },
             body: JSON.stringify(newView)
