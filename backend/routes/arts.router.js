@@ -10,9 +10,19 @@ artRouter.get("/", auth, async (req, res) => {
         const arts = await ArtModel.find({ username: req.body.username });
         return res.status(200).send(arts)
     } catch (error) {
-        return res.status(500).send(error)
+        return res.status(500).send({ "msg": "Something went wrong.", "err": error })
     }
 });
+
+artRouter.get("/all", async (req, res) => {
+    const { category } = req.query;
+    try {
+        const art = await ArtModel.find({ category: category })
+        res.status(200).send(art);
+    } catch (error) {
+        res.status(500).send({ "msg": "Something went wrong.", "err": error })
+    }
+})
 
 artRouter.patch("/view/:id", async (req, res) => {
     const { id } = req.params;
@@ -20,7 +30,7 @@ artRouter.patch("/view/:id", async (req, res) => {
         await ArtModel.findByIdAndUpdate({ _id: id }, req.body);
         return res.status(200).send({ "msg": "Updated successfully." })
     } catch (error) {
-        return res.status(500).send(error)
+        return res.status(500).send({ "msg": "Something went wrong.", "err": error })
     }
 });
 
@@ -40,7 +50,7 @@ artRouter.post("/add", auth, async (req, res) => {
         await arts.save();
         return res.status(200).send({ "msg": "New art is add", "New_art": arts });
     } catch (error) {
-        return res.status(500).send(error)
+        return res.status(500).send({ "msg": "Something went wrong.", "err": error })
     }
 });
 artRouter.patch("/update/:Id", auth, async (req, res) => {
@@ -55,7 +65,7 @@ artRouter.patch("/update/:Id", auth, async (req, res) => {
             res.status(300).send({ "msg": "You are not authorized." })
         }
     } catch (error) {
-        return res.status(500).send(error)
+        return res.status(500).send({ "msg": "Something went wrong.", "err": error })
     }
 });
 
@@ -71,7 +81,7 @@ artRouter.delete("/delete/:Id", auth, async (req, res) => {
             res.status(300).send({ "msg": "You are not authorized." })
         }
     } catch (error) {
-        return res.status(500).send(error)
+        return res.status(500).send({ "msg": "Something went wrong.", "err": error })
     }
 });
 module.exports = { artRouter }
