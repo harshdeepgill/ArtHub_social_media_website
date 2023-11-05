@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, GridItem, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, GridItem, Image, Stack, Text, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { ViewIcon, StarIcon } from "@chakra-ui/icons"
@@ -22,6 +22,62 @@ const ArtPage = () => {
             .catch((err) => console.log(err))
     }
     console.log(data);
+    const renderData1 = () => {
+        const ele = []
+        for (let i = 0; i < data.length; i += 4) {
+            ele.push(<Box key={data[i]._id} className={`div`} onClick={() => handleView(data[i]._id, data[i].views)}>
+                <Image src={data[i].image} className="div-img" />
+                <Text className="title">{data[i].title}</Text>
+                <VStack className="opacity">
+                    <Text display={"flex"} alignItems={"center"} gap={"5px"}>{data[i].views} <ViewIcon /></Text>
+                    <Text display={"flex"} alignItems={"center"} gap={"5px"}>{data[i].favorite} <StarIcon /></Text>
+                </VStack>
+            </Box>)
+        }
+        return ele;
+    }
+    const renderData2 = () => {
+        const ele = [];
+        for (let i = 1; i < data.length - 1; i += 4) {
+            ele.push(<Box key={data[i]._id} className={`div`} onClick={() => handleView(data[i]._id, data[i].views)}>
+                <Image src={data[i].image} className="div-img" />
+                <Text className="title">{data[i].title}</Text>
+                <VStack className="opacity">
+                    <Text display={"flex"} alignItems={"center"} gap={"5px"}>{data[i].views} <ViewIcon /></Text>
+                    <Text display={"flex"} alignItems={"center"} gap={"5px"}>{data[i].favorite} <StarIcon /></Text>
+                </VStack>
+            </Box>)
+        }
+        return ele;
+    }
+    const renderData3 = () => {
+        const ele = [];
+        for (let i = 2; i < data.length - 2; i += 4) {
+            ele.push(<Box key={data[i]._id} className={`div`} onClick={() => handleView(data[i]._id, data[i].views)}>
+                <Image src={data[i].image} className="div-img" />
+                <Text className="title">{data[i].title}</Text>
+                <VStack className="opacity">
+                    <Text display={"flex"} alignItems={"center"} gap={"5px"}>{data[i].views} <ViewIcon /></Text>
+                    <Text display={"flex"} alignItems={"center"} gap={"5px"}>{data[i].favorite} <StarIcon /></Text>
+                </VStack>
+            </Box>)
+        }
+        return ele;
+    }
+    const renderData4 = () => {
+        const ele = [];
+        for (let i = 3; i < data.length - 3; i += 4) {
+            ele.push(<Box key={data[i]._id} className={`div`} onClick={() => handleView(data[i]._id, data[i].views)}>
+                <Image src={data[i].image} className="div-img" />
+                <Text className="title">{data[i].title}</Text>
+                <VStack className="opacity">
+                    <Text display={"flex"} alignItems={"center"} gap={"5px"}>{data[i].views} <ViewIcon /></Text>
+                    <Text display={"flex"} alignItems={"center"} gap={"5px"}>{data[i].favorite} <StarIcon /></Text>
+                </VStack>
+            </Box>)
+        }
+        return ele;
+    }
     const handleView = (id, view) => {
         const newView = { views: view + 1 };
         console.log(newView.views);
@@ -61,7 +117,7 @@ const ArtPage = () => {
                     <Button w={"100%"} variant={"outline"} borderColor={curr == "AIArt" ? "#00ff51" : "#ffb89e"} value={"AIArt"} _hover={{ opacity: 0.8 }} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"}>AI Art</Button>
                 </GridItem>
                 <GridItem>
-                    <Button w={"100%"} variant={"outline"} borderColor={curr == "SkyScapes" ? "#00ff51" : "#ffb89e"} value={"SkyScapes"} _hover={{ opacity: 0.8 }} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"}>Skyscapes</Button>
+                    <Button w={"100%"} variant={"outline"} borderColor={curr == "Digital Art" ? "#00ff51" : "#ffb89e"} value={"Digital Art"} _hover={{ opacity: 0.8 }} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"}>Digital Art</Button>
                 </GridItem>
                 <GridItem>
                     <Button w={"100%"} variant={"outline"} borderColor={curr == "Anime" ? "#00ff51" : "#ffb89e"} value={"Anime"} _hover={{ opacity: 0.8 }} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"}>Anime</Button>
@@ -70,55 +126,51 @@ const ArtPage = () => {
                     <Button w={"100%"} variant={"outline"} borderColor={curr == "Drawings" ? "#00ff51" : "#ffb89e"} value={"Drawings"} _hover={{ opacity: 0.8 }} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"}>Drawings</Button>
                 </GridItem>
                 <GridItem>
-                    <Button w={"100%"} variant={"outline"} borderColor={curr == "OnePiece" ? "#00ff51" : "#ffb89e"} _hover={{ opacity: 0.8 }} value={"OnePiece"} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"}>One Piece</Button>
+                    <Button w={"100%"} variant={"outline"} borderColor={curr == "Fan Art" ? "#00ff51" : "#ffb89e"} _hover={{ opacity: 0.8 }} value={"Fan Art"} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"}>Fan Art</Button>
                 </GridItem>
                 <GridItem>
                     <Button w={"100%"} variant={"outline"} borderColor={curr == "Nature" ? "#00ff51" : "#ffb89e"} _hover={{ opacity: 0.8 }} value={"Nature"} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"}>Nature</Button>
                 </GridItem>
                 <GridItem>
-                    <Button w={"100%"} variant={"outline"} borderColor={curr == "Architecture" ? "#00ff51" : "#ffb89e"} _hover={{ opacity: 0.8 }} value={"Architecture"} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"}>Architecture</Button>
+                    <Button w={"100%"} variant={"outline"} borderColor={curr == "Fantasy" ? "#00ff51" : "#ffb89e"} _hover={{ opacity: 0.8 }} value={"Fantasy"} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"}>Fantasy</Button>
                 </GridItem>
                 <GridItem>
                     <Button w={"100%"} variant={"outline"} borderColor={curr == "Photography" ? "#00ff51" : "#ffb89e"} _hover={{ opacity: 0.8 }} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"} value={"Photography"}>Photography</Button>
                 </GridItem>
             </Grid>
-            {/* <Box display={"flex"} flexWrap={"wrap"} gap={"1rem"}>
-                {data.length > 0 && data.map((el) => {
-                    return <Box key={el._id} position={"relative"} w={"auto"} h={"auto"}>
-                        <Image src={el.image} position={"relative"} objectFit={"cover"} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
-                        <Text noOfLines={1} position={"absolute"} bottom={0} left={0} backgroundColor={"transparent"} color={"white"} padding={"5px"} visibility={"hidden"} transition={"visibility 0.2s"} className="image-title" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>{el.title}</Text>
-                        {/* <Text>{el.views}</Text> */}
-            {/* <Text>{el.favorite}</Text> */}
-            {/* </Box> */}
-            {/* })} */}
-            {/* </Box> * /} */}
-            <GRID className="grid">
-                {data.length > 0 && data.map((el) => {
-                    return <Box key={el._id} className={`div`} onClick={() => handleView(el._id, el.views)}>
-                        <Image src={el.image} className="div-img" />
-                        <Text className="title">{el.title}</Text>
-                        <VStack className="opacity">
-                            <Text display={"flex"} alignItems={"center"} gap={"5px"}>{el.views} <ViewIcon /></Text>
-                            <Text display={"flex"} alignItems={"center"} gap={"5px"}>{el.favorite} <StarIcon /></Text>
-                        </VStack>
-                    </Box>
-                })}
-                {/* <div></div>
-                <div></div>
-                <div></div> */}
-            </GRID>
+            <Grid gap={"1rem"} templateColumns={["repeat(1,1fr)", "repeat(1,1fr)", "repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"]}>
+                <GRID>
+                    <GridItem className="grid">
+                        {renderData1()}
+                    </GridItem>
+                </GRID>
+                <GRID>
+                    <GridItem className="grid">
+                        {renderData2()}
+                    </GridItem>
+                </GRID>
+                <GRID>
+                    <GridItem className="grid">
+                        {renderData3()}
+                    </GridItem>
+                </GRID>
+                <GRID>
+                    <GridItem className="grid">
+                        {renderData4()}
+                    </GridItem>
+                </GRID>
+            </Grid>
         </Box >
     </Box >
 }
 export default ArtPage;
+
 const GRID = styled.div`
-    display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-rows: auto;
-  grid-auto-flow: dense;
-  height: auto;
-  
+    .grid{
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
   .div {
     max-height: fit-content;
     position: relative;
@@ -136,28 +188,30 @@ const GRID = styled.div`
 
   .div .title {
     position: absolute;
-    top: 92%;
-    left: 3%;
+    top: 0%;
+    left: 0%;
     color: #fff;
     padding: 10px;
     visibility: hidden;
-    transition: opacity 0.3s;
+    transition: opacity 1s;
     text-align: center;
+    cursor: default;
   }
 
   .opacity{
     position: absolute;
-    top: 85%;
-    right: 5%;
+    bottom: 0%;
+    right: 0%;
     color: #fff;
     padding: 10px;
     visibility: hidden;
     transition: opacity 0.3s;
     text-align: center;
+    cursor: default;
   }
 
   .div:hover .div-img {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 
   .div:hover .title,
