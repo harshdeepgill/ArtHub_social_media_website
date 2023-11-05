@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 import { Explore } from '../Components/Explore';
 import Hero from '../Components/Hero';
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
 
-{/* <Grid
+<Grid
   templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }}
   gap="4"
 >
+  {/* Your grid items go here */}
   <GridItem style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
     <Link to="/arts">
       <Image objectFit="cover" w="17rem" h="10rem" boxShadow='outline' src="https://firebasestorage.googleapis.com/v0/b/festive-crayon.appspot.com/o/Posts%2FAscendance%20of%20a%20Bookworm.png44370915-aedf-42a9-b51f-d132766b0191?alt=media&token=9835d4db-20cd-4be9-ad14-87b4d8528cc5" borderRadius="22px" _hover={{ outline: "3px solid coral", transform: "scale(1.05)", transition: "transform 0.3s ease-in-out" }} />
@@ -20,21 +20,24 @@ import styled from 'styled-components';
   <GridItem>Item 2</GridItem>
   <GridItem>Item 3</GridItem>
   <GridItem>Item 4</GridItem>
-</Grid> */}
+  {/* Add more items as needed */}
+</Grid>
 
 const Home = () => {
   const theme = useSelector((store) => store.authReducer.theme);
 
   return (
     <>
-      <HERO id='hero' style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded", fontFamily: "Nunito" }}>
+      <section id='hero' style={{ height: "32rem", backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded", fontFamily: "Nunito" }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem", color: `${theme}` === "dark" ? "white" : "black", paddingTop: "2rem" }}>
           <h1 className='head-text' style={{ marginTop: "3rem" }}>Create great designs</h1>
           <Text fontSize="xl">Turn ideas into outstanding designs with high-quality vectors, photos, videos, mockups, and more</Text>
         </div>
-        <Flex justify={"center"}>
-          <CUSTOMGRID>
-            {/* <Flex gap="3rem" mt="4rem" justify="center" pl="1rem" pr="1rem" wrap="wrap"> */}
+        <Grid
+          templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }}
+          gap="4"
+        >
+          <Flex gap="3rem" mt="4rem" justify="center" pl="1rem" pr="1rem" wrap="wrap">
             <Box style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
               <Link to="/arts">
                 <Image objectFit="cover" w="17rem" h="10rem" boxShadow='outline' src="https://firebasestorage.googleapis.com/v0/b/festive-crayon.appspot.com/o/Posts%2FAscendance%20of%20a%20Bookworm.png44370915-aedf-42a9-b51f-d132766b0191?alt=media&token=9835d4db-20cd-4be9-ad14-87b4d8528cc5" borderRadius="22px" _hover={{ outline: "3px solid coral", transform: "scale(1.05)", transition: "transform 0.3s ease-in-out" }} />
@@ -62,40 +65,13 @@ const Home = () => {
               </Link>
               <Text fontSize="xl" style={{ color: `${theme}` === "dark" ? "white" : "black" }}>Food Art</Text>
             </Box>
-            {/* </Flex> */}
-          </CUSTOMGRID>
-        </Flex>
-      </HERO>
+          </Flex>
+        </Grid>
+      </section>
       <Hero />
       <Explore />
     </>
   )
 }
-
-const CUSTOMGRID = styled.div`
-display: grid;
-grid-template-columns: 18rem 18rem 18rem 18rem;
-margin-top: 2rem;
-gap: 3rem;
-@media screen and (max-width: 1260px) {
-  grid-template-columns: repeat(2,1fr);
-}
-@media screen and (max-width: 650px) {
-  grid-template-columns: repeat(1,1fr);
-}
-`;
-
-const HERO = styled.section`
-
-height: 28rem;
-
-@media screen and (max-width: 1260px) {
-  height: 45rem;
-}
-
-@media screen and (max-width: 650px) {
-  height: 77rem;
-}
-`;
 
 export default Home

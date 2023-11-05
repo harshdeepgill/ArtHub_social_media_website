@@ -87,7 +87,7 @@ gap: 3rem;
 
 const HERO = styled.section`
 
-height: 28rem;
+height: 32rem;
 
 @media screen and (max-width: 1260px) {
   height: 45rem;

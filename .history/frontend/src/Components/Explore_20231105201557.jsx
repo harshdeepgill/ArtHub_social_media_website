@@ -8,7 +8,7 @@ export const Explore = () => {
 
     return (
         <div style={{ width: "100%", paddingBottom: "2rem", background: theme === "dark" ? "#15191E" : "#edf2f7" }}>
-            <div style={{ color: `${theme}` === "dark" ? "white" : "black", display: 'flex', justifyContent: "center", fontSize: "3rem", marginBottom: "1.5rem" }}>EXPLORE</div>
+            <div style={{ color: `${theme}` === "dark" ? "white" : "black", display: 'flex', justifyContent: "center", fontSize: "3rem" }}>Explore</div>
             <div className={styles.container}>
                 <div className={`${styles.card} ${styles.one}`}>
                     <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/966ab91b-78fc-4a18-bb98-395ffd1d0cff/dgebwk6-035deb75-16e2-4bf1-a0fb-7c090953c93d.png/v1/fill/w_622,h_350,q_70,strp/dream_house_by_deeplearningdiaries_dgebwk6-350t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk2NmFiOTFiLTc4ZmMtNGExOC1iYjk4LTM5NWZmZDFkMGNmZlwvZGdlYndrNi0wMzVkZWI3NS0xNmUyLTRiZjEtYTBmYi03YzA5MDk1M2M5M2QucG5nIiwiaGVpZ2h0IjoiPD05MDAiLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiJcL3dtXC85NjZhYjkxYi03OGZjLTRhMTgtYmI5OC0zOTVmZmQxZDBjZmZcL2RlZXBsZWFybmluZ2RpYXJpZXMtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.1tNQMBK1PvYDeXgQvi87jQ0K3dr6oCNfpwx7ailFDGQ" className={styles.explore_img} alt="explore pic" />
