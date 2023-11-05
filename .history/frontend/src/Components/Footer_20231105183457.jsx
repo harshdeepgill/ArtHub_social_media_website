@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Grid, GridItem, Heading, Text, VStack, HStack, Image, Spacer, Stack, Box } from '@chakra-ui/react'
+import { Grid, GridItem, Heading, Text, VStack, HStack, Image, Spacer, Stack } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { FaCopyright, FaTwitter, FaYoutube, FaInstagram, FaWhatsapp, FaGithub } from 'react-icons/fa';
 import styled from 'styled-components';
@@ -63,44 +63,44 @@ const Footer = () => {
         <GridItem mt={4}>
           <VStack spacing={3}>
             <Heading fontSize="1.2rem" mb={3} style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }}>Company</Heading>
-            <Box fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>About us</Box>
-            <Box fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Blog</Box>
-            <Box fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Careers</Box>
-            <Box fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Contact us</Box>
+            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>About us</Text>
+            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Blog</Text>
+            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Careers</Text>
+            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Contact us</Text>
           </VStack>
         </GridItem>
         <GridItem mt={4}>
           <VStack spacing={3}>
             <Heading fontSize="1.2rem" mb={3} style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }}>Social</Heading>
-            <Box fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Help Center</Box>
-            <Box fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Facebook</Box>
-            <Box fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>youtube</Box>
-            <Box fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Community Guidelines</Box>
+            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Help Center</Text>
+            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Facebook</Text>
+            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>youtube</Text>
+            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Community Guidelines</Text>
           </VStack>
         </GridItem>
         <GridItem mt={4}>
           <VStack spacing={3}>
             <Heading fontSize="1.2rem" mb={3} style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }}>Legal</Heading>
-            <Box fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Cookies Policy</Box>
-            <Box fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Privacy Policy</Box>
-            <Box fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Terms and services</Box>
-            <Box fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Press Releases</Box>
+            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Cookies Policy</Text>
+            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Privacy Policy</Text>
+            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Terms and services</Text>
+            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Press Releases</Text>
           </VStack>
         </GridItem>
         <GridItem mt={4}>
-          <VStack spacing={3}>
+          <VStack spacing={6}>
             <Heading fontSize="1.2rem" mb={3} style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }}>Install App</Heading>
             <Image src="https://trippy-time.vercel.app/static/media/google-play.a642dda447fd0d634216.png" w="10rem"></Image>
             <Image src='https://trippy-time.vercel.app/static/media/appstore.991016dd0c414dd7de02.png' w="10rem"></Image>
           </VStack>
         </GridItem>
       </Grid>
-      <hr style={{ height: "1px", background: theme === "dark" ? "white" : "black" }} />
+      <hr style={{ height: "1px", background: "black" }} />
       <FB>
         <Stack w="100%" pl={10} pr={20} mt="0.5rem" direction={{ lg: "row", md: "row", sm: "column" }} pt="1rem" pb="1rem" className='fb-section'>
           <FL>
             <HStack spacing={"2rem"} className='footer-logo-section' justifyContent={{ sm: "center" }}>
-              <Image src="https://firebasestorage.googleapis.com/v0/b/festive-crayon.appspot.com/o/Posts%2FCraft_Ideas1-removebg.png029b92d9-75e9-48d1-b100-5b790f007a6c?alt=media&token=b496407b-289a-45d6-952d-9bb82d176b81" w="6rem" mb="1rem"></Image>
+              <Image src="https://firebasestorage.googleapis.com/v0/b/festive-crayon.appspot.com/o/Posts%2FCraft_Ideas1-removebg.png029b92d9-75e9-48d1-b100-5b790f007a6c?alt=media&token=b496407b-289a-45d6-952d-9bb82d176b81" w="6rem"></Image>
               <HStack spacing={"1rem"}>
                 <FaCopyright style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }), marginBottom: "1rem" }} />
                 <Text fontSize={"md"} style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }}>2023 All rights reserved.</Text>
@@ -159,7 +159,6 @@ const SL = styled.div`
 
 display: flex;
 justify-content: center;
-margin-bottom: 1rem;
 
 @media (max-width: 542px)
 {

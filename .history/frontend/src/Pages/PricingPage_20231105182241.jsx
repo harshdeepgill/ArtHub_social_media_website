@@ -1,7 +1,9 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components'
 // import PricingCard from '../Components/PricingCard'
+
+
 
 const basic = {
   type: "Basic",
@@ -56,6 +58,7 @@ export default function PricingPage() {
         })}
       </PriceContainer> */}
 
+
       <div className='row row-cols-1 row-cols-md-3 my-5 w-75 m-auto'>
         <div className='col '>
           <div className='card text-center'>
@@ -95,7 +98,7 @@ export default function PricingPage() {
                 <li>{premium.platformFees}% Platform Fee</li>
                 <li>{premium.ArtProtect ? "Art Protect" : ""}</li>
               </ul>
-              <button className='btn text-white btn-success btn-lg w-100 btn-outline-success'>{premium.price === "0" ? "Get Started" : "Upgrade"}</button>
+              <button className='btn text-white btn-success btn-lg w-100 btn-outline-success'>{premium.price == "0" ? "Get Started" : "Upgrade"}</button>
             </div>
           </div>
         </div>
@@ -116,7 +119,7 @@ export default function PricingPage() {
                 <li>{elite.platformFees}% Platform Fee</li>
                 <li>{elite.ArtProtect ? "Art Protect" : ""}</li>
               </ul>
-              <button className='btn text-white btn-success btn-lg w-100 btn-outline-success'>{elite.price === "0" ? "Get Started" : "Upgrade"}</button>
+              <button className='btn text-white btn-success btn-lg w-100 btn-outline-success'>{elite.price == "0" ? "Get Started" : "Upgrade"}</button>
             </div>
           </div>
         </div>
@@ -127,10 +130,10 @@ export default function PricingPage() {
         <table className='table text-center'>
           <thead>
             <tr>
-              <th style={{ width: "34%" }}></th>
-              <th style={{ width: "22%" }}>{basic.type}</th>
-              <th style={{ width: "22%" }}>{premium.type}</th>
-              <th style={{ width: "22%" }}>{elite.type}</th>
+              <th styel={{ width: "34%" }}></th>
+              <th styel={{ width: "22%" }}>{basic.type}</th>
+              <th styel={{ width: "22%" }}>{premium.type}</th>
+              <th styel={{ width: "22%" }}>{elite.type}</th>
 
             </tr>
           </thead>
@@ -192,5 +195,7 @@ font-family:'Mulish';
 display: flex;
 gap:25px;
 justify-content: center;
+
+
   
 `

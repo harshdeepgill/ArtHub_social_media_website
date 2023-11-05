@@ -95,7 +95,7 @@ const Footer = () => {
           </VStack>
         </GridItem>
       </Grid>
-      <hr style={{ height: "1px", background: theme === "dark" ? "white" : "black" }} />
+      <hr style={{ height: "1px", background: "black" }} />
       <FB>
         <Stack w="100%" pl={10} pr={20} mt="0.5rem" direction={{ lg: "row", md: "row", sm: "column" }} pt="1rem" pb="1rem" className='fb-section'>
           <FL>

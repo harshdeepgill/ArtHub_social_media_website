@@ -95,12 +95,12 @@ const Footer = () => {
           </VStack>
         </GridItem>
       </Grid>
-      <hr style={{ height: "1px", background: theme === "dark" ? "white" : "black" }} />
+      <hr style={{ height: "1px", background: "black" }} />
       <FB>
         <Stack w="100%" pl={10} pr={20} mt="0.5rem" direction={{ lg: "row", md: "row", sm: "column" }} pt="1rem" pb="1rem" className='fb-section'>
           <FL>
             <HStack spacing={"2rem"} className='footer-logo-section' justifyContent={{ sm: "center" }}>
-              <Image src="https://firebasestorage.googleapis.com/v0/b/festive-crayon.appspot.com/o/Posts%2FCraft_Ideas1-removebg.png029b92d9-75e9-48d1-b100-5b790f007a6c?alt=media&token=b496407b-289a-45d6-952d-9bb82d176b81" w="6rem" mb="1rem"></Image>
+              <Image src="https://firebasestorage.googleapis.com/v0/b/festive-crayon.appspot.com/o/Posts%2FCraft_Ideas1-removebg.png029b92d9-75e9-48d1-b100-5b790f007a6c?alt=media&token=b496407b-289a-45d6-952d-9bb82d176b81" w="6rem"></Image>
               <HStack spacing={"1rem"}>
                 <FaCopyright style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }), marginBottom: "1rem" }} />
                 <Text fontSize={"md"} style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }}>2023 All rights reserved.</Text>
@@ -159,7 +159,6 @@ const SL = styled.div`
 
 display: flex;
 justify-content: center;
-margin-bottom: 1rem;
 
 @media (max-width: 542px)
 {
