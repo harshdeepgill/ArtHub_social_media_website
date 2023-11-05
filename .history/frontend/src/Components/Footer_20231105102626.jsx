@@ -52,7 +52,7 @@ const Footer = () => {
   }
 
   return (
-    <div style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#edf2f7" }}>
+    <div style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#edf2f7", marginTop: "2rem" }}>
       <Grid
         // bgColor="#e6dcc8"
         // bgColor="#edf2f7"

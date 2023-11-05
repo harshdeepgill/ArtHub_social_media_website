@@ -8,7 +8,7 @@ import { logout, themeChange } from "../Redux/action";
 
 const Navbar = () => {
     const [search, setSearch] = useState("");
-    const theme = useSelector((store) => store.authReducer.theme);
+    const [theme, setTheme] = useState("dark");
     const navigate = useNavigate();
     // const [isAuth, setIsAuth] = useState(false);
     let isAuth = false;
@@ -29,6 +29,10 @@ const Navbar = () => {
     const handleLogout = () => {
         logout(dispatch);
     }
+
+    useEffect(() => {
+
+    }, [theme])
 
     return <Box w={"100%"} bgColor={theme === "dark" ? "#15191E" : "#f0eded"} color={theme === "dark" ? "white" : "black"}>
         <Stack w={"90%"} m={"auto"} direction={"row"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} p={"1"}>
