@@ -72,35 +72,31 @@ const EditPhoto = () => {
         canvas.width = previewImg.naturalWidth;
         canvas.height = previewImg.naturalHeight;
 
+        
+        ctx.translate(canvas.width/2, canvas.height/2)
+        ctx.scale(flipHorizontal, flipVertical);
         if(rotate !== 0){
             ctx.rotate(rotate * Math.PI/180);
         }
-        ctx.translate(canvas.width/2, canvas.height/2)
-        ctx.scale(flipHorizontal, flipVertical);
         ctx.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`
         ctx.drawImage(previewImg, -canvas.width /2, -canvas.height/ 2, canvas.width, canvas.height);
         
         const link = document.createElement("a");
-        const abc  = ctx.getImageData(0, 0,canvas.width, canvas.height );
-        postPicHandler(abc);
+        link.download = `${Date.now()}`;
+        link.href = canvas.toDataURL();
+        link.click();
+        // postPicHandler(abc);
 
     }
 
 
   return (
     <div style={{padding:"40px"}}>
-        <h2>Image Editor</h2>
+        <h1 style={{fontSize: "2rem"}}>Image Editor</h1>
         <DIV>
             <div>
                 <EDITORPANNEL>
-                    <TITLEDIV>
-                        <label>Title</label>
-                        <input type="text" />
-                        <label>Tags</label>
-                        <input type="text" />
-                        <button>Add</button>
-                    </TITLEDIV>
-                        <label >Filters</label>
+                        <label style={{fontSize:"1.2rem"}}>Filters</label>
                     <SLIDER>
                         <div>
                             <p>Brightness</p>
@@ -124,7 +120,7 @@ const EditPhoto = () => {
                         <input onChange={(e) => {setGrayscale(e.target.value)}} type="range" value={grayscale} min={"0"} max={"100"} id='input-slider' />
                     </SLIDER>
                     <ROTATE>
-                        <label>Rotate & Flip</label>
+                        <label style={{fontSize:"1.2rem"}}>Rotate & Flip</label>
                         <div>
                             <button onClick={()=> {setRotate(prev => prev-90)}}>
                                 <FaArrowRotateLeft/>
@@ -142,7 +138,7 @@ const EditPhoto = () => {
                     </ROTATE>
                 </EDITORPANNEL>
                 <IMGDIV>
-                    <IMG flipHorizontal={flipHorizontal} flipVertical={flipVertical} rotate={rotate} brightnes={brightness} saturation={saturation} inversion={inversion} grayscale={grayscale} id='preview-img' src="https://placehold.co/600x400" alt="" /> 
+                    <IMG flipHorizontal={flipHorizontal} flipVertical={flipVertical} rotate={rotate} brightnes={brightness} saturation={saturation} inversion={inversion} grayscale={grayscale} id='preview-img' src="https://i.pinimg.com/564x/ce/22/32/ce22327fa176a92798cdbd1589391cc2.jpg" alt="" /> 
                     <canvas hidden id='image-canvas'></canvas>
                 </IMGDIV>
 
@@ -187,11 +183,12 @@ const DIV = styled.div`
     &>div:nth-child(1){ //main flexed div
         display: flex;
         margin: 20px 0;
+        overflow: hidden;
     }
 `
 
 const EDITORPANNEL = styled.div`
-    width: 43rem;
+    width: 40%;
 
     &>label{
         font-size: 15px;
@@ -215,6 +212,8 @@ const OPTIONS = styled.div`
 `
 
 const SLIDER = styled.div`
+margin-top: 10px;
+margin-bottom: 15px;
     font-size: 14px;
 
     &>div{
@@ -235,12 +234,16 @@ const ROTATE = styled.div`
         font-size: 14px;
     }
     &>div{
+        margin-top: 10px;
         display: flex;
         justify-content: space-between;
     }
     & button{
         width: calc(100%/4 - 14px);
-        height: 55px;
+        height: 65px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: white;
         border: 1px solid #ccc;
         font-size: 25px;

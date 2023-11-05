@@ -27,8 +27,6 @@ export default function PricingCard({type,price,MonetiztionFees,storage,AccessMo
         <p>{platformFees}% Platform Fee</p>
         <p>{ArtProtect?"Art Protect":""}</p>
         </div>
-        
-      
         </PriceCard>
         
        

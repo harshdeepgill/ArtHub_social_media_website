@@ -1,7 +1,12 @@
 import React from 'react'
+
+import { Text, Image, VStack, Box, Flex, Button } from "@chakra-ui/react";
+import { Link } from 'react-router-dom';
+import { Explor } from '../Components/Explor';
+import Hero from '../Components/Hero';
+
 import { Text, Image, VStack, Box, Flex } from "@chakra-ui/react";
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
   const theme = useSelector((store) => store.authReducer.theme);
