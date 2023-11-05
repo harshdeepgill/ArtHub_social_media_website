@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Grid, GridItem, Heading, Text, VStack, HStack, Image, Spacer, Stack, Box } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 import { FaCopyright, FaTwitter, FaYoutube, FaInstagram, FaWhatsapp, FaGithub } from 'react-icons/fa';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
