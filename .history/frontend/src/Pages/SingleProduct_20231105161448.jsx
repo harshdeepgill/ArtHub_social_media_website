@@ -102,7 +102,7 @@ const SingleProduct = () => {
                         <Stack display={"flex"} w={"100%"} mt={"1rem"} direction={"row"} justifyContent={"space-between"}>
                             <HStack>
                                 <Button leftIcon={<AiOutlineStar />} bgColor={"#FF7F50"} color={"white"} _hover={{ bgColor: "none" }} _active={{ transform: "scale(0.95)" }}>Add to Favourites</Button>
-                                <Button leftIcon={<BiCommentDetail />} bgColor={"#8FDBA7"} _hover={{ bgColor: "none" }} onClick={() => setcommentSection(!commentSection)} _active={{ transform: "scale(0.95)" }}>Comments</Button>
+                                <Button leftIcon={<BiCommentDetail />} bgColor={"#8FDBA7"} _hover={{ bgColor: "none" }} onClick={() => setcommentSection(!commentSection)} _active={{ transform: "scale(0.95)" }}>Comments</Button >
                             </HStack>
                             <HStack>
                                 <ChakraLink href={data.image} rel="norefferer noopener" target="_blank" >
