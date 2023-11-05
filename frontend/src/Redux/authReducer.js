@@ -4,7 +4,7 @@ const initialState = {
   avatar: "",
   subscription: "",
   token: "",
-  theme: ""
+  theme: localStorage.getItem("theme") || "dark"
 }
 
 const authReducer = (state = initialState, { type, payload }) => {
@@ -16,10 +16,11 @@ const authReducer = (state = initialState, { type, payload }) => {
       localStorage.removeItem("token");
       return initialState;
     }
-    case "THEME":
-      {
-        return { ...state, theme: state.theme === "dark" ? "light" : "dark" }
-      }
+    case "TOGGLETHEME": {
+      const val = state.theme == "dark" ? "light" : "dark";
+      localStorage.setItem("theme", val);
+      return { ...state, theme: val };
+    }
     default: return state;
   }
 }
