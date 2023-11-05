@@ -10,7 +10,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 const SingleProduct = () => {
     const { id } = useParams();
     const theme = useSelector(store => store.authReducer.theme);
-    const userName = useSelector(store => store.authReducer.userName);
+    const userName = useSelector(store => store.authReducer.username);
     const userID = useSelector(store => store.authReducer.userID);
     const avatar = useSelector(store => store.authReducer.avatar);
     const fetchThedata = () => {

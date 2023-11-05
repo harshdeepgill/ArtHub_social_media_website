@@ -10,8 +10,8 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 const SingleProduct = () => {
     const { id } = useParams();
     const theme = useSelector(store => store.authReducer.theme);
-    const userName = useSelector(store => store.authReducer.userName);
-    const userID = useSelector(store => store.authReducer.userID);
+    const userName = useSelector(store => store.authReducer.username);
+    const userID = useSelector(store => store.authReducer.userId);
     const avatar = useSelector(store => store.authReducer.avatar);
     const fetchThedata = () => {
         fetch(`https://gifted-kit-cow.cyclic.app/arts/${id}`, {
