@@ -24,6 +24,7 @@ const SingleProduct = () => {
             .then((res) => {
                 setData(res[0])
                 fetchTheComments(res[0]._id);
+                otherData(res[0].category);
             })
             .catch((err) => console.log(err))
     }
@@ -37,7 +38,6 @@ const SingleProduct = () => {
             .then((res) => res.json())
             .then((res) => setComments(res))
             .catch((err) => console.log(err))
-        otherData();
     }
     const [data, setData] = useState();
     const [otherArt, setOtherArt] = useState();
@@ -66,8 +66,8 @@ const SingleProduct = () => {
         //     .then((res) => setComments(res))
         //     .catch((err) => console.log(err))
     }
-    const otherData = () => {
-        const url = `https://gifted-kit-cow.cyclic.app/arts/all/?category=${data.category}`
+    const otherData = (category) => {
+        const url = `https://gifted-kit-cow.cyclic.app/arts/all/?category=${category}`
         fetch(url, {
             method: "GET",
             headers: {
@@ -86,7 +86,6 @@ const SingleProduct = () => {
     useEffect(() => {
         loader();
         fetchThedata();
-        otherData();
     }, [])
     const [loading, setLoading] = useState(true);
     return <Box bgColor={theme == "dark" ? "#15191E" : "#edf2f7"} color={theme == "dark" ? "white" : "black"}>
@@ -144,7 +143,7 @@ const SingleProduct = () => {
                             </Box>
                             <Grid templateColumns={"repeat(3,1fr)"} gap={"0.5rem"}>
                                 {otherArt?.length > 0 && otherArt.map((el) => {
-                                    return <GridItem >
+                                    return <GridItem key={el._id}>
                                         <LazyLoadImage src={el.image} className="div-img" alt={el.title} effect="blur" />
                                         <Text className="title">{el.title}</Text>
                                         <HStack className="opacity">
