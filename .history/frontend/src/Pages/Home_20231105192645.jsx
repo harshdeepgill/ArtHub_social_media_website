@@ -16,7 +16,7 @@ const Home = () => {
           <h1 className='head-text' style={{ marginTop: "3rem" }}>Create great designs</h1>
           <Text fontSize="xl">Turn ideas into outstanding designs with high-quality vectors, photos, videos, mockups, and more</Text>
         </div>
-        <Flex gap="4rem" mt="4rem" justify="center" pl="4rem" pr="4rem">
+        <Flex gap="4rem" mt="4rem" justify="space-around">
           <Box style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
             <Link to="/arts">
               <Image objectFit="cover" w="20rem" h="12rem" boxShadow='outline' src="https://firebasestorage.googleapis.com/v0/b/festive-crayon.appspot.com/o/Posts%2FAscendance%20of%20a%20Bookworm.png44370915-aedf-42a9-b51f-d132766b0191?alt=media&token=9835d4db-20cd-4be9-ad14-87b4d8528cc5" borderRadius="22px" _hover={{ outline: "3px solid coral", transform: "scale(1.05)", transition: "transform 0.3s ease-in-out" }} />
