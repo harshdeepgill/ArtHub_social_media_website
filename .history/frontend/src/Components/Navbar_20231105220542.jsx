@@ -48,7 +48,7 @@ const Navbar = () => {
             .then((res) => {
                 console.log(res.data);
                 setSearchResult(res.data);
-                localStorage.setItem("searchResult", JSON.stringify(res.data));
+                localStorage.setItem("searchResult", searchResult);
                 if (search.length > 0) {
                     navigate("/search");
                 }
@@ -75,15 +75,13 @@ const Navbar = () => {
         <Stack w={"90%"} m={"auto"} direction={"row"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} p={"1"}>
             <Image src="https://firebasestorage.googleapis.com/v0/b/festive-crayon.appspot.com/o/Posts%2FCraft_Ideas1-removebg.png029b92d9-75e9-48d1-b100-5b790f007a6c?alt=media&token=b496407b-289a-45d6-952d-9bb82d176b81" alt="logo" objectFit={"cover"} w={"10%"} _hover={{ cursor: "pointer" }} onClick={() => { navigate("/") }} />
             <InputGroup w={"40%"}>
-                <Input value={search} placeholder="Search" borderRadius={"8px"} focusBorderColor="#8FDBA7" outline={"unstyled"} borderColor={theme === "dark" ? "white" : "black"} _hover={{ borderColor: "none" }} onChange={(e) => {
+                <Input value={search} placeholder="Search" borderRadius={"7px"} focusBorderColor="#8FDBA7" outline={"unstyled"} borderColor={theme === "dark" ? "white" : "black"} _hover={{ borderColor: "none" }} onChange={(e) => {
                     if (e.target.value === "") {
                         setSearch(e.target.value);
-                        localStorage.setItem("searchKey", JSON.stringify(search));
                         navigate("/");
                     }
                     else {
                         setSearch(e.target.value);
-                        localStorage.setItem("searchKey", JSON.stringify(search));
                     }
                 }} /*style={{ outline: "2px solid blue" }}*/ />
                 <InputRightElement onClick={handleSearch}>

@@ -9,7 +9,7 @@ import ArtPage from "../Pages/Artpage";
 import SingleProduct from '../Pages/SingleProduct';
 import { PrivateRouter } from './PrivateRoute';
 import PricingPage from '../Pages/PricingPage';
-import Search from "../Pages/Search";
+import Search from "../Page/Search";
 
 const AllRoutes = () => {
   return (

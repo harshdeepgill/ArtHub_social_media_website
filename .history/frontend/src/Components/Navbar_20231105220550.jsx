@@ -48,7 +48,7 @@ const Navbar = () => {
             .then((res) => {
                 console.log(res.data);
                 setSearchResult(res.data);
-                localStorage.setItem("searchResult", JSON.stringify(res.data));
+                localStorage.setItem("searchResult", searchResult);
                 if (search.length > 0) {
                     navigate("/search");
                 }
@@ -78,12 +78,10 @@ const Navbar = () => {
                 <Input value={search} placeholder="Search" borderRadius={"8px"} focusBorderColor="#8FDBA7" outline={"unstyled"} borderColor={theme === "dark" ? "white" : "black"} _hover={{ borderColor: "none" }} onChange={(e) => {
                     if (e.target.value === "") {
                         setSearch(e.target.value);
-                        localStorage.setItem("searchKey", JSON.stringify(search));
                         navigate("/");
                     }
                     else {
                         setSearch(e.target.value);
-                        localStorage.setItem("searchKey", JSON.stringify(search));
                     }
                 }} /*style={{ outline: "2px solid blue" }}*/ />
                 <InputRightElement onClick={handleSearch}>

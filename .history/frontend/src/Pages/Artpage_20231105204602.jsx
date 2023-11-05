@@ -30,7 +30,7 @@ const ArtPage = () => {
             }
         })
             .then((res) => res.json())
-            .then((res) => { console.log("artpage data :", res); setData(res.reverse()) })
+            .then((res) => setData(res.reverse()))
             .catch((err) => console.log(err))
     }
     const renderData1 = () => {
