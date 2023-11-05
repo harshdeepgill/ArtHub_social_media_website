@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <>
-      <HERO id='hero' style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded", fontFamily: "Nunito" }}>
+      <HERO id='hero' style={{ height: "32rem", backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded", fontFamily: "Nunito" }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem", color: `${theme}` === "dark" ? "white" : "black", paddingTop: "2rem" }}>
           <h1 className='head-text' style={{ marginTop: "3rem" }}>Create great designs</h1>
           <Text fontSize="xl">Turn ideas into outstanding designs with high-quality vectors, photos, videos, mockups, and more</Text>
@@ -87,15 +87,6 @@ gap: 3rem;
 
 const HERO = styled.section`
 
-height: 28rem;
-
-@media screen and (max-width: 1260px) {
-  height: 45rem;
-}
-
-@media screen and (max-width: 650px) {
-  height: 77rem;
-}
 `;
 
 export default Home
