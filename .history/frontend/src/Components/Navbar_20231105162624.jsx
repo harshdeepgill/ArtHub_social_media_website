@@ -47,7 +47,7 @@ const Navbar = () => {
 
     const handleSearch = () => {
         console.log("handle search invoked");
-        let searchData = axios.get(`https://gifted-kit-cow.cyclic.app/arts/search?title=${search}`);
+        let searchData = axios.get(`https://gifted-kit-cow.cyclic.app/arts/search?title=${search}`)
     }
 
     useEffect(() => {
