@@ -52,7 +52,7 @@ const Footer = () => {
   }
 
   return (
-    <div style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#edf2f7" }}>
+    <div style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#edf2f7", marginTop: "2rem" }}>
       <Grid
         // bgColor="#e6dcc8"
         // bgColor="#edf2f7"
@@ -62,34 +62,34 @@ const Footer = () => {
       >
         <GridItem mt={4}>
           <VStack spacing={3}>
-            <Heading fontSize="1.2rem" mb={3} style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }}>Company</Heading>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>About us</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Blog</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Careers</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Contact us</Text>
+            <Heading fontSize="1.2rem" mb={3}>Company</Heading>
+            <Link to="/about"><Text fontSize="md" color={"blue.400"}>About us</Text></Link>
+            <Text fontSize="md" color={"blue.400"}>Blog</Text>
+            <Text fontSize="md" color={"blue.400"}>Careers</Text>
+            <Link to="/contact"><Text fontSize="md" color={"blue.400"}>Contact us</Text></Link>
           </VStack>
         </GridItem>
         <GridItem mt={4}>
           <VStack spacing={3}>
-            <Heading fontSize="1.2rem" mb={3} style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }}>Social</Heading>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Help Center</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Facebook</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>youtube</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Community Guidelines</Text>
+            <Heading fontSize="1.2rem" mb={3}>Social</Heading>
+            <Text fontSize="md" color={"blue.400"}>Help Center</Text>
+            <Text fontSize="md" color={"blue.400"}>Facebook</Text>
+            <Text fontSize="md" color={"blue.400"}>youtube</Text>
+            <Text fontSize="md" color={"blue.400"}>Community Guidelines</Text>
           </VStack>
         </GridItem>
         <GridItem mt={4}>
           <VStack spacing={3}>
-            <Heading fontSize="1.2rem" mb={3} style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }}>Legal</Heading>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Cookies Policy</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Privacy Policy</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Terms and services</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Press Releases</Text>
+            <Heading fontSize="1.2rem" mb={3}>Legal</Heading>
+            <Text fontSize="md" color={"blue.400"}>Cookies Policy</Text>
+            <Text fontSize="md" color={"blue.400"}>Privacy Policy</Text>
+            <Text fontSize="md" color={"blue.400"}>Terms and services</Text>
+            <Text fontSize="md" color={"blue.400"}>Press Releases</Text>
           </VStack>
         </GridItem>
         <GridItem mt={4}>
           <VStack spacing={3}>
-            <Heading fontSize="1.2rem" mb={3} style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }}>Install App</Heading>
+            <Heading fontSize="1.2rem" mb={3}>Install App</Heading>
             <Image src="https://trippy-time.vercel.app/static/media/google-play.a642dda447fd0d634216.png" w="10rem"></Image>
             <Image src='https://trippy-time.vercel.app/static/media/appstore.991016dd0c414dd7de02.png' w="10rem"></Image>
           </VStack>
@@ -102,28 +102,28 @@ const Footer = () => {
             <HStack spacing={"2rem"} className='footer-logo-section' justifyContent={{ sm: "center" }}>
               <Image src="https://firebasestorage.googleapis.com/v0/b/festive-crayon.appspot.com/o/Posts%2FCraft_Ideas1-removebg.png029b92d9-75e9-48d1-b100-5b790f007a6c?alt=media&token=b496407b-289a-45d6-952d-9bb82d176b81" w="6rem"></Image>
               <HStack spacing={"1rem"}>
-                <FaCopyright style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }} />
-                <Text fontSize={"md"} style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }}>2023 All rights reserved.</Text>
+                <FaCopyright />
+                <Text fontSize={"md"}>2023 All rights reserved.</Text>
               </HStack>
             </HStack>
           </FL>
           <Spacer></Spacer>
           <SL>
             <HStack spacing={6} className='social-logo-section' fontSize="2xl">
-              <FaTwitter style={{ ...iconStyle, ...(theme === "dark" ? { color: "white" } : { color: "black" }), ...(isTwitterHovered ? twitterIconStyle : {}) }}
+              <FaTwitter style={{ ...iconStyle, ...(isTwitterHovered ? twitterIconStyle : {}) }}
                 onMouseEnter={() => setIsTwitterHovered(true)}
                 onMouseLeave={() => setIsTwitterHovered(false)}
               />
-              <FaYoutube style={{ ...iconStyle, ...(theme === "dark" ? { color: "white" } : { color: "black" }), ...(isYoutubeHovered ? youtubeIconStyle : {}) }}
+              <FaYoutube style={{ ...iconStyle, ...(isYoutubeHovered ? youtubeIconStyle : {}) }}
                 onMouseEnter={() => setIsYoutubeHovered(true)}
                 onMouseLeave={() => setIsYoutubeHovered(false)} />
-              <FaInstagram style={{ ...iconStyle, ...(theme === "dark" ? { color: "white" } : { color: "black" }), ...(isInstagramHovered ? instagramIconStyle : {}) }}
+              <FaInstagram style={{ ...iconStyle, ...(isInstagramHovered ? instagramIconStyle : {}) }}
                 onMouseEnter={() => setIsInstagramHovered(true)}
                 onMouseLeave={() => setIsInstagramHovered(false)} />
-              <FaWhatsapp style={{ ...iconStyle, ...(theme === "dark" ? { color: "white" } : { color: "black" }), ...(isWhatsappHovered ? whatsappIconStyle : {}) }}
+              <FaWhatsapp style={{ ...iconStyle, ...(isWhatsappHovered ? whatsappIconStyle : {}) }}
                 onMouseEnter={() => setIsWhatsappHovered(true)}
                 onMouseLeave={() => setIsWhatsappHovered(false)} />
-              <FaGithub style={{ ...iconStyle, ...(theme === "dark" ? { color: "white" } : { color: "black" }), ...(isGithubHovered ? githubIconStyle : {}) }}
+              <FaGithub style={{ ...iconStyle, ...(isGithubHovered ? githubIconStyle : {}) }}
                 onMouseEnter={() => setIsGithubHovered(true)}
                 onMouseLeave={() => setIsGithubHovered(false)} />
             </HStack>

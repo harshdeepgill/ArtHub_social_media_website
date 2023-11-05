@@ -6,6 +6,6 @@ export const logout = (dispatch) => {
   dispatch({ type: "LOGOUT" });
 }
 
-export const themeChange = (dispatch) => {
+export const theme = (dispatch) => {
   dispatch({ type: "THEME" });
 }

@@ -30,6 +30,10 @@ const Navbar = () => {
         logout(dispatch);
     }
 
+    useEffect(() => {
+
+    }, [theme])
+
     return <Box w={"100%"} bgColor={theme === "dark" ? "#15191E" : "#f0eded"} color={theme === "dark" ? "white" : "black"}>
         <Stack w={"90%"} m={"auto"} direction={"row"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} p={"1"}>
             {/* <ChakraLink to="/" as={RouteLink}> */}

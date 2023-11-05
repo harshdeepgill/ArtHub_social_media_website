@@ -16,10 +16,6 @@ const authReducer = (state = initialState, { type, payload }) => {
       localStorage.removeItem("token");
       return initialState;
     }
-    case "THEME":
-      {
-        return { ...state, theme: state.theme === "dark" ? "light" : "dark" }
-      }
     default: return state;
   }
 }

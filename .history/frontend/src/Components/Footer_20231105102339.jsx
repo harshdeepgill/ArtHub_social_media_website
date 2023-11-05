@@ -52,7 +52,7 @@ const Footer = () => {
   }
 
   return (
-    <div style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#edf2f7" }}>
+    <div style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#edf2f7", marginTop: "2rem" }}>
       <Grid
         // bgColor="#e6dcc8"
         // bgColor="#edf2f7"
@@ -63,28 +63,28 @@ const Footer = () => {
         <GridItem mt={4}>
           <VStack spacing={3}>
             <Heading fontSize="1.2rem" mb={3} style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }}>Company</Heading>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>About us</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Blog</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Careers</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Contact us</Text>
+            <Link to="/about"><Text fontSize="md" color={"blue.400"}>About us</Text></Link>
+            <Text fontSize="md" color={"blue.400"}>Blog</Text>
+            <Text fontSize="md" color={"blue.400"}>Careers</Text>
+            <Link to="/contact"><Text fontSize="md" color={"blue.400"}>Contact us</Text></Link>
           </VStack>
         </GridItem>
         <GridItem mt={4}>
           <VStack spacing={3}>
             <Heading fontSize="1.2rem" mb={3} style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }}>Social</Heading>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Help Center</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Facebook</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>youtube</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Community Guidelines</Text>
+            <Text fontSize="md" color={"blue.400"}>Help Center</Text>
+            <Text fontSize="md" color={"blue.400"}>Facebook</Text>
+            <Text fontSize="md" color={"blue.400"}>youtube</Text>
+            <Text fontSize="md" color={"blue.400"}>Community Guidelines</Text>
           </VStack>
         </GridItem>
         <GridItem mt={4}>
           <VStack spacing={3}>
             <Heading fontSize="1.2rem" mb={3} style={{ ...(theme === "dark" ? { color: "white" } : { color: "black" }) }}>Legal</Heading>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Cookies Policy</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Privacy Policy</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Terms and services</Text>
-            <Text fontSize="md" color={"blue.400"} style={{ ...(theme === "dark" ? { color: "coral" } : { color: "blue" }) }}>Press Releases</Text>
+            <Text fontSize="md" color={"blue.400"}>Cookies Policy</Text>
+            <Text fontSize="md" color={"blue.400"}>Privacy Policy</Text>
+            <Text fontSize="md" color={"blue.400"}>Terms and services</Text>
+            <Text fontSize="md" color={"blue.400"}>Press Releases</Text>
           </VStack>
         </GridItem>
         <GridItem mt={4}>
