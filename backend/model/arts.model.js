@@ -9,7 +9,8 @@ const artSchema = mongoose.Schema({
     premium: Boolean,
     category: String,
     userID: String,
-    username: String
+    username: String,
+    useravatar: String
 },
     { versionKey: false }
 )

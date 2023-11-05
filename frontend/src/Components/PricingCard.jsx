@@ -83,7 +83,8 @@ export default function PricingCard({type,price,MonetiztionFees,storage,AccessMo
 //     cursor: pointer;
 // }
 // .priceCarddetails{
-   
+
+
 //     box-sizing: border-box;
 //     text-align: center;
 //     padding: 10px;
@@ -98,8 +99,6 @@ export default function PricingCard({type,price,MonetiztionFees,storage,AccessMo
 // const DIV=styled.div`
 // .priceCard:hover{
 //     transform: scale(1.1);
-//     box-shadow: rgba(194, 192, 192, 0.35) 0px 5px 15px;
-    
-   
+//     box-shadow: rgba(194, 192, 192, 0.35) 0px 5px 15px;   
 // 
 //`}

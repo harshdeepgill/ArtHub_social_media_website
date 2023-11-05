@@ -23,6 +23,8 @@ import axios from 'axios'
 const AddPost = () => {
 
   const [tag, setTag] = useState("");
+  const userID = useSelector((store) => store.authReducer.userID);
+  const username = useSelector((store) => store.authReducer.username);
 
   const dispatch = useDispatch();
 
@@ -79,7 +81,8 @@ const AddPost = () => {
       premium,
       views: 0,
       favorite: 0,
-      // userID: "6544ed8e677444857d9d6228"
+      userID: localStorage.getItem("userId") || "anonymous"
+
     }, {
       headers: {
         "Content-type": "application/json",
@@ -97,7 +100,7 @@ const AddPost = () => {
 
   return (
     <Box mx="auto" w="95%">
-      <HStack mx="auto" direction={"row"} w="95%">
+      <HStack mx="auto" justifyContent="space-between" direction={"row"} w="75%">
         <form onSubmit={handleSubmit}>
           <FormControl style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
             <FormLabel>Title</FormLabel>
