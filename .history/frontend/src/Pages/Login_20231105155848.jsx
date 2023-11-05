@@ -100,7 +100,7 @@ const Login = () => {
       .then((res) => {
         console.log(res.data);
         localStorage.setItem("token", res.data.token);
-        localStorage.setItem("userID", res.data.userId);
+        localStorage.setItem("userID", res.data.userID);
         localStorage.setItem("avatar", res.data.avatar);
         localStorage.setItem("userName", res.data.username);
         localStorage.setItem("subscription", res.data.subscription);

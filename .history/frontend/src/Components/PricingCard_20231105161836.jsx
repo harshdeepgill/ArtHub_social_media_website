@@ -17,7 +17,7 @@ export default function PricingCard({ type, price, MonetiztionFees, storage, Acc
             <PriceCard className='priceCard'>
                 <h2>{type}</h2>
                 <h4>${price}</h4>
-                <button>{price === "0" ? "Get Started" : "Upgrade"}</button>
+                <button>{price == "0" ? "Get Started" : "Upgrade"}</button>
 
                 <div className='priceCardDetails'>
                     <p>{MonetiztionFees} Monetization Fee</p>

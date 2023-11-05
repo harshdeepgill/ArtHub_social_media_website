@@ -17,9 +17,9 @@ export default function PricingCard({ type, price, MonetiztionFees, storage, Acc
             <PriceCard className='priceCard'>
                 <h2>{type}</h2>
                 <h4>${price}</h4>
-                <button>{price === "0" ? "Get Started" : "Upgrade"}</button>
+                <button>{price == "0" ? "Get Started" : "Upgrade"}</button>
 
-                <div className='priceCardDetails'>
+                <div className='priceCarddetails'>
                     <p>{MonetiztionFees} Monetization Fee</p>
                     <p>{storage}GB storage</p>
                     <p>{commissionFees}% Commission Fee</p>
@@ -56,7 +56,7 @@ button{
 button:hover{
     cursor: pointer;
 }
-.priceCardDetails{
+.priceCarddetails{
    
     box-sizing: border-box;
     text-align: center;

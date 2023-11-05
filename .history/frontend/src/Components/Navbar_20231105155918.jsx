@@ -5,22 +5,16 @@ import { SearchIcon } from "@chakra-ui/icons";
 import { BsMoonStars, BsSun } from "react-icons/bs"
 import { useDispatch, useSelector } from "react-redux";
 import { logout, themeChange } from "../Redux/action";
-import axios from "axios";
 
 const Navbar = () => {
     const [search, setSearch] = useState("");
 
     const theme = useSelector((store) => store.authReducer.theme);
     // const avatar = useSelector((store) => store.authReducer.avatar);
-    const avatar = localStorage.getItem("avatar");
     // const username = useSelector((store) => store.authReducer.userName);
-    const username = localStorage.getItem("userName");
     // const subscription = useSelector((store) => store.authReducer.subscription);
     const subscription = localStorage.getItem("subscription");
-    // const isAuth = localStorage.getItem("token") ? true : false;
-    const isAuth = useSelector((store) => store.authReducer.isAuth);
-
-
+    // const isAuth = useSelector((store) => store.authReducer.isAuth);
 
     const navigate = useNavigate();
     // const [isAuth, setIsAuth] = useState(false);
@@ -45,36 +39,12 @@ const Navbar = () => {
         logout(dispatch);
     }
 
-    const handleSearch = () => {
-        console.log("handle search invoked");
-        let searchData = axios.get(`https://gifted-kit-cow.cyclic.app/arts/search?title=${search}`);
-    }
-
-    useEffect(() => {
-        const debounceTimer = setTimeout(() => {
-            handleSearch();
-        }, 1000);
-
-        return () => {
-            clearTimeout(debounceTimer);
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [search]);
-
     return <Box w={"100%"} bgColor={theme === "dark" ? "#15191E" : "#edf2f7"} color={theme === "dark" ? "white" : "black"}>
         <Stack w={"90%"} m={"auto"} direction={"row"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} p={"1"}>
             <Image src="https://firebasestorage.googleapis.com/v0/b/festive-crayon.appspot.com/o/Posts%2FCraft_Ideas1-removebg.png029b92d9-75e9-48d1-b100-5b790f007a6c?alt=media&token=b496407b-289a-45d6-952d-9bb82d176b81" alt="logo" objectFit={"cover"} w={"10%"} _hover={{ cursor: "pointer" }} onClick={() => { navigate("/") }} />
             <InputGroup w={"50%"}>
-                <Input value={search} placeholder="Search" borderRadius={"none"} focusBorderColor="#8FDBA7" borderColor={theme === "dark" ? "white" : "black"} _hover={{ borderColor: "none" }} onChange={(e) => {
-                    if (e.target.value === "") {
-                        setSearch(e.target.value);
-                        navigate("/");
-                    }
-                    else {
-                        setSearch(e.target.value);
-                    }
-                }} />
-                <InputRightElement onClick={handleSearch}>
+                <Input value={search} placeholder="Search" borderRadius={"none"} focusBorderColor="#8FDBA7" borderColor={theme === "dark" ? "white" : "black"} _hover={{ borderColor: "none" }} onChange={(e) => setSearch(e.target.value)} />
+                <InputRightElement >
                     <IconButton icon={<SearchIcon />} size={"sm"} p={"1"} bgColor={"#8FDBA7"} _hover={{ bgColor: "none" }} />
                 </InputRightElement>
             </InputGroup>

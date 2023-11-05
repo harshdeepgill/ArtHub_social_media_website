@@ -44,30 +44,27 @@ const SingleProduct = () => {
     const [commentSection, setcommentSection] = useState(false);
     const [commentInput, setCommentInput] = useState("");
     const [comments, setComments] = useState();
-    console.log(comments);
     const postComment = () => {
         const payload = {
             body: commentInput,
             postId: data._id,
-            userID: localStorage.getItem("userID"),
+            userID: userID,
             username: userName,
             userAvatar: avatar,
             time: Date()
         }
-        fetch(`https://gifted-kit-cow.cyclic.app/comments/${data._id}/create`, {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${localStorage.getItem("token")}`,
-                "Content-type": "application/json"
-            },
-            body: JSON.stringify(payload)
-        })
-            .then((res) => res.json())
-            .then((res) => {
-                setComments(res)
-                setCommentInput("");
-            })
-            .catch((err) => console.log(err))
+        console.log(payload);
+        // fetch(`https://gifted-kit-cow.cyclic.app/comments/${data._id}/create`, {
+        //     method: "POST",
+        //     headers: {
+        //         "Authorization": `Bearer ${localStorage.getItem("token")}`,
+        //         "Content-type": "application/json"
+        //     },
+        //     body: JSON.stringify(payload)
+        // })
+        //     .then((res) => res.json())
+        //     .then((res) => setComments(res))
+        //     .catch((err) => console.log(err))
     }
     const otherData = (category) => {
         const url = `https://gifted-kit-cow.cyclic.app/arts/all/?category=${category}`
@@ -98,14 +95,14 @@ const SingleProduct = () => {
                 <Image src="https://i.ibb.co/68zbKqX/output-onlinegiftools.gif" w={"10%"} />
             </Flex> :
             <Box w={"90%"} m={"auto"} p={"1rem"}>
-                <Stack display={"flex"} direction={["column", "column", "row", "row", "row"]} justifyContent={"center"}>
-                    <Box w={["90%", "90%", "60%", "60%", "60%"]} m={["auto", "auto", "auto", "1rem", "1rem"]} position={"relative"} justifyContent={"center"}>
+                <Stack display={"flex"} direction={["column", "column", "column", "row", "row"]} justifyContent={"center"}>
+                    <Box w={"60%"} mb={"1rem"} position={"relative"} justifyContent={"center"}>
                         <LazyLoadImage src={data.image} effect="blur" alt={data.title} />
                         {data.premium === true && <Text position={"absolute"} letterSpacing={"1px"} top={0} left={0} bgColor={"#FF7F50"}>PREMIUM</Text>}
                         <Stack display={"flex"} w={"100%"} mt={"1rem"} direction={"row"} justifyContent={"space-between"}>
                             <HStack>
                                 <Button leftIcon={<AiOutlineStar />} bgColor={"#FF7F50"} color={"white"} _hover={{ bgColor: "none" }} _active={{ transform: "scale(0.95)" }}>Add to Favourites</Button>
-                                <Button leftIcon={<BiCommentDetail />} bgColor={"#8FDBA7"} _hover={{ bgColor: "none" }} onClick={() => setcommentSection(!commentSection)} _active={{ transform: "scale(0.95)" }}>Comments</Button>
+                                <Button leftIcon={<BiCommentDetail />} bgColor={"#8FDBA7"} _hover={{ bgColor: "none" }} onClick={() => setcommentSection(!commentSection)} _active={{ transform: "scale(0.95)" }}>Comments</Button >
                             </HStack>
                             <HStack>
                                 <ChakraLink href={data.image} rel="norefferer noopener" target="_blank" >
@@ -139,28 +136,8 @@ const SingleProduct = () => {
                                 return <Button variant='solid' backgroundColor={"#8FDBA7"} ml={"10px"} key={el} _hover={{ color: "none" }}>{el}</Button>
                             })}
                         </Box>
-                        <Box m={"1rem"}>
-                            {comments?.length == 0 && <Box h={"20vh"} display={"flex"} alignItems={"center"} justifyContent={"center"} >
-                                <Text textAlign={"center"} fontSize={"xl"} fontWeight={500}>No comments are present, be first to comment on this post.</Text>
-                            </Box>
-                            }
-                            {comments.length > 0 && comments.map((el) => {
-                                return <Box w={"100%"} m={"3px"} p={"5"} border={"1px solid"} borderColor={theme == "dark" ? "white" : "black"} borderRadius={"10px"} >
-                                    <Box w={"100%"} display={"flex"} m={"auto"} gap={"1rem"} alignItems={"center"}>
-                                        <Image src={el.userAvatar} w={"10%"} h={"10%"} />
-                                        <VStack w={"50%"} align={"flex-start"}>
-                                            <Text>{el.username}</Text>
-                                            <Text>{el.body}</Text>
-                                        </VStack>
-                                        <Text w={"40%"}>
-                                            Commented at:- {el.time}
-                                        </Text>
-                                    </Box>
-                                </Box>
-                            })}
-                        </Box>
                     </Box>
-                    <Box w={["90%", "90%", "40%", "40%", "40%"]} >
+                    <Box w={"40%"} >
                         <Box p={"5"}>
                             <Box display={"flex"} alignItems={"center"} gap={"1"}>
                                 <Text fontSize={"md"} fontWeight={500}>More in this category</Text>
