@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Explor } from '../Components/Explor';
 import Hero from '../Components/Hero';
 
-import { Text, Image, VStack, Box, Flex } from "@chakra-ui/react";
+// import { Text, Image, VStack, Box, Flex } from "@chakra-ui/react";
 import { useSelector } from 'react-redux';
 
 const Home = () => {
@@ -13,7 +13,6 @@ const Home = () => {
 
   return (
     <section id='hero' style={{ height: "32rem", backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded", fontFamily: "Nunito" }}>
-      <Link to={"/arts"}>Arts</Link>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem", color: `${theme}` === "dark" ? "white" : "black" }}>
         <h1 className='head-text' style={{ marginTop: "3rem" }}>Create great designs</h1>
         <Text fontSize="xl">Turn ideas into outstanding designs with high-quality vectors, photos, videos, mockups, and more</Text>
@@ -39,6 +38,9 @@ const Home = () => {
           <Text fontSize="xl" style={{ color: `${theme}` === "dark" ? "white" : "black" }}>Food Art</Text>
         </Box>
       </Flex>
+      <div style={{ display: "flex", gap: "7px", fontSize: "20px",justifyContent:"center" }}>
+        <Link to={"/arts"} style={{ color: "#FF7F50", textDecoration: "underline" }}>See our Arts</Link>
+      </div>
     </section>
   )
 }

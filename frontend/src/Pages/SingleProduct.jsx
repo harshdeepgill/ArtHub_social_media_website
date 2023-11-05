@@ -95,7 +95,7 @@ const SingleProduct = () => {
     return <Box bgColor={theme === "dark" ? "#15191E" : "#edf2f7"} color={theme === "dark" ? "white" : "black"}>
         {!comments ?
             <Flex height="80vh" align="center" justify="center" >
-                <Image src="https://i.ibb.co/68zbKqX/output-onlinegiftools.gif" w={"10%"} />
+                <Image src="https://i.ibb.co/68zbKqX/output-onlinegiftools.gif" w={"10%"} h={"10%"} />
             </Flex> :
             <Box w={"90%"} m={"auto"} p={"1rem"}>
                 <Stack display={"flex"} direction={["column", "column", "row", "row", "row"]} justifyContent={"center"}>
