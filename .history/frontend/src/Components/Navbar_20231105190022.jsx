@@ -7,8 +7,6 @@ import { FaPlus } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, themeChange } from "../Redux/action";
 import axios from "axios";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [search, setSearch] = useState("");
@@ -82,7 +80,7 @@ const Navbar = () => {
             <Box display={"flex"} justifyContent={"space-around"} gap="1.5rem" alignItems={"center"}>
                 <Icon as={theme === "dark" ? BsSun : BsMoonStars} fontSize={"xl"} onClick={() => changeTheme(dispatch)} />
                 <ChakraLink to="/arts" as={RouteLink} style={{ textDecoration: "none", color: theme === "dark" ? "coral" : "blue" }} _hover={{ color: "#8FDBA7" }} fontSize="2xl">arts</ChakraLink>
-                /*{
+                {/* {
                     subscription === "basic" ? (
                         <Button bgColor="#FF7F50" color={"white"} _hover={{ backgroundColor: "#91D9A8", color: "coral" }} onClick={() => { navigate("/plans") }}>
                             Subscribe
@@ -92,14 +90,14 @@ const Navbar = () => {
                             Upgrade
                         </Button>
                     ) : ""
-                } */
+                } */}
                 {
                     isAuth ?
                         (
                             <HStack spacing="1rem">
                                 <Image src={avatar} borderRadius='full' boxSize='55px'></Image>
                                 <Box fontSize="lg">{username}</Box>
-                                <ICONBOX><Link to="/upload"><FaPlus fontSize="1.5rem" /></Link></ICONBOX>
+                                <FaPlus fontSize="1.5rem" style={{}} />
                                 {
                                     subscription === "basic" ? (
                                         <Button bgColor="#FF7F50" color={"white"} _hover={{ backgroundColor: "#91D9A8", color: "coral" }} onClick={() => { navigate("/plans") }}>
@@ -119,11 +117,4 @@ const Navbar = () => {
         </Stack>
     </Box>
 }
-
-const ICONBOX = styled.div`
-&:hover{
-    cursor: pointer;
-}
-`;
-
 export default Navbar;
