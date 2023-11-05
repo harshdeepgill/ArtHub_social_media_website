@@ -7,8 +7,6 @@ import { FaPlus } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, themeChange } from "../Redux/action";
 import axios from "axios";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [search, setSearch] = useState("");
@@ -99,7 +97,7 @@ const Navbar = () => {
                             <HStack spacing="1rem">
                                 <Image src={avatar} borderRadius='full' boxSize='55px'></Image>
                                 <Box fontSize="lg">{username}</Box>
-                                <ICONBOX><Link to="/upload"><FaPlus fontSize="1.5rem" /></Link></ICONBOX>
+                                <ICONBOX><FaPlus fontSize="1.5rem" style={{}} /></ICONBOX>
                                 {
                                     subscription === "basic" ? (
                                         <Button bgColor="#FF7F50" color={"white"} _hover={{ backgroundColor: "#91D9A8", color: "coral" }} onClick={() => { navigate("/plans") }}>
@@ -120,10 +118,6 @@ const Navbar = () => {
     </Box>
 }
 
-const ICONBOX = styled.div`
-&:hover{
-    cursor: pointer;
-}
-`;
+const ICONBOX = styled.div``;
 
 export default Navbar;
