@@ -1,7 +1,9 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components'
 // import PricingCard from '../Components/PricingCard'
+
+
 
 const basic = {
   type: "Basic",
@@ -55,6 +57,7 @@ export default function PricingPage() {
           return <PricingCard {...ele} />
         })}
       </PriceContainer> */}
+
 
       <div className='row row-cols-1 row-cols-md-3 my-5 w-75 m-auto'>
         <div className='col '>
