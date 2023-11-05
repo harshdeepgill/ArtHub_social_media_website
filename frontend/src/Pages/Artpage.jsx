@@ -11,7 +11,14 @@ const ArtPage = () => {
         setCurr(e.target.value)
     }
     const fetchTheData = () => {
-        fetch(`https://gifted-kit-cow.cyclic.app/arts/${curr}`, {
+        let url;
+        if (curr === "") {
+            url = "https://gifted-kit-cow.cyclic.app/arts"
+        }
+        else {
+            url = `https://gifted-kit-cow.cyclic.app/arts/all/cate=${curr}`
+        }
+        fetch(url, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhcmFzIiwiaWF0IjoxNjk5MTA5MDAzLCJleHAiOjE2OTk3MTM4MDN9.J6J2TNTFERx0Cs1PUpuQUSjtRU4mQVYLLd6Coy7wXuY`
@@ -38,7 +45,7 @@ const ArtPage = () => {
     }
     const renderData2 = () => {
         const ele = [];
-        for (let i = 1; i < data.length - 1; i += 4) {
+        for (let i = 1; i < data.length; i += 4) {
             ele.push(<Box key={data[i]._id} className={`div`} onClick={() => handleView(data[i]._id, data[i].views)}>
                 <Image src={data[i].image} className="div-img" />
                 <Text className="title">{data[i].title}</Text>
@@ -52,7 +59,7 @@ const ArtPage = () => {
     }
     const renderData3 = () => {
         const ele = [];
-        for (let i = 2; i < data.length - 2; i += 4) {
+        for (let i = 2; i < data.length; i += 4) {
             ele.push(<Box key={data[i]._id} className={`div`} onClick={() => handleView(data[i]._id, data[i].views)}>
                 <Image src={data[i].image} className="div-img" />
                 <Text className="title">{data[i].title}</Text>
@@ -66,7 +73,7 @@ const ArtPage = () => {
     }
     const renderData4 = () => {
         const ele = [];
-        for (let i = 3; i < data.length - 3; i += 4) {
+        for (let i = 3; i < data.length; i += 4) {
             ele.push(<Box key={data[i]._id} className={`div`} onClick={() => handleView(data[i]._id, data[i].views)}>
                 <Image src={data[i].image} className="div-img" />
                 <Text className="title">{data[i].title}</Text>
