@@ -26,9 +26,9 @@ img{
     transition: 0.5s;
     
 }
-img:hover{
+/* img:hover{
     transform: scale(1.1);
-}
+} */
 .title{
     height: 50px;
     padding: 6px;
