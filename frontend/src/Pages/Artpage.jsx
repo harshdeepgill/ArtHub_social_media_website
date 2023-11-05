@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { ViewIcon, StarIcon } from "@chakra-ui/icons"
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 const ArtPage = () => {
     const [curr, setCurr] = useState("");
     const [data, setData] = useState();
     const navigate = useNavigate();
+    const theme = useSelector(store => store.authReducer.theme);
     const handleClick = (e) => {
         setCurr(e.target.value)
     }
@@ -16,7 +18,7 @@ const ArtPage = () => {
             url = "https://gifted-kit-cow.cyclic.app/arts"
         }
         else {
-            url = `https://gifted-kit-cow.cyclic.app/arts/all/cate=${curr}`
+            url = `https://gifted-kit-cow.cyclic.app/arts/all/?category=${curr}`
         }
         fetch(url, {
             method: "GET",
@@ -28,7 +30,6 @@ const ArtPage = () => {
             .then((res) => setData(res.reverse()))
             .catch((err) => console.log(err))
     }
-    console.log(data);
     const renderData1 = () => {
         const ele = []
         for (let i = 0; i < data.length; i += 4) {
@@ -114,8 +115,8 @@ const ArtPage = () => {
             <Image src="https://cdn.slidevision.io/www/14304000000085015_loader.gif" w={"10%"} />
         </Flex>
     }
-    return <Box w={"100%"} bgColor={"#15191E"} color={"white"}>
-        <Box w={"90%"} m={"auto"}>
+    return <Box w={"100%"} bgColor={theme == "dark" ? "#15191E" : "#efefef"} color={theme == "dark" ? "white" : "black"}>
+        <Box w={"90%"} m={"auto"} padding={"1rem"}>
             <Grid w={"100%"} m={"auto"} templateColumns={["repeat(2,1fr)", "repeat(3,1fr)", "repeat(5,1fr)", "repeat(7,1fr)", "repeat(9,1fr)"]} columnGap={"1rem"} rowGap={"0.5rem"} templateRows={"auto"} p={"1rem"}>
                 <GridItem>
                     <Button w={"100%"} variant={"outline"} value={""} borderColor={curr == "" ? "#00ff51" : "#ffb89e"} _hover={{ opacity: 0.8 }} colorScheme={"#15191E"} onClick={handleClick} borderRadius={"5px"} _active={{ color: "none" }}>For You</Button>

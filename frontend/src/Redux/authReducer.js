@@ -3,7 +3,8 @@ const initialState = {
   userName: "",
   avatar: "",
   subscription: "",
-  token: ""
+  token: "",
+  theme: localStorage.getItem("theme") || "dark"
 }
 
 const authReducer = (state = initialState, { type, payload }) => {
@@ -14,6 +15,11 @@ const authReducer = (state = initialState, { type, payload }) => {
     case "LOGOUT": {
       localStorage.removeItem("token");
       return initialState;
+    }
+    case "TOGGLETHEME": {
+      const val = state.theme == "dark" ? "light" : "dark";
+      localStorage.setItem("theme", val);
+      return { ...state, theme: val };
     }
     default: return state;
   }

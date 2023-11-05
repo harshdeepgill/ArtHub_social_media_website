@@ -5,3 +5,7 @@ export const login = (dispatch, obj) => {
 export const logout = (dispatch) => {
   dispatch({ type: "LOGOUT" });
 }
+
+export const toggletheme = (dispatch) => {
+  dispatch({ type: "TOGGLETHEME" });
+}
