@@ -21,7 +21,7 @@ const Hero = () => {
 export default Hero
 
 const DIV = styled.div`
-    height: 25rem;
+    height: 70vh;
     width: 100%;
     text-align: center;
     display: flex;
@@ -30,15 +30,17 @@ const DIV = styled.div`
     background-color: ${(props) => props.theme === "dark" ? "#15191E" : "#edf2f7"};
 
     &> div{
+        
+
         &> h1{
-        font-size: 3.4rem;
-        text-transform: uppercase;
-        letter-spacing: 3px;
+        font - size: 3.4rem;
+        text - transform: uppercase;
+        letter - spacing: 3px;
     }
     
         &> p{
-        letter-spacing: 1px;
-        font-size: 1.1rem;
+        letter - spacing: 1px;
+        font - size: 1.1rem;
     }
 }
 `;

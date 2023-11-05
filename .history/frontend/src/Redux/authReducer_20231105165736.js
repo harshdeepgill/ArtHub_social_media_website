@@ -20,7 +20,6 @@ const authReducer = (state = initialState, { type, payload }) => {
       localStorage.removeItem("avatar");
       localStorage.removeItem("userName");
       localStorage.removeItem("subscription");
-      localStorage.setItem("isAuth", false);
       return initialState;
     }
     case "TOGGLETHEME": {

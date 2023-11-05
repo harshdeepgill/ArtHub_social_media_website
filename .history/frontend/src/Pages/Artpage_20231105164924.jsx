@@ -144,7 +144,7 @@ const ArtPage = () => {
                 </GridItem>
             </Grid>
             {!data && <Flex height="80vh" align="center" justify="center">
-                <Image src="https://i.ibb.co/68zbKqX/output-onlinegiftools.gif" w={"10%"} h={"10%"} />
+                <Image src="https://i.ibb.co/68zbKqX/output-onlinegiftools.gif" w={"10%"} />
             </Flex>}
             {data?.length === 0 && <Box>
                 <Heading textAlign={"center"}>There is no data present.</Heading>
