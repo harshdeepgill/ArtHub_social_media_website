@@ -100,8 +100,8 @@ const Login = () => {
       .then((res) => {
         console.log(res.data);
         localStorage.setItem("token", res.data.token);
-        localStorage.setItem("userID", res.data.userID);
-        login(dispatch, { username: res.data.username, avatar: res.data.avatar, subscription: res.data.subscription, userID: res.data.userID });
+        localStorage.setItem("userID", res.data.userId);
+        login(dispatch, { username: res.data.username, avatar: res.data.avatar, subscription: res.data.subscription, userID: res.data.userId });
       })
       .catch(err => console.log(err.message));
     // login(dispatch, { username, password });
