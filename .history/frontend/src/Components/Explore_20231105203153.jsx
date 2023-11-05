@@ -90,7 +90,7 @@ const TITLE = styled.div`
     box-sizing: border-box;
     position: absolute;
     color: white;
-    bottom: 20px;
+    bottom: 30px;
 
     @media screen and (max-width: 750px){
         bottom: 5px;

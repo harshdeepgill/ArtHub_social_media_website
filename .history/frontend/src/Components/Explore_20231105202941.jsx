@@ -78,10 +78,6 @@ const HEADING = styled.h4`
     font-size: 1rem;
 }
 
-@media screen and (max-width: 580px){
-    font-size: 0.7rem;
-}
-
 `;
 
 const TITLE = styled.div`
@@ -90,13 +86,9 @@ const TITLE = styled.div`
     box-sizing: border-box;
     position: absolute;
     color: white;
-    bottom: 20px;
+    bottom: 30px;
 
     @media screen and (max-width: 750px){
         bottom: 5px;
-    }
-
-    @media screen and (max-width: 580px){
-        bottom: 0;
     }
 `;
