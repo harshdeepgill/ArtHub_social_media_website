@@ -41,6 +41,17 @@ adminRoute.get("/arts", async (req, res) => {
     }
 })
 
+adminRoute.get("/search", async (req, res) => {
+    const { title } = req.query;
+    try {
+        const arts = await ArtModel.find({ title });
+        res.status(200).send(arts);
+    }
+    catch (err) {
+        res.status(500).send({ "msg": "Something went wrong.", "err": err.message });
+    }
+})
+
 adminRoute.patch("/arts/update/:id", async (req, res) => {
     const { id } = req.params;
     try {
