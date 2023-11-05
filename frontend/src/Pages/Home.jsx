@@ -1,12 +1,14 @@
 import React from 'react'
 import { Text, Image, VStack, Box, Flex } from "@chakra-ui/react";
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const theme = useSelector((store) => store.authReducer.theme);
 
   return (
     <section id='hero' style={{ height: "30rem", backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded", fontFamily: "Nunito" }}>
+      <Link to={"/arts"}>Arts</Link>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem", color: `${theme}` === "dark" ? "white" : "black" }}>
         <h1 className='head-text' style={{ marginTop: "3rem" }}>Create great designs</h1>
         <Text fontSize="xl">Turn ideas into outstanding designs with high-quality vectors, photos, videos, mockups, and more</Text>

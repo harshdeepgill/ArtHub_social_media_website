@@ -47,7 +47,7 @@ commentRoute.delete("/:commentId/delete", async (req, res) => {
 })
 
 // User can update comment using postId.
-commentRoute.patch("/:commentId/delete", async (req, res) => {
+commentRoute.patch("/:commentId/update", async (req, res) => {
     const { commentId } = req.params;
     const comment = await CommentModel.findOne({ _id: commentId });
     try {

@@ -24,6 +24,7 @@ const AddPost = () => {
 
   const [tag, setTag] = useState("");
   const userID = useSelector((store) => store.authReducer.userID);
+  const username = useSelector((store) => store.authReducer.username);
 
   const dispatch = useDispatch();
 
@@ -80,7 +81,8 @@ const AddPost = () => {
       premium,
       views: 0,
       favorite: 0,
-      userID
+      userID,
+      username
     }, {
       headers: {
         "Content-type": "application/json",
