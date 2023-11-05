@@ -21,7 +21,7 @@ const Hero = () => {
 export default Hero
 
 const DIV = styled.div`
-    height: 25rem;
+    height: 30rem;
     width: 100%;
     text-align: center;
     display: flex;

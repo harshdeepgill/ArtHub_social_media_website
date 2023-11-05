@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Text, Image, VStack, Box, Flex, Button } from "@chakra-ui/react";
 import { Link } from 'react-router-dom';
-import { Explore } from '../Components/Explore';
+import { Explor } from '../Components/Explor';
 import Hero from '../Components/Hero';
 import { useSelector } from 'react-redux';
 
@@ -47,7 +47,7 @@ const Home = () => {
         </Flex>
       </section>
       <Hero />
-      <Explore />
+      <Explor />
     </>
   )
 }

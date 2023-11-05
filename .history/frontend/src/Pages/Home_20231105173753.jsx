@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Text, Image, VStack, Box, Flex, Button } from "@chakra-ui/react";
 import { Link } from 'react-router-dom';
-import { Explore } from '../Components/Explore';
+import { Explor } from '../Components/Explor';
 import Hero from '../Components/Hero';
 import { useSelector } from 'react-redux';
 
@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
       <section id='hero' style={{ height: "32rem", backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded", fontFamily: "Nunito" }}>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem", color: `${theme}` === "dark" ? "white" : "black", paddingTop: "2rem" }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem", color: `${theme}` === "dark" ? "white" : "black", marginTop: "2rem" }}>
           <h1 className='head-text' style={{ marginTop: "3rem" }}>Create great designs</h1>
           <Text fontSize="xl">Turn ideas into outstanding designs with high-quality vectors, photos, videos, mockups, and more</Text>
         </div>
@@ -47,7 +47,7 @@ const Home = () => {
         </Flex>
       </section>
       <Hero />
-      <Explore />
+      <Explor />
     </>
   )
 }
