@@ -115,7 +115,7 @@ const ArtPage = () => {
             <Image src="https://cdn.slidevision.io/www/14304000000085015_loader.gif" w={"10%"} />
         </Flex>
     }
-    return <Box w={"100%"} bgColor={theme == "dark" ? "#15191E" : "#efefef"} color={theme == "dark" ? "white" : "black"}>
+    return <Box w={"100%"} bgColor={theme == "dark" ? "#15191E" : "#edf2f7"} color={theme == "dark" ? "white" : "black"}>
         <Box w={"90%"} m={"auto"} padding={"1rem"}>
             <Grid w={"100%"} m={"auto"} templateColumns={["repeat(2,1fr)", "repeat(3,1fr)", "repeat(5,1fr)", "repeat(7,1fr)", "repeat(9,1fr)"]} columnGap={"1rem"} rowGap={"0.5rem"} templateRows={"auto"} p={"1rem"}>
                 <GridItem>

@@ -7,5 +7,5 @@ export const logout = (dispatch) => {
 }
 
 export const themeChange = (dispatch) => {
-  dispatch({ type: "THEME" });
+  dispatch({ type: "TOGGLETHEME" });
 }
