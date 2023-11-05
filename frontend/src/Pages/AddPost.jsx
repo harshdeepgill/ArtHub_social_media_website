@@ -23,6 +23,8 @@ import axios from 'axios'
 const AddPost = () => {
 
   const [tag, setTag] = useState("");
+  const userID = useSelector((store) => store.authReducer.userID);
+  const username = useSelector((store) => store.authReducer.username);
 
   const dispatch = useDispatch();
 
@@ -80,6 +82,7 @@ const AddPost = () => {
       views: 0,
       favorite: 0,
       userID: localStorage.getItem("userId") || "anonymous"
+
     }, {
       headers: {
         "Content-type": "application/json",
@@ -110,6 +113,8 @@ const AddPost = () => {
               <option value='Photography'>Photography</option>
               <option value='Fantasy'>Fantasy</option>
               <option value='Anime'>Anime</option>
+              <option value='Nature'>Nature</option>
+              <option value='Drawings'>Drawings</option>
             </Select>
             <FormLabel>Choose Art</FormLabel>
             <Input onChange={loadImage} id='file-input-addpost' type='file' boxShadow="outline" />
