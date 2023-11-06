@@ -99,7 +99,7 @@ const SingleProduct = () => {
             </Flex> :
             <Box w={"90%"} m={"auto"} p={"1rem"}>
                 <Stack display={"flex"} direction={["column", "column", "row", "row", "row"]} justifyContent={"center"}>
-                    <Box w={["90%", "90%", "60%", "60%", "60%"]} m={["auto", "auto", "auto", "1rem", "1rem"]} position={"relative"} justifyContent={"center"} style={{ display: "flex", flexDirection: "column" }}>
+                    <Box w={["90%", "90%", "60%", "60%", "60%"]} m={["auto", "auto", "auto", "1rem", "1rem"]} position={"relative"} justifyContent={"center"} style={{ display: "flex" }}>
                         <LazyLoadImage src={data.image} effect="blur" alt={data.title} />
                         {data.premium === true && <Text position={"absolute"} letterSpacing={"1px"} top={0} left={0} bgColor={"#FF7F50"}>PREMIUM</Text>}
                         <Stack display={"flex"} w={"100%"} mt={"1rem"} direction={"row"} justifyContent={"space-between"}>

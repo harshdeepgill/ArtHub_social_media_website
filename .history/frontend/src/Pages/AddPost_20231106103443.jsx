@@ -151,8 +151,8 @@ const AddPost = () => {
               </div>
             </FormControl>
           </form>
-          <Box boxSize={["sm", "sm", "lg", "lg", "lg"]} mx="auto">
-            <Image id='preview-img-addpost' src='https://placehold.co/600x400' alt='Dan Abramov' mx="auto" />
+          <Box w="50%" boxSize='lg' style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <Image id='preview-img-addpost' src='https://placehold.co/600x400' alt='Dan Abramov' />
           </Box>
         </Stack>
       </Box>
