@@ -46,13 +46,12 @@ const elite = {
 
 export default function PricingPage() {
   const theme = useSelector(store => store.authReducer.theme);
-  const subscription = useSelector(store => store.authReducer.subscription);
 
   return (
     <DIV theme={theme}>
 
-      <h1 style={{ color: `${theme}` === "dark" ? "white" : "black" }}>Upgrade your Plan</h1>
-      <h3 style={{ color: `${theme}` === "dark" ? "white" : "black" }}>Limited time offer : Get 50% OFF on plans</h3>
+      <h1>Upgrade your Plan</h1>
+      <h3>Limited time offer : Get 50% OFF on plans</h3>
 
       <div className='row row-cols-1 row-cols-md-3 my-5 w-75 m-auto'>
         <div className='col '>
@@ -72,7 +71,7 @@ export default function PricingPage() {
                 <li>{basic.platformFees}% Platform Fee</li>
                 <li>{basic.ArtProtect ? "Art Protect" : ""}</li>
               </ul>
-              <button className='btn btn-lg w-100 btn-success'>{subscription === "basic" ? "Current Plan" : subscription === "premium" ? "Change Plan" : subscription === "elite" ? "Change Plan" : ""}</button>
+              <button className='btn btn-lg w-100 btn-outline-success'>Sign up</button>
             </div>
           </div>
         </div>
@@ -93,7 +92,7 @@ export default function PricingPage() {
                 <li>{premium.platformFees}% Platform Fee</li>
                 <li>{premium.ArtProtect ? "Art Protect" : ""}</li>
               </ul>
-              <button className='btn btn-success btn-lg w-100 btn-success'>{subscription === "basic" ? "Upgrade" : subscription === "premium" ? "Current Plan" : subscription === "elite" ? "Change Plan" : ""}</button>
+              <button className='btn text-white btn-success btn-lg w-100 btn-outline-success'>{premium.price === "0" ? "Get Started" : "Upgrade"}</button>
             </div>
           </div>
         </div>
@@ -114,13 +113,13 @@ export default function PricingPage() {
                 <li>{elite.platformFees}% Platform Fee</li>
                 <li>{elite.ArtProtect ? "Art Protect" : ""}</li>
               </ul>
-              <button className='btn btn-success btn-lg w-100 btn-success'>{subscription === "basic" ? "Upgrade" : subscription === "premium" ? "Upgrade" : subscription === "elite" ? "Current Plan" : ""}</button>
+              <button className='btn text-white btn-success btn-lg w-100 btn-outline-success'>{elite.price === "0" ? "Get Started" : "Upgrade"}</button>
             </div>
           </div>
         </div>
       </div>
 
-      <h1 className='text-center fw-normal my-5' style={{ color: `${theme}` === "dark" ? "white" : "black" }}>Compare Plan</h1>
+      <h1 className='text-center fw-normal my-5'>Compare Plan</h1>
       <div className='w-75  m-auto'>
         <table className='table text-center'>
           <thead>
@@ -179,3 +178,11 @@ const DIV = styled.div`
     font-size: 20px;
   }
 `;
+
+const PriceContainer = styled.div`
+font-family:'Mulish';
+display: flex;
+gap:25px;
+justify-content: center;
+  
+`
