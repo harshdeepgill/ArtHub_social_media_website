@@ -72,7 +72,7 @@ export default function PricingPage() {
                 <li>{basic.platformFees}% Platform Fee</li>
                 <li>{basic.ArtProtect ? "Art Protect" : ""}</li>
               </ul>
-              <button className='btn btn-lg w-100 btn-success'>{subscription === "basic" ? "Current Plan" : subscription === "premium" ? "Change Plan" : subscription === "elite" ? "Change Plan" : ""}</button>
+              <button className='btn btn-lg w-100 btn-success'>Purchase</button>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ export default function PricingPage() {
                 <li>{premium.platformFees}% Platform Fee</li>
                 <li>{premium.ArtProtect ? "Art Protect" : ""}</li>
               </ul>
-              <button className='btn btn-success btn-lg w-100 btn-success'>{subscription === "basic" ? "Upgrade" : subscription === "premium" ? "Current Plan" : subscription === "elite" ? "Change Plan" : ""}</button>
+              <button className='btn btn-success btn-lg w-100 btn-success'>{subscription === "basic" ? "Upgrade" : subscription === "elite" ? "Change Plan" : ""}</button>
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function PricingPage() {
                 <li>{elite.platformFees}% Platform Fee</li>
                 <li>{elite.ArtProtect ? "Art Protect" : ""}</li>
               </ul>
-              <button className='btn btn-success btn-lg w-100 btn-success'>{subscription === "basic" ? "Upgrade" : subscription === "premium" ? "Upgrade" : subscription === "elite" ? "Current Plan" : ""}</button>
+              <button className='btn btn-success btn-lg w-100 btn-success'>{subscription === "basic" ? "Upgrade" : subscription === "elite" ? "Current Plan" : ""}</button>
             </div>
           </div>
         </div>
@@ -179,3 +179,11 @@ const DIV = styled.div`
     font-size: 20px;
   }
 `;
+
+const PriceContainer = styled.div`
+font-family:'Mulish';
+display: flex;
+gap:25px;
+justify-content: center;
+  
+`
