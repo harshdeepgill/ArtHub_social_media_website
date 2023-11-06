@@ -5,7 +5,12 @@ import { Link } from 'react-router-dom';
 import { Explore } from '../Components/Explore';
 import Hero from '../Components/Hero';
 import { useSelector } from 'react-redux';
+
+import PricingCard from '../Components/PricingCard';
+import PricingPage from './PricingPage';
+
 import styled from 'styled-components';
+
 
 const Home = () => {
   const theme = useSelector((store) => store.authReducer.theme);
@@ -53,6 +58,7 @@ const Home = () => {
       </HERO>
       <Hero />
       <Explore />
+
     </>
   )
 }

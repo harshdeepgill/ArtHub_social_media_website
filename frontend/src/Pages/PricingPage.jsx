@@ -170,7 +170,6 @@ export default function PricingPage() {
 const DIV = styled.div`
  
 
-  background-image: url(${"https://st.deviantart.net/eclipse/package-picker/background-sale-updated.webp?1"});
   text-align: center;
   color: white;
   padding: 10px;

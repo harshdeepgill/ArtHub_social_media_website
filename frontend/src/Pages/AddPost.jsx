@@ -18,7 +18,8 @@ import {
   Stack,
   HStack
 } from '@chakra-ui/react'
-import axios from 'axios'
+import axios from 'axios';
+import { FaRegTimesCircle } from "react-icons/fa";
 
 const AddPost = () => {
   const theme = useSelector(store => store.authReducer.theme);
@@ -99,54 +100,60 @@ const AddPost = () => {
     console.log({ image, title, tags, category, premium });
   }
 
+  const handleRemoveTag = (i)=> {
+    const newTag = [...tags];
+
+    newTag.splice(i,1);
+
+    dispatch({type: "REMTAG", payload: newTag});
+  }
+
   return (
-    <Box bgColor={theme == "dark" ? "#15191E" : "#edf2f7"} color={theme == "dark" ? "white" : "black"}>
-      <Box mx="auto" w="95%" >
-        <HStack mx="auto" justifyContent="space-between" direction={"row"} w="75%">
-          <form onSubmit={handleSubmit}>
-            <FormControl style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              <FormLabel>Title</FormLabel>
-              <Input onChange={(e) => { dispatch({ type: "TITLE", payload: e.target.value }) }} type='text' value={title} boxShadow="outline" />
-              <FormLabel>Category</FormLabel>
-              <Select onChange={(e) => { dispatch({ type: "CATAGORY", payload: e.target.value }) }} bgColor={theme == "dark" ? "#15191E" : "#edf2f7"} color={theme == "dark" ? "white" : "black"} placeholder='Select option' boxShadow="outline">
-                <option value='AI Art' style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded" }}>AI Art</option>
-                <option value='Digital Art' style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded" }}>Digital Art</option>
-                <option value='Fan Art' style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded" }}>Fan Art</option>
-                <option value='Photography' style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded" }}>Photography</option>
-                <option value='Fantasy' style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded" }}>Fantasy</option>
-                <option value='Anime' style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded" }}>Anime</option>
-                <option value='Nature' style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded" }}>Nature</option>
-                <option value='Drawings' style={{ backgroundColor: `${theme}` === "dark" ? "#15191E" : "#f0eded" }}>Drawings</option>
-              </Select>
-              <FormLabel>Choose Art</FormLabel>
-              <Input onChange={loadImage} id='file-input-addpost' type='file' boxShadow="outline" />
-              <FormLabel>Tags</FormLabel>
-              <Box>
-                {tags?.map((el, i) => <Box key={i}>{el}</Box>)}
-              </Box>
-              <InputGroup size="md">
-                <Input onChange={(e) => { setTag(e.target.value) }} type='text' boxShadow="outline" value={tag} />
-                <InputRightElement w="4.5rem">
-                  <Button size="md" onClick={tagHandler}>Add Tag</Button>
-                </InputRightElement>
-              </InputGroup>
-              <FormLabel>Version</FormLabel>
-              <RadioGroup onChange={(e) => { dispatch({ type: "VERSION", payload: e }) }}>
-                <Stack direction='row'>
-                  <Radio value='free'>Free</Radio>
-                  <Radio value='premium'>Premium</Radio>
-                </Stack>
-              </RadioGroup>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <Button type='submit' value="Add Post">Add Post</Button>
-              </div>
-            </FormControl>
-          </form>
-          <Box w="50%" boxSize='lg'>
-            <Image id='preview-img-addpost' src='https://placehold.co/600x400' alt='Dan Abramov' />
-          </Box>
-        </HStack>
-      </Box>
+    <Box mx="auto" w="95%">
+      <HStack mx="auto" justifyContent="space-between" direction={"row"} w="75%">
+        <form onSubmit={handleSubmit}>
+          <FormControl style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+            <FormLabel>Title</FormLabel>
+            <Input onChange={(e) => { dispatch({ type: "TITLE", payload: e.target.value }) }} type='text' value={title} boxShadow="outline" />
+            <FormLabel>Category</FormLabel>
+            <Select onChange={(e) => { dispatch({ type: "CATAGORY", payload: e.target.value }) }} placeholder='Select option' boxShadow="outline">
+              <option value='AI Art'>AI Art</option>
+              <option value='Digital Art'>Digital Art</option>
+              <option value='Fan Art'>Fan Art</option>
+              <option value='Photography'>Photography</option>
+              <option value='Fantasy'>Fantasy</option>
+              <option value='Anime'>Anime</option>
+              <option value='Nature'>Nature</option>
+              <option value='Drawings'>Drawings</option>
+            </Select>
+            <FormLabel>Choose Art</FormLabel>
+            <Input onChange={loadImage} id='file-input-addpost' type='file' boxShadow="outline" />
+            <FormLabel>Tags</FormLabel>
+            <Box display={"flex"} gap={"5px"} direction={"row"}>
+              {tags?.map((el, i) => <Box display={"flex"} alignItems={"center"} padding={"10px"} key={i}>{el} <FaRegTimesCircle onClick={()=> {handleRemoveTag(i)}}/></Box>)}
+            </Box>
+            <InputGroup size="md">
+              <Input onChange={(e) => { setTag(e.target.value) }} value={tag} type='text' boxShadow="outline" />
+              <InputRightElement w="4.5rem">
+                <Button size="md" onClick={tagHandler}>Add Tag</Button>
+              </InputRightElement>
+            </InputGroup>
+            <FormLabel>Version</FormLabel>
+            <RadioGroup onChange={(e) => { dispatch({ type: "VERSION", payload: e }) }}>
+              <Stack direction='row'>
+                <Radio value='free'>Free</Radio>
+                <Radio value='premium'>Premium</Radio>
+              </Stack>
+            </RadioGroup>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <Button type='submit' value="Add Post">Add Post</Button>
+            </div>
+          </FormControl>
+        </form>
+        <Box w="50%" boxSize='lg'>
+          <Image id='preview-img-addpost' src='https://placehold.co/600x400' alt='Dan Abramov' />
+        </Box>
+      </HStack>
     </Box>
   )
 }

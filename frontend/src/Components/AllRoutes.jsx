@@ -8,8 +8,10 @@ import Register from "../Pages/Register";
 import ArtPage from "../Pages/Artpage";
 import SingleProduct from '../Pages/SingleProduct';
 import { PrivateRouter } from './PrivateRoute';
+import UserPage from '../Pages/UserPage';
 import PricingPage from '../Pages/PricingPage';
 import Search from "../Pages/Search";
+
 
 const AllRoutes = () => {
   return (
@@ -20,6 +22,11 @@ const AllRoutes = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/arts" element={
           <ArtPage />
+        } />
+        <Route path='/user' element={
+          <PrivateRouter>
+            <UserPage/>
+          </PrivateRouter>
         } />
         <Route path='/edit' element={
           <PrivateRouter>
