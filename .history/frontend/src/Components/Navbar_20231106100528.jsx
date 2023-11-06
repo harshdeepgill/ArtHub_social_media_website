@@ -21,8 +21,8 @@ const Navbar = () => {
     const username = localStorage.getItem("userName");
     // const subscription = useSelector((store) => store.authReducer.subscription);
     const subscription = localStorage.getItem("subscription");
-    // const [isAuth, setIsAuth] = useState(localStorage.getItem("token"));
     const isAuth = useSelector((store) => store.authReducer.isAuth);
+    // const [isAuth, setIsAuth] = useState(localStorage.getItem("token"));
 
 
 
