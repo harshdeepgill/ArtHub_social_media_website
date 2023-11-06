@@ -34,14 +34,14 @@ const Home = () => {
 
             <Box style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
               <Link to="/arts">
-                <Image objectFit="cover" w="17rem" h="10rem" boxShadow='outline' src="https://img.freepik.com/free-photo/ai-nuclear-energy-background-future-innovation-disruptive-technology_53876-129783.jpg?w=996&t=st=1699109080~exp=1699109680~hmac=bf6a04c1ddc3b58acfe0dd62c996a68acf37abb6197903b6ef2943eadc460407" borderRadius="22px" _hover={{ outline: "3px solid coral", transform: "scale(1.05)", transition: "transform 0.3s ease-in-out" }} />
+                <Image objectFit="cover" w="17rem" h="10rem" boxShadow='outline' src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/390425ad-41fc-48d9-bbca-ad4a6f63256d/dfb6rg5-6ac75079-1a89-4950-8641-2d8dd28d3457.png/v1/fill/w_350,h_350,q_70,strp/the_metaverse_by_digitonaut_dfb6rg5-350t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTUzNiIsInBhdGgiOiJcL2ZcLzM5MDQyNWFkLTQxZmMtNDhkOS1iYmNhLWFkNGE2ZjYzMjU2ZFwvZGZiNnJnNS02YWM3NTA3OS0xYTg5LTQ5NTAtODY0MS0yZDhkZDI4ZDM0NTcucG5nIiwid2lkdGgiOiI8PTE1MzYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.vg-qmZ6d1JFUuztOoUEpfLvCgDEpZS12Hp9H4cpLBt4" borderRadius="22px" _hover={{ outline: "3px solid coral", transform: "scale(1.05)", transition: "transform 0.3s ease-in-out" }} />
               </Link>
               <Text fontSize="xl" style={{ color: `${theme}` === "dark" ? "white" : "black" }}>AI Art</Text>
             </Box>
 
             <Box style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
               <Link to="/arts">
-                <Image objectFit="cover" w="17rem" h="10rem" boxShadow='outline' src="https://img.freepik.com/free-photo/seljalandsfoss-waterfall-during-sunset-beautiful-waterfall-iceland_335224-596.jpg?w=996&t=st=1699109425~exp=1699110025~hmac=c7f0f48757bf877c024415e07e2b9cb61b9b3c22bbf137839927235caa5f3cdb" borderRadius="22px" _hover={{ outline: "3px solid coral", transform: "scale(1.05)", transition: "transform 0.3s ease-in-out" }} />
+                <Image objectFit="cover" w="17rem" h="10rem" boxShadow='outline' src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/51bad5a5-a63e-4bbf-9937-6b5b78416457/dcmh1mi-5fb2b2da-5d1c-45d3-aa8d-19aef8db8787.jpg/v1/fill/w_700,h_350,q_70,strp/mountain_landscape_by_allrichart_dcmh1mi-350t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6IlwvZlwvNTFiYWQ1YTUtYTYzZS00YmJmLTk5MzctNmI1Yjc4NDE2NDU3XC9kY21oMW1pLTVmYjJiMmRhLTVkMWMtNDVkMy1hYThkLTE5YWVmOGRiODc4Ny5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.H4zpN-0muaAwnft2i3kYZxSn0i9AbabkIT4O62yRx6Q" borderRadius="22px" _hover={{ outline: "3px solid coral", transform: "scale(1.05)", transition: "transform 0.3s ease-in-out" }} />
               </Link>
               <Text fontSize="xl" style={{ color: `${theme}` === "dark" ? "white" : "black" }}>Nature Art</Text>
             </Box>
