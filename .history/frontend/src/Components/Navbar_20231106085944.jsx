@@ -1,4 +1,3 @@
-
 import { Link as RouteLink, useNavigate } from "react-router-dom"
 import { Box, Stack, Image, Input, InputGroup, InputRightElement, Button, IconButton, Link as ChakraLink, Icon, HStack } from "@chakra-ui/react"
 import { useState, useEffect } from "react";
@@ -96,7 +95,6 @@ const Navbar = () => {
                     isAuth ?
                         (
                             <HStack spacing="1rem">
-
                                 <Image src={avatar} borderRadius='full' boxSize='55px'></Image>
                                 <Box fontSize="lg">{username}</Box>
                                 <ICONBOX><Link to="/upload"><FaPlus fontSize="1.5rem" color={theme === "dark" ? "white" : "black"} /></Link></ICONBOX>
@@ -111,7 +109,6 @@ const Navbar = () => {
                                         </Button>
                                     ) : ""
                                 }
-
                                 <Button bgColor="#FF7F50" color="white" _hover={{ backgroundColor: "#91D9A8", color: "coral" }} onClick={handleLogout}>Logout</Button>
                             </HStack>
                         ) : (<ChakraLink to="/login" as={RouteLink} style={{ textDecoration: "none", color: theme === "dark" ? "coral" : "blue" }} _hover={{ color: "#8FDBA7" }} fontSize="xl">Login</ChakraLink>)
