@@ -22,10 +22,9 @@ import axios from 'axios';
 import { FaRegTimesCircle } from "react-icons/fa";
 
 const AddPost = () => {
-
+  const theme = useSelector(store => store.authReducer.theme);
+  const avatar = useSelector(store => store.authReducer.avatar);
   const [tag, setTag] = useState("");
-  const userID = useSelector((store) => store.authReducer.userID);
-  const username = useSelector((store) => store.authReducer.username);
 
   const dispatch = useDispatch();
 
@@ -69,7 +68,7 @@ const AddPost = () => {
 
   const tagHandler = () => {
     dispatch({ type: "TAG", payload: tag });
-    setTag("");
+    setTag(prev => prev = "");
   }
 
   const handleSubmit = (e) => {
@@ -82,7 +81,9 @@ const AddPost = () => {
       premium,
       views: 0,
       favorite: 0,
-      userID: localStorage.getItem("userId") || "anonymous"
+      userID: localStorage.getItem("userID") || "anonymous",
+      username: localStorage.getItem("userName"),
+      useravatar: avatar
     }, {
       headers: {
         "Content-type": "application/json",
@@ -91,6 +92,7 @@ const AddPost = () => {
     })
       .then(res => {
         console.log("upload response :", res.data);
+        dispatch({ type: "REMOVE" })
       })
       .catch(err => {
         console.log(err.message);

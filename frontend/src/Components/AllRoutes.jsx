@@ -6,10 +6,13 @@ import AddPost from '../Pages/AddPost';
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import ArtPage from "../Pages/Artpage";
-import Plans from "../Pages/Plans";
 import SingleProduct from '../Pages/SingleProduct';
 import { PrivateRouter } from './PrivateRoute';
 import UserPage from '../Pages/UserPage';
+import PricingPage from '../Pages/PricingPage';
+import Search from "../Pages/Search";
+
+
 const AllRoutes = () => {
   return (
     <div>
@@ -35,7 +38,8 @@ const AllRoutes = () => {
             <AddPost />
           </PrivateRouter>
         } />
-        <Route path='/plans' element={<Plans />} />
+        <Route path='/plans' element={<PricingPage />} />
+        <Route path='/search' element={<Search />} />
         <Route path='/art/:id' element={
           <PrivateRouter>
             <SingleProduct />

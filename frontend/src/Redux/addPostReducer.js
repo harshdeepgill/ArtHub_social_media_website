@@ -23,6 +23,7 @@ const postReducer = (state = initialState, { type, payload }) => {
         case "TAG": return {
             ...state,
             tags: [...state.tags,"#" + payload]
+
         }
         case "VERSION": return {
             ...state,
