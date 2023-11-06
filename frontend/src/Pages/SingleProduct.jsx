@@ -128,7 +128,7 @@ const SingleProduct = () => {
                                 <Image src={data.useravatar} w={"20%"} h={"20%"} />
                                 <Stack gap={"auto"} direction={"column"} columnGap={"0px"}>
                                     <Text mt={"auto"} fontSize={"20px"} fontWeight={500} >{data.title}</Text>
-                                    <Text mb={"auto"} >by <span style={{ fontSize: "20px", fontWeight: "500" }}>{data.username} <Tag mt={"1"} bgColor={"#FF7F50"} color={"white"}>Premium</Tag></span></Text>
+                                    <Text mb={"auto"} >by {data.username}</Text>
                                 </Stack>
                             </Box>
                             <Text m={"auto"} fontSize={"20px"} fontWeight={500} display={"flex"} alignItems={"center"} gap={"5px"}><ViewIcon /> {data.views}</Text>
