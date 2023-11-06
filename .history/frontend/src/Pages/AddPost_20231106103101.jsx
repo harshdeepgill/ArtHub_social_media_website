@@ -16,6 +16,7 @@ import {
   RadioGroup,
   Select,
   Stack,
+  HStack
 } from '@chakra-ui/react'
 import axios from 'axios';
 import { FaRegTimesCircle } from "react-icons/fa";
@@ -110,7 +111,7 @@ const AddPost = () => {
   return (
     <Box bgColor={theme === "dark" ? "#15191E" : "#edf2f7"} color={theme === "dark" ? "white" : "black"}>
       <Box mx="auto" w="95%">
-        <Stack mx="auto" justifyContent="space-between" direction={["column-reverse", "column-reverse", "column-reverse", "row ", "row"]} w="75%">
+        <Stack mx="auto" justifyContent="space-between" direction={["column", "column", "row", "row ", "row"]} w="75%">
           <form onSubmit={handleSubmit}>
             <FormControl style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               <FormLabel>Title</FormLabel>
@@ -150,8 +151,8 @@ const AddPost = () => {
               </div>
             </FormControl>
           </form>
-          <Box boxSize={["sm", "sm", "lg", "lg", "lg"]} mx="auto">
-            <Image id='preview-img-addpost' src='https://placehold.co/600x400' alt='Dan Abramov' mx="auto" />
+          <Box w="50%" boxSize='lg'>
+            <Image id='preview-img-addpost' src='https://placehold.co/600x400' alt='Dan Abramov' />
           </Box>
         </Stack>
       </Box>

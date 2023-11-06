@@ -16,6 +16,7 @@ import {
   RadioGroup,
   Select,
   Stack,
+  HStack
 } from '@chakra-ui/react'
 import axios from 'axios';
 import { FaRegTimesCircle } from "react-icons/fa";
@@ -150,7 +151,7 @@ const AddPost = () => {
               </div>
             </FormControl>
           </form>
-          <Box boxSize={["sm", "sm", "lg", "lg", "lg"]} mx="auto">
+          <Box boxSize='lg' mx="auto" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
             <Image id='preview-img-addpost' src='https://placehold.co/600x400' alt='Dan Abramov' mx="auto" />
           </Box>
         </Stack>
