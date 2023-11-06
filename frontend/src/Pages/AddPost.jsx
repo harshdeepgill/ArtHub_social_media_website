@@ -18,7 +18,8 @@ import {
   Stack,
   HStack
 } from '@chakra-ui/react'
-import axios from 'axios'
+import axios from 'axios';
+import { FaRegTimesCircle } from "react-icons/fa";
 
 const AddPost = () => {
 
@@ -82,7 +83,6 @@ const AddPost = () => {
       views: 0,
       favorite: 0,
       userID: localStorage.getItem("userId") || "anonymous"
-
     }, {
       headers: {
         "Content-type": "application/json",
@@ -96,6 +96,14 @@ const AddPost = () => {
         console.log(err.message);
       })
     console.log({ image, title, tags, category, premium });
+  }
+
+  const handleRemoveTag = (i)=> {
+    const newTag = [...tags];
+
+    newTag.splice(i,1);
+
+    dispatch({type: "REMTAG", payload: newTag});
   }
 
   return (
@@ -119,11 +127,11 @@ const AddPost = () => {
             <FormLabel>Choose Art</FormLabel>
             <Input onChange={loadImage} id='file-input-addpost' type='file' boxShadow="outline" />
             <FormLabel>Tags</FormLabel>
-            <Box>
-              {tags.split(" ")?.map((el, i) => <Box key={i}>{el}</Box>)}
+            <Box display={"flex"} gap={"5px"} direction={"row"}>
+              {tags?.map((el, i) => <Box display={"flex"} alignItems={"center"} padding={"10px"} key={i}>{el} <FaRegTimesCircle onClick={()=> {handleRemoveTag(i)}}/></Box>)}
             </Box>
             <InputGroup size="md">
-              <Input onChange={(e) => { setTag(e.target.value) }} type='text' boxShadow="outline" />
+              <Input onChange={(e) => { setTag(e.target.value) }} value={tag} type='text' boxShadow="outline" />
               <InputRightElement w="4.5rem">
                 <Button size="md" onClick={tagHandler}>Add Tag</Button>
               </InputRightElement>
