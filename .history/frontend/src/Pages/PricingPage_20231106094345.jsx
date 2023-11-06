@@ -179,3 +179,11 @@ const DIV = styled.div`
     font-size: 20px;
   }
 `;
+
+const PriceContainer = styled.div`
+font-family:'Mulish';
+display: flex;
+gap:25px;
+justify-content: center;
+  
+`

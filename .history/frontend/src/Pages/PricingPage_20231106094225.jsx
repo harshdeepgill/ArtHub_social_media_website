@@ -72,7 +72,7 @@ export default function PricingPage() {
                 <li>{basic.platformFees}% Platform Fee</li>
                 <li>{basic.ArtProtect ? "Art Protect" : ""}</li>
               </ul>
-              <button className='btn btn-lg w-100 btn-success'>{subscription === "basic" ? "Current Plan" : subscription === "premium" ? "Change Plan" : subscription === "elite" ? "Change Plan" : ""}</button>
+              <button className='btn btn-lg w-100 btn-success'>Purchase</button>
             </div>
           </div>
         </div>
@@ -179,3 +179,11 @@ const DIV = styled.div`
     font-size: 20px;
   }
 `;
+
+const PriceContainer = styled.div`
+font-family:'Mulish';
+display: flex;
+gap:25px;
+justify-content: center;
+  
+`
