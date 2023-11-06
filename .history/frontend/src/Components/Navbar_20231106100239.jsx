@@ -21,8 +21,8 @@ const Navbar = () => {
     const username = localStorage.getItem("userName");
     // const subscription = useSelector((store) => store.authReducer.subscription);
     const subscription = localStorage.getItem("subscription");
+    // const isAuth = useSelector((store) => store.authReducer.isAuth);
     // const [isAuth, setIsAuth] = useState(localStorage.getItem("token"));
-    const isAuth = useSelector((store) => store.authReducer.isAuth);
 
 
 
@@ -70,21 +70,17 @@ const Navbar = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [search]);
 
-    // useEffect(() => {
-    //     let isAuth = localStorage.getItem("isAuth");
-    //     if (isAuth === undefined) {
+    useEffect(() => {
+        let isAuth = localStorage.getItem("isAuth");
+        if (isAuth === undefined) {
 
-    //     }
-    //     else {
-    //         if (isAuth === "false") {
+        }
+        else {
+            if (isAuth === "false") {
 
-    //         }
-    //         else
-    //         {
-
-    //         }
-    //     }
-    // }, []);
+            }
+        }
+    }, []);
 
     return <Box w={"100%"} bgColor={theme === "dark" ? "#15191E" : "#edf2f7"} color={theme === "dark" ? "white" : "black"}>
         <Stack w={"90%"} m={"auto"} direction={"row"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} p={"1"}>
@@ -109,7 +105,7 @@ const Navbar = () => {
                 <Icon as={theme === "dark" ? BsSun : BsMoonStars} fontSize={"xl"} onClick={() => changeTheme(dispatch)} />
                 <ChakraLink to="/arts" as={RouteLink} style={{ textDecoration: "none", color: "coral" }} _hover={{ color: "#8FDBA7" }} fontSize="2xl">Arts</ChakraLink>
                 {
-                    isAuth ?
+                    localStorage.getItem("token") ?
                         (
                             <HStack spacing="1rem">
 
