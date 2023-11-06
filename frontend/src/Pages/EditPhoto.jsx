@@ -2,13 +2,15 @@ import React, { useRef, useState } from 'react'
 import styled from 'styled-components'
 import { FaArrowRotateLeft, FaArrowRotateRight } from "react-icons/fa6";
 import { TbFlipVertical, TbFlipHorizontal } from "react-icons/tb";
-import {ref, uploadBytes, listAll, getDownloadURL} from "firebase/storage";
-import {v4} from "uuid";
+import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import { v4 } from "uuid";
 import { storage } from '../Redux/firebase';
+import { useSelector } from 'react-redux';
 
 const EditPhoto = () => {
     // const [slider, setSlider] = useState(100);
     const [filter, setFilter] = useState("");
+    const theme = useSelector(store => store.authReducer.theme);
 
     const [brightness, setBrightness] = useState(100);
     const [saturation, setSaturation] = useState(100);
@@ -48,21 +50,21 @@ const EditPhoto = () => {
         const imagePathInFirebase = v4()
         const imageRef = ref(storage, `Posts/${imagePathInFirebase}`)
         uploadBytes(imageRef, img).then(() => {
-          listAll(ref(storage, 'Posts/'))
-          .then(res => {
-            res.items.forEach(el => {
-              if (el._location.path_ === `Posts/${imagePathInFirebase}`) {
-                getDownloadURL(el)
-                .then(url => {
-                //   dispatch({ type: 'IMAGE', payload: url })
-                  alert('image uploaded!')
-                  console.log(url)
+            listAll(ref(storage, 'Posts/'))
+                .then(res => {
+                    res.items.forEach(el => {
+                        if (el._location.path_ === `Posts/${imagePathInFirebase}`) {
+                            getDownloadURL(el)
+                                .then(url => {
+                                    //   dispatch({ type: 'IMAGE', payload: url })
+                                    alert('image uploaded!')
+                                    console.log(url)
+                                })
+                        }
+                    })
                 })
-              }
-            })
-          })
         })
-      }
+    }
 
     const handleSaveImage = () => {
         const canvas = document.getElementById("image-canvas");
@@ -72,15 +74,15 @@ const EditPhoto = () => {
         canvas.width = previewImg.naturalWidth;
         canvas.height = previewImg.naturalHeight;
 
-        
-        ctx.translate(canvas.width/2, canvas.height/2)
+
+        ctx.translate(canvas.width / 2, canvas.height / 2)
         ctx.scale(flipHorizontal, flipVertical);
-        if(rotate !== 0){
-            ctx.rotate(rotate * Math.PI/180);
+        if (rotate !== 0) {
+            ctx.rotate(rotate * Math.PI / 180);
         }
         ctx.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`
-        ctx.drawImage(previewImg, -canvas.width /2, -canvas.height/ 2, canvas.width, canvas.height);
-        
+        ctx.drawImage(previewImg, -canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
+
         const link = document.createElement("a");
         link.download = `${Date.now()}`;
         link.href = canvas.toDataURL();
@@ -90,61 +92,61 @@ const EditPhoto = () => {
     }
 
 
-  return (
-    <div style={{padding:"40px"}}>
-        <h1 style={{fontSize: "2rem"}}>Image Editor</h1>
-        <DIV>
-            <div>
-                <EDITORPANNEL>
-                        <label style={{fontSize:"1.2rem"}}>Filters</label>
-                    <SLIDER>
-                        <div>
-                            <p>Brightness</p>
-                            <p>{brightness}%</p>
-                        </div>
-                        <input onChange={(e) => {setBrightness(e.target.value)}} type="range" value={brightness} min={"0"} max={"200"} id='input-slider' />
-                        <div>
-                            <p>Saturation</p>
-                            <p>{saturation}%</p>
-                        </div>
-                        <input onChange={(e) => {setSaturation(e.target.value)}} type="range" value={saturation} min={"0"} max={"200"} id='input-slider' />
-                        <div>
-                            <p>Inversion</p>
-                            <p>{inversion}%</p>
-                        </div>
-                        <input onChange={(e) => {setInversion(e.target.value)}} type="range" value={inversion} min={"0"} max={"100"} id='input-slider' />
-                        <div>
-                            <p>Grayscale</p>
-                            <p>{grayscale}%</p>
-                        </div>
-                        <input onChange={(e) => {setGrayscale(e.target.value)}} type="range" value={grayscale} min={"0"} max={"100"} id='input-slider' />
-                    </SLIDER>
-                    <ROTATE>
-                        <label style={{fontSize:"1.2rem"}}>Rotate & Flip</label>
-                        <div>
-                            <button onClick={()=> {setRotate(prev => prev-90)}}>
-                                <FaArrowRotateLeft/>
-                            </button>
-                            <button onClick={()=> {setRotate(prev => prev+90)}}>
-                                <FaArrowRotateRight/>
-                            </button>
-                            <button onClick={()=> {setFlipHorizontal(prev => {return(prev == 1 ? -1 : 1)})}}>
-                                <TbFlipVertical/>
-                            </button>
-                            <button onClick={()=> {setFlipVertical(prev => {return(prev == 1 ? -1 : 1)})}}>
-                                <TbFlipHorizontal/>
-                            </button>
-                        </div>
-                    </ROTATE>
-                </EDITORPANNEL>
-                <IMGDIV>
-                    <IMG flipHorizontal={flipHorizontal} flipVertical={flipVertical} rotate={rotate} brightnes={brightness} saturation={saturation} inversion={inversion} grayscale={grayscale} id='preview-img' src="https://i.pinimg.com/564x/ce/22/32/ce22327fa176a92798cdbd1589391cc2.jpg" alt="" /> 
-                    <canvas hidden id='image-canvas'></canvas>
-                </IMGDIV>
+    return (
+        <div style={{ padding: "40px", backgroundColor: `${theme}` === "dark" ? "#15191E" : "#edf2f7", color: `${theme}` === "dark" ? "white" : "black" }}>
+            <h1 style={{ fontSize: "2rem" }}>Image Editor</h1>
+            <DIV>
+                <div>
+                    <EDITORPANNEL>
+                        <label style={{ fontSize: "1.2rem" }}>Filters</label>
+                        <SLIDER>
+                            <div>
+                                <p>Brightness</p>
+                                <p>{brightness}%</p>
+                            </div>
+                            <input onChange={(e) => { setBrightness(e.target.value) }} type="range" value={brightness} min={"0"} max={"200"} id='input-slider' />
+                            <div>
+                                <p>Saturation</p>
+                                <p>{saturation}%</p>
+                            </div>
+                            <input onChange={(e) => { setSaturation(e.target.value) }} type="range" value={saturation} min={"0"} max={"200"} id='input-slider' />
+                            <div>
+                                <p>Inversion</p>
+                                <p>{inversion}%</p>
+                            </div>
+                            <input onChange={(e) => { setInversion(e.target.value) }} type="range" value={inversion} min={"0"} max={"100"} id='input-slider' />
+                            <div>
+                                <p>Grayscale</p>
+                                <p>{grayscale}%</p>
+                            </div>
+                            <input onChange={(e) => { setGrayscale(e.target.value) }} type="range" value={grayscale} min={"0"} max={"100"} id='input-slider' />
+                        </SLIDER>
+                        <ROTATE>
+                            <label style={{ fontSize: "1.2rem" }}>Rotate & Flip</label>
+                            <div>
+                                <button onClick={() => { setRotate(prev => prev - 90) }}>
+                                    <FaArrowRotateLeft />
+                                </button>
+                                <button onClick={() => { setRotate(prev => prev + 90) }}>
+                                    <FaArrowRotateRight />
+                                </button>
+                                <button onClick={() => { setFlipHorizontal(prev => { return (prev == 1 ? -1 : 1) }) }}>
+                                    <TbFlipVertical />
+                                </button>
+                                <button onClick={() => { setFlipVertical(prev => { return (prev == 1 ? -1 : 1) }) }}>
+                                    <TbFlipHorizontal />
+                                </button>
+                            </div>
+                        </ROTATE>
+                    </EDITORPANNEL>
+                    <IMGDIV>
+                        <IMG flipHorizontal={flipHorizontal} flipVertical={flipVertical} rotate={rotate} brightnes={brightness} saturation={saturation} inversion={inversion} grayscale={grayscale} id='preview-img' src="https://i.pinimg.com/564x/ce/22/32/ce22327fa176a92798cdbd1589391cc2.jpg" alt="" />
+                        <canvas hidden id='image-canvas'></canvas>
+                    </IMGDIV>
 
-            </div>
-            <BOTTOMDIV>
-            <button onClick={handleDefault}>Restore Defaults</button>
+                </div>
+                <BOTTOMDIV>
+                    <button onClick={handleDefault}>Restore Defaults</button>
                     <div>
                         <input onChange={loadImage} type="file" id='file-input' accept='image/*' hidden />
                         <button onClick={handleFileInput}>Choose Image</button>
