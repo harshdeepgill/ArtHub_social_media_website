@@ -4,7 +4,9 @@ Tag line : Turn ideas into outstanding designs with high-quality vectors, photos
 
 ## Table of Contents
 
-- [This is a React website built on theme of Art gallery it consists basic functionality such as post art, comment on art, view arts by category, etc more focus is on UI the project contains Home page, Arts page, Upload Page, Edit Art Page, Register Page and Login Page.](#description)
+## [Description](#description)
+
+- This is a React website built on theme of Art gallery it consists basic functionality such as post art, comment on art, view arts by category, etc more focus is on UI the project contains Home page, Arts page, Upload Page, Edit Art Page, Register Page and Login Page.
 
 ## [Features](#features)
 
@@ -69,7 +71,7 @@ Tag line : Turn ideas into outstanding designs with high-quality vectors, photos
 ## Usage
 
 1. After following the installation steps, open your web browser.
-2. Navigate to http://localhost:3000 to access the website.
+2. Navigate to <http://localhost:3000> to access the website.
 3. Explore the different features and sections of the website.
 4. Interact with the elements and see the content.
 5. Enjoy using the website and provide feedback!
@@ -80,17 +82,23 @@ Contributions are welcome! Here's how you can get involved:
 
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix:
+
    ```sh
    git checkout -b feature-name
    ```
+
 3. Make your changes and commit them:
+
    ```sh
    git commit -m "Add your message here"
    ```
+
 4. Push your changes to your forked repository:
+
    ```sh
    git push origin feature-name
    ```
+
 5. Open a pull request on GitHub and provide details about your changes.
 
 ## Production Links
