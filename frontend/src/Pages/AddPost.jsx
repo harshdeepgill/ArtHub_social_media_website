@@ -72,7 +72,7 @@ const AddPost = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("https://gifted-kit-cow.cyclic.app/arts/add", {
+    axios.post("https://artsphere.onrender.com/arts/add", {
       image,
       title,
       tags,
