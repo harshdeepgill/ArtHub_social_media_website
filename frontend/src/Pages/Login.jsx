@@ -96,7 +96,7 @@ const Login = () => {
     console.log("handle login invoked");
     const payload = { email: username, password };
     console.log("login payload :", payload);
-    axios.post("https://gifted-kit-cow.cyclic.app/users/login", payload)
+    axios.post("https://artsphere.onrender.com/users/login", payload)
       .then((res) => {
         console.log(res.data);
         localStorage.setItem("token", res.data.token);

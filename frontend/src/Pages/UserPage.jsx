@@ -18,7 +18,7 @@ const UserPage = () => {
     })
 
     useEffect(()=> {
-        axios.get(`https://gifted-kit-cow.cyclic.app/arts/singleuser?id=${userID}`)
+        axios.get(`https://artsphere.onrender.com/arts/singleuser?id=${userID}`)
         .then(res => {
             console.log(res);
             setPosts(res.data);
