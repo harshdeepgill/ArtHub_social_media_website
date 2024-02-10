@@ -17,7 +17,7 @@ const SingleProduct = () => {
         fetch(`https://gifted-kit-cow.cyclic.app/arts/${id}`, {
             method: "GET",
             headers: {
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhcmFzIiwiaWF0IjoxNjk5MTA5MDAzLCJleHAiOjE2OTk3MTM4MDN9.J6J2TNTFERx0Cs1PUpuQUSjtRU4mQVYLLd6Coy7wXuY"
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
             }
         })
             .then((res) => res.json())
