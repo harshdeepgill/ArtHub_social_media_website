@@ -18,10 +18,10 @@ const ArtPage = () => {
     const fetchTheData = () => {
         let url;
         if (curr === "") {
-            url = "https://gifted-kit-cow.cyclic.app/admin/arts"
+            url = "https://artsphere.onrender.com/admin/arts"
         }
         else {
-            url = `https://gifted-kit-cow.cyclic.app/arts/all/?category=${curr}`
+            url = `https://artsphere.onrender.com/arts/all/?category=${curr}`
         }
         fetch(url, {
             method: "GET",
@@ -91,7 +91,7 @@ const ArtPage = () => {
     }
     const handleView = (id, view) => {
         const newView = { views: view + 1 };
-        fetch(`https://gifted-kit-cow.cyclic.app/arts/view/${id}`, {
+        fetch(`https://artsphere.onrender.com/arts/view/${id}`, {
             method: "PATCH",
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem("token")}`,

@@ -14,7 +14,7 @@ const SingleProduct = () => {
     const userID = useSelector(store => store.authReducer.userID);
     const avatar = useSelector(store => store.authReducer.avatar);
     const fetchThedata = () => {
-        fetch(`https://gifted-kit-cow.cyclic.app/arts/${id}`, {
+        fetch(`https://artsphere.onrender.com/arts/${id}`, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem("token")}`
@@ -29,7 +29,7 @@ const SingleProduct = () => {
             .catch((err) => console.log(err))
     }
     const fetchTheComments = (id) => {
-        fetch(`https://gifted-kit-cow.cyclic.app/comments/${id}`, {
+        fetch(`https://artsphere.onrender.com/comments/${id}`, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem("token")}`
@@ -54,7 +54,7 @@ const SingleProduct = () => {
             userAvatar: avatar,
             time: Date()
         }
-        fetch(`https://gifted-kit-cow.cyclic.app/comments/${data._id}/create`, {
+        fetch(`https://artsphere.onrender.com/comments/${data._id}/create`, {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem("token")}`,
@@ -70,7 +70,7 @@ const SingleProduct = () => {
             .catch((err) => console.log(err))
     }
     const otherData = (category) => {
-        const url = `https://gifted-kit-cow.cyclic.app/arts/all/?category=${category}`
+        const url = `https://artsphere.onrender.com/arts/all/?category=${category}`
         fetch(url, {
             method: "GET",
             headers: {

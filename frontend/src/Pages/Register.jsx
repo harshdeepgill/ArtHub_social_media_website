@@ -95,7 +95,7 @@ const Register = () => {
     try {
       const payload = { username: userName, name, email: user, avatar, password: pwd, age, subscription: "basic" };
       console.log("register payload :", payload);
-      axios.post("https://gifted-kit-cow.cyclic.app/users/register", payload)
+      axios.post("https://artsphere.onrender.com/users/register", payload)
         .then((res) => {
           console.log("Register response :", res.data);
           toast({

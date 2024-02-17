@@ -11,7 +11,7 @@ const SearchCard = () => {
 
   const handleView = (id, view) => {
     const newView = { views: view + 1 };
-    fetch(`https://gifted-kit-cow.cyclic.app/arts/view/${id}`, {
+    fetch(`https://artsphere.onrender.com/arts/view/${id}`, {
       method: "PATCH",
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("token")}`,
