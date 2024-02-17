@@ -105,4 +105,4 @@ Contributions are welcome! Here's how you can get involved:
 
 [cyclic deployed Backend](https://artsphere.onrender.com/)
 
-[vercel deployed frontend](https://festive-crayon-1023-one.vercel.app/)
+[vercel deployed frontend](https://artsphere-eight.vercel.app)
